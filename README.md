@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/andela/ah-frontend-poseidon.svg?branch=develop)](https://travis-ci.org/andela/ah-frontend-poseidon)
+[![Maintainability](https://api.codeclimate.com/v1/badges/31201a67ff802ca0e3f8/maintainability)](https://codeclimate.com/github/andela/ah-frontend-poseidon/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/31201a67ff802ca0e3f8/test_coverage)](https://codeclimate.com/github/andela/ah-frontend-poseidon/test_coverage)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
