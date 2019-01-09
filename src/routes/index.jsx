@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import HomeView from "../views/homeView";
 import AuthView from "../views/authView";
-import ConfigureStore from "../redux/store";
+import configureStore from '../redux/store';
 
-const store = ConfigureStore();
+const store = configureStore();
 
 class Routes extends Component {
   render() {

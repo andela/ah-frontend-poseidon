@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import Routes from './routes/index';
 import './App.scss';
 import Notification from 'react-notify-toast';
-import Routes from './routes';
 
 class App extends Component {
   render() {
