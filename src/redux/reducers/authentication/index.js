@@ -12,13 +12,13 @@ const authReducer = (state = initialState, action) => {
     case ACTION_TYPE.SIGN_UP_SUCCESS:
       return {
         ...state,
-        signUpSuccess: action.signUpData.user
+        signUpSuccess: action.signUpData.user,
       };
     case ACTION_TYPE.SIGN_UP_FAILURE:
       return {
         ...state,
 
-        signUpFailure: action.signUpErrors
+        signUpFailure: action.errors
       };
 
     default:

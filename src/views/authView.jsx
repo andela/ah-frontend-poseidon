@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import { notify } from "react-notify-toast";
+import 'msg-notify/dist/notify.css'
+import notify from 'msg-notify';
 import PropTypes from "prop-types";
 import SignUpForm from "../components/auth";
 import { API } from "../constants";
@@ -25,24 +26,25 @@ class AuthView extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { signUpData, signUpErrors } = nextProps;
+    
     if (signUpData || signUpErrors) {
       // eslint-disable-next-line
-
       signUpData
         ? this.redirectOnSuccesfullLogin(signUpData)
-        : notify.show(this.extractError(signUpErrors.errors), "error", 4000);
+        : notify(this.extractError(signUpErrors.errors).toString(), 'error')
       this.setState({ loader: { loading: false } });
     }
   }
 
   redirectOnSuccesfullLogin = nextProps => {
+    
     const message =
       nextProps.Message ||
       "You have succesfully Logged into Authorz Haven\
     success";
     localStorage.setItem("user", nextProps.token);
-    localStorage.setItem('username', nextProps.username);
-    notify.show(message, "success", 5000);
+    localStorage.setItem('username', nextProps.username)
+    notify(message, 'success')
     if (!nextProps.Message) {
       this.props.history.push("/");
     }

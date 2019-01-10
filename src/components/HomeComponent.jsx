@@ -1,22 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SideBar from './dashboard/SideBarComponent';
-import Article from './dashboard/ArticleComponent';
-import './dashboard/Dashboard.scss';
+import SideBar from './Dashboard/SideBarComponent';
+import Article from './Dashboard/ArticleComponent';
+import './Dashboard/Dashboard.scss';
 
-const Home = (props) => {
-  const { articles } = props;
+class Home extends React.Component {
+  
+  render(){
+    const { articles, getArticle } = this.props;
   const articleList = articles || [];
-  return (
+    return (
     <div className="container-fluid">
       <div className="row">
         <SideBar articles={articleList} />
         <div className="col-lg-10 col-md-10 article-content">
-          {articleList.map(article => (<Article article={article} key={article.id} />))}
+          {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
         </div>
       </div>
     </div>
   );
+  }
 };
 
 
@@ -27,11 +30,11 @@ Home.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
-      tagList: PropTypes.array.isRequired,
-      createdAt: PropTypes.string.isRequired,
-      updatedAt: PropTypes.string.isRequired,
+      tags: PropTypes.array.isRequired,
+      created_on: PropTypes.string.isRequired,
+      updated_on: PropTypes.string.isRequired,
       favorited: PropTypes.boolean,
-      favoritesCount: PropTypes.number.isRequired,
+      favourites_count: PropTypes.number.isRequired,
       author: PropTypes.object.isRequired,
       id: PropTypes.number.isRequired,
     }),

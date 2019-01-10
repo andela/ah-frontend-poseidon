@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ProfileEdit from '../../components/profile/profileEditComponent';
 import { viewProfile, editProfile } from '../../redux/actions/profileActions';
 import { getPrivateDataThunk, postDataThunk } from '../../redux/thunks/index';
-import NavBar from '../../components/dashboard/NavBarComponent';
+import NavBar from '../../components/Dashboard/NavBarComponent';
 
 export class ProfileEditView extends Component {
   state = {

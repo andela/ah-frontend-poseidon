@@ -8,10 +8,10 @@ export const signUpActionCreatorSuccess = signUpData => ({
   signUpData
 });
 
-export const signUpActionCreatorFailure = signUpErrors => ({
+export const signUpActionCreatorFailure = errors => ({
   /** function to generate a sign-up action */
   type: ACTION_TYPE.SIGN_UP_FAILURE,
-  signUpErrors
+  errors,
 });
 
 // export const authAction = (requestData, URL) => dispatch => {

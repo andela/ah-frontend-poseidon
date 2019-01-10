@@ -25,7 +25,7 @@ describe("Login actions", () => {
     ).toEqual(expectedAction);
   });
   it("should handle USER_LOGGED_IN", () => {
-    const signUpErrors = {
+    const errors = {
       user: {
         password: "hhgy8uo",
         username: "wasswajoel"
@@ -33,7 +33,7 @@ describe("Login actions", () => {
     };
     const expectedAction = {
       type: "SIGN_UP_FAILURE",
-      signUpErrors
+      errors
     };
     actions.type = "SIGN_UP_FAILURE";
     expect(

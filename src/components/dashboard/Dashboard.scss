@@ -4,10 +4,6 @@ $primary-color: #3f51b5;
 $secondary-color: #eceef8;
 $grey: #8c8c8c;
 
-.container-fluid {
-  background-color: white;
-}
-
 p {
   font: {
     family: "Roboto";
@@ -39,9 +35,6 @@ p {
   margin-right: 5px;
   padding:0;
   text-align: left;
-  p {
-    color:black;
-  }
   .img {
     margin:0;
     padding-right:0;

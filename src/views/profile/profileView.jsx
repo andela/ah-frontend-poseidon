@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ProfilePage from '../../components/profile/ProfileComponent';
 import { viewProfile } from '../../redux/actions/profileActions';
 import { getPrivateDataThunk } from '../../redux/thunks/index';
-import NavBar from '../../components/dashboard/NavBarComponent';
+import NavBar from '../../components/Dashboard/NavBarComponent';
 
 export class ProfileView extends Component {
   componentDidMount() {

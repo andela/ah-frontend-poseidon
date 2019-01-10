@@ -1,0 +1,55 @@
+.basic-button{
+  background-color: #3f51b5;
+  border: 1px solid #c8c8c8;
+  border-color: #007bff;
+  width: 70px;
+  height: 40px;
+  border-radius: .25em;
+  text-decoration-color: #c8c8c8;
+  &--disabled {
+    cursor: not-allowed;
+    background-color: #bdc1c1c7;
+    border: 1px solid #c8c8c8;
+    width: 70px;
+    height: 40px;
+    border-radius: .25em;
+  }
+}
+.basic-button:hover{background-color: #5a70ee}
+
+.articles-text-input {
+  border: none;
+  background-color: none;
+  outline: 0;
+  font-size: 25px;
+  width: 60%;
+  height: 30px;
+  margin-bottom: 2%;
+}
+#post {
+  width: 150px;
+  color: white;
+  font-weight: bolder;
+}
+
+.articles-text-input:hover {
+  border-bottom: 1px solid #3f51b5;
+  background-color: none;
+  outline: 0;
+  height: 30px;
+}
+
+.commands{
+  border: none;
+  margin: 5px;
+  background-color: transparent;
+}
+.commands:hover{
+  background-color: #3f51b5;
+}
+#contentArea{
+  outline: 0px;
+  height: 420px;
+  background-color: lightgray;
+  overflow: scroll;
+}

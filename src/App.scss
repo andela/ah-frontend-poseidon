@@ -1,7 +1,6 @@
 $colour: rgba(#3f51b5, 1);
 $label-color-1: rgba(#3f51b5, 1);
 $color-alert: #b71c1c;
-
 .page-wrapper {
   background: url('static/images/technology-785742.jpg') fixed;
   background-size: cover;
@@ -78,6 +77,12 @@ p {
   position: relative;
   margin-top: 25em;
 }
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+$primary-color: #3f51b5;
+$secondary-color: #b4bbe4;
+$grey: #8c8c8c;
+
 p {
   font: {
     family: "Roboto";
