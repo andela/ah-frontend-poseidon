@@ -23,13 +23,13 @@ const loginDetails = [
     title: 'should handle USER_LOGGED_IN failure',
     action: actions.signUpActionCreatorFailure({ user: { password: 'hhgy8uo', username: 'wasswajoel' } }),
     expectedAction: {
-      type: 'SIGN_UP_FAILURE',
-      signUpErrors: {
+      errors: {
         user: {
           password: 'hhgy8uo',
           username: 'wasswajoel',
         },
       },
+      type: 'SIGN_UP_FAILURE',
     },
   },
 ];

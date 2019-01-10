@@ -35,7 +35,7 @@ describe('Authentication reducers', () => {
     };
     const action = {
       type: ACTION_TYPE.SIGN_UP_FAILURE,
-      signUpErrors: {
+      errors: {
         username: 'user already exists',
       },
     };

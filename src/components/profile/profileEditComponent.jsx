@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import './profile.scss';
 
@@ -12,7 +13,7 @@ export default class ProfileEdit extends Component {
         <form>
           <div className="form-group profile-field">
             <div>{img ? <img className="rounded-circle" src={img} alt="author profile..."/> :
-             <FontAwesomeIcon icon="user-circle" size={"10x"} color="#3F51B5"/>}</div>
+             <FontAwesomeIcon icon={faUserCircle} size={"10x"} color="#3F51B5"/>}</div>
             <label className="btn btn-outline-primary btn-file">
               Change image <input className="file-upload" name="image" onClick={onClickChange} accept=".jpg, .jpeg, .png"/>
             </label>

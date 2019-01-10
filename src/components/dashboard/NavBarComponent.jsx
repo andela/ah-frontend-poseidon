@@ -1,10 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './Dashboard.scss';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -23,7 +22,7 @@ const NavBar = () => {
                 <a className="dropdown-item" href="/">Notifications</a>
                 <a className="dropdown-item" href="/profile">View Profile</a>
                 <div className="dropdown-divider" />
-                <a className="dropdown-item" href="/">Create Article</a>
+                <a id="newArticle" className="dropdown-item" onClick={props.createArticle}>Create Article</a>
                 <a className="dropdown-item" href="/">Your Articles</a>
               </div>
             </li>

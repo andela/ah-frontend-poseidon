@@ -1,13 +1,11 @@
 /** module to create the store */
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import logger from "redux-logger";
-import rootReducer from "../reducers";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import rootReducer from '../reducers';
 
-export default (initialState = {}) =>
-  createStore(
-    rootReducer(),
-    initialState,
-    composeWithDevTools(applyMiddleware(thunk, logger))
-  );
+export default function (initialState = {}) {
+  /** This creates the Redux store */
+  return createStore(rootReducer(), initialState, composeWithDevTools(applyMiddleware(thunk)));
+}

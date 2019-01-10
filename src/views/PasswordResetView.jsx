@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { notify } from 'react-notify-toast';
 import SignUpForm from '../components/auth';
-import { postDataThunkNoHeader, postDataThunk } from '../redux/thunks';
+import postDataThunkNoHeader, { postDataThunk } from '../redux/thunks';
 import { signUpActionCreatorSuccess, signUpActionCreatorFailure } from '../redux/actions/authentication';
 import CircularProgressLoader from '../components/progress';
 
