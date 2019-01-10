@@ -32,8 +32,8 @@ export default class ProfileEdit extends Component {
 }
 
 ProfileEdit.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  onClickChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
+  onClickChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  onClick: PropTypes.func,
 };

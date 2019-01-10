@@ -1,9 +1,9 @@
 /** module containing reducers */
-import ACTION_TYPE from "../../actions/types";
+import ACTION_TYPE from '../../actions/types';
 
 const initialState = {
   signUpFailure: null,
-  signUpSuccess: null
+  signUpSuccess: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -12,15 +12,14 @@ const authReducer = (state = initialState, action) => {
     case ACTION_TYPE.SIGN_UP_SUCCESS:
       return {
         ...state,
-        signUpSuccess: action.signUpData.user
+        signUpSuccess: action.signUpData.user,
       };
     case ACTION_TYPE.SIGN_UP_FAILURE:
       return {
         ...state,
 
-        signUpFailure: action.signUpErrors
+        signUpFailure: action.signUpErrors,
       };
-
     default:
       return state;
   }
