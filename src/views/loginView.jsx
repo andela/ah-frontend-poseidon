@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import Login from '../components/LoginComponent';
+import React, { Component } from "react";
+import Login from "../components/LoginComponent";
+// import { connect } from "react-redux";
 
 class LoginView extends Component {
   render() {

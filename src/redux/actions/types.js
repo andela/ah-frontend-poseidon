@@ -1,0 +1,18 @@
+export const CREATE_ARTICLE = "CREATE_ARTICLE";
+export const EDIT_ARTICLE = "EDIT_ARTICLE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
+export const GET_ARTICLE = "GET_ARTICLE";
+export const GET_ALL_ARTICLES = "GET_ALL_ARTICLES";
+export const ERROR_OCCURRED = "ERROR_OCCURRED";
+export const DO_NOTHING = "DO_NOTHING";
+export const USER_LOGGED_IN = "USER_LOGGED_IN";
+export const USER_LOGIN_FAILURE = "USER_LOGIN_FAILURE";
+export const SOSIAL_AUTH = "SOCIAL_AUTH";
+const ACTION_TYPE = {
+  SIGN_UP: "SIGN_UP",
+  LOGIN: "LOGIN"
+};
+export const SOCIAL_LOGIN = 'SOCIAL_LOGIN_SUCCESS';
+export const SOCIAL_LOGIN_FAILURE = 'SOCIAL_LOGIN_FAILURE';
+
+export default ACTION_TYPE;
