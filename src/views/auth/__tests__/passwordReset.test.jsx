@@ -40,16 +40,19 @@ describe('password reset', () => {
   const store = mockStore(expectedStore);
 
   beforeEach(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+    const div = document.createElement('div');
     wrapper = mount(
-      <PasswordTest {...props} store={store} />,
+      <PasswordTest {...props} store={store} />, div,
     );
   });
   it('renders password reset view', () => {
-    mount(
-      <Provider store={store}>
-        <PasswordResetView {...props} />
-      </Provider>,
-    );
+    mount(<Provider store={store}>
+      <PasswordResetView {...props} />
+    </Provider>);
   });
   it('renders view on reset link clicked', () => {
     Object.defineProperty(window, 'location', {
