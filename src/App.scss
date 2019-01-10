@@ -8,7 +8,9 @@ $color-alert: #b71c1c;
   margin: 0;
   padding: 0;
 }
-
+a:hover { 
+  background-color: rgb(4, 0, 255);
+}
 .wrapper--680 {
   max-width: 680px;
 }

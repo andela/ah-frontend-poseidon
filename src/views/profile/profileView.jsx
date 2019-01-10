@@ -38,7 +38,7 @@ export class ProfileView extends Component {
 
 ProfileView.propTypes = {
   getPrivateDataThunk: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.object,
 };
 
 const mapStateToProps = (state) => {

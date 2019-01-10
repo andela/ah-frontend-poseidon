@@ -7,6 +7,8 @@ import { viewProfile, editProfile } from '../redux/actions/profileActions';
 import ProfileView from '../views/profile/profileView';
 import ProfileEditView from '../views/profile/profileEditView';
 import AuthView from '../views/authView';
+import PasswordResetView from '../views/PasswordResetView';
+
 
 const store = configureStore();
 store.dispatch(viewProfile(), editProfile());
@@ -21,8 +23,10 @@ class Routes extends Component {
               <Route path="/signup" component={AuthView} />
               <Route path="/profile" component={ProfileView} />
               <Route path="/edit" component={ProfileEditView} />
+              <Route path="/reset-password" component={PasswordResetView} />
+              <Route path="/password-reset/:token" component={PasswordResetView} />
             </Switch>
-        </BrowserRouter>
+        </ BrowserRouter>
       </Provider>
     );
   }

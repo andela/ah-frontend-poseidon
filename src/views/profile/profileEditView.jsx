@@ -103,7 +103,7 @@ const actionCreators = {
 ProfileEditView.propTypes = {
   getPrivateDataThunk: PropTypes.func.isRequired,
   postDataThunk: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.object,
 };
 
 export default connect(mapStateToProps, actionCreators)(ProfileEditView);

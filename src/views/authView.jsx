@@ -4,7 +4,7 @@ import { notify } from "react-notify-toast";
 import PropTypes from "prop-types";
 import SignUpForm from "../components/auth";
 import { API } from "../constants";
-import postDataThunkNoHeader from "../redux/thunks";
+import {postDataThunkNoHeader} from "../redux/thunks";
 import {
   signUpActionCreatorSuccess,
   signUpActionCreatorFailure
@@ -17,6 +17,8 @@ class AuthView extends React.Component {
     email: "",
     password: "",
     isSignUp: true,
+    isResetPassword: true,
+    addNewPassword: true,
     loader: {
       success: false,
       loading: false
@@ -50,7 +52,11 @@ class AuthView extends React.Component {
     this.setState({ loader: { loading: false } });
   };
 
-  extractError = errors => {
+  changeToResetPassword = () => {
+    // event.preventDefault()
+    this.props.history.push('/reset-password')};
+
+  extractError = (errors) => {
     const errs = Object.keys(errors).map(key => errors[key]);
     return errs && errs.length > 1 ? errs[0] : errs;
   };
@@ -64,6 +70,7 @@ class AuthView extends React.Component {
 
   handleLogin = event => {
     event.preventDefault();
+    console.log("this is logging in")
 
     const {
       postDataThunkNoHeader,
@@ -149,6 +156,8 @@ class AuthView extends React.Component {
   render() {
     const { loader, errors, isSignUp } = this.state;
     const onSubmit = isSignUp ? this.handleSignup : this.handleLogin;
+    const title = isSignUp ? "Sign Up" : "Log In"
+    const buttonName = isSignUp ? "Sign Up" : "Log In"
     return (
       <Fragment>
         <CircularProgressLoader {...loader} />
@@ -156,9 +165,14 @@ class AuthView extends React.Component {
           onSubmit={onSubmit}
           {...this.state}
           isSignUp={isSignUp}
+          isResetPassword={this.state.isResetPassword}
+          addNewPassword={this.state.addNewPassword}
           errors={errors}
           handleLogin={this.handleChangeFormStatus}
           renderInput={this.renderInput}
+          changeToResetPassword={this.changeToResetPassword} 
+          title={title}
+          buttonName={buttonName}
         />
       </Fragment>
     );
