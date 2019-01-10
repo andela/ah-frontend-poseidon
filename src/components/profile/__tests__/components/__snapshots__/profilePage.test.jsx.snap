@@ -1,0 +1,3848 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test profile page renders profile page successfully 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__unrendered__): <ProfilePage
+    onClick={[MockFunction]}
+    profile={
+      Object {
+        "bio": "I love sports and tech",
+        "email": "bill.twinomuhwezi@andela.com",
+        "following": false,
+        "image": null,
+        "username": "kabanga",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": ProfilePage {
+      "_reactInternalFiber": FiberNode {
+        "_debugID": 50,
+        "_debugIsCurrentlyTiming": false,
+        "_debugOwner": FiberNode {
+          "_debugID": 49,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "mode": 0,
+          "nextEffect": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "onClick": [MockFunction],
+                    "profile": Object {
+                      "bio": "I love sports and tech",
+                      "email": "bill.twinomuhwezi@andela.com",
+                      "following": false,
+                      "image": null,
+                      "username": "kabanga",
+                    },
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="container profile"
+                >
+                  <div
+                    id="image"
+                  />
+                  <h1>
+                    kabanga
+                  </h1>
+                  <h6>
+                    I love sports and tech
+                  </h6>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Edit Profile
+                  </button>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "onClick": [MockFunction],
+                    "profile": Object {
+                      "bio": "I love sports and tech",
+                      "email": "bill.twinomuhwezi@andela.com",
+                      "following": false,
+                      "image": null,
+                      "username": "kabanga",
+                    },
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="container profile"
+                >
+                  <div
+                    id="image"
+                  />
+                  <h1>
+                    kabanga
+                  </h1>
+                  <h6>
+                    I love sports and tech
+                  </h6>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Edit Profile
+                  </button>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_debugSource": null,
+        "actualDuration": 0,
+        "actualStartTime": -1,
+        "alternate": null,
+        "child": FiberNode {
+          "_debugID": 51,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": [Circular],
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 52,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 56,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 1,
+              "elementType": [Function],
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "border": false,
+                "className": "",
+                "color": "#3F51B5",
+                "fixedWidth": false,
+                "flip": null,
+                "icon": "user-circle",
+                "inverse": false,
+                "listItem": false,
+                "mask": null,
+                "pull": null,
+                "pulse": false,
+                "rotation": null,
+                "size": "10x",
+                "spin": false,
+                "symbol": false,
+                "title": "",
+                "transform": null,
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "border": false,
+                "className": "",
+                "color": "#3F51B5",
+                "fixedWidth": false,
+                "flip": null,
+                "icon": "user-circle",
+                "inverse": false,
+                "listItem": false,
+                "mask": null,
+                "pull": null,
+                "pulse": false,
+                "rotation": null,
+                "size": "10x",
+                "spin": false,
+                "symbol": false,
+                "title": "",
+                "transform": null,
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": null,
+              "tag": 0,
+              "treeBaseDuration": 0,
+              "type": [Function],
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "effectTag": 0,
+            "elementType": "div",
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": <FontAwesomeIcon
+                border={false}
+                className=""
+                color="#3F51B5"
+                fixedWidth={false}
+                flip={null}
+                icon="user-circle"
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size="10x"
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />,
+              "id": "image",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": <FontAwesomeIcon
+                border={false}
+                className=""
+                color="#3F51B5"
+                fixedWidth={false}
+                flip={null}
+                icon="user-circle"
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size="10x"
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />,
+              "id": "image",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": FiberNode {
+              "_debugID": 53,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": "h1",
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 1,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "kabanga",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "kabanga",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": FiberNode {
+                "_debugID": 54,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": "h6",
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 2,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "I love sports and tech",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "I love sports and tech",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": FiberNode {
+                  "_debugID": 55,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": null,
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "effectTag": 0,
+                  "elementType": "button",
+                  "expirationTime": 0,
+                  "firstContextDependency": null,
+                  "firstEffect": null,
+                  "index": 3,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "Edit Profile",
+                    "className": "btn btn-outline-primary",
+                    "onClick": [MockFunction],
+                    "type": "button",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "Edit Profile",
+                    "className": "btn btn-outline-primary",
+                    "onClick": [MockFunction],
+                    "type": "button",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": null,
+                  "stateNode": <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Edit Profile
+                  </button>,
+                  "tag": 5,
+                  "treeBaseDuration": 0,
+                  "type": "button",
+                  "updateQueue": null,
+                },
+                "stateNode": <h6>
+                  I love sports and tech
+                </h6>,
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": "h6",
+                "updateQueue": null,
+              },
+              "stateNode": <h1>
+                kabanga
+              </h1>,
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": "h1",
+              "updateQueue": null,
+            },
+            "stateNode": <div
+              id="image"
+            />,
+            "tag": 5,
+            "treeBaseDuration": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "effectTag": 0,
+          "elementType": "div",
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "children": Array [
+              <div
+                id="image"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  color="#3F51B5"
+                  fixedWidth={false}
+                  flip={null}
+                  icon="user-circle"
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size="10x"
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </div>,
+              <h1>
+                kabanga
+              </h1>,
+              <h6>
+                I love sports and tech
+              </h6>,
+              <button
+                className="btn btn-outline-primary"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                Edit Profile
+              </button>,
+            ],
+            "className": "container profile",
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "children": Array [
+              <div
+                id="image"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  color="#3F51B5"
+                  fixedWidth={false}
+                  flip={null}
+                  icon="user-circle"
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size="10x"
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />
+              </div>,
+              <h1>
+                kabanga
+              </h1>,
+              <h6>
+                I love sports and tech
+              </h6>,
+              <button
+                className="btn btn-outline-primary"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                Edit Profile
+              </button>,
+            ],
+            "className": "container profile",
+          },
+          "ref": null,
+          "return": [Circular],
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": <div
+            class="container profile"
+          >
+            <div
+              id="image"
+            />
+            <h1>
+              kabanga
+            </h1>
+            <h6>
+              I love sports and tech
+            </h6>
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+            >
+              Edit Profile
+            </button>
+          </div>,
+          "tag": 5,
+          "treeBaseDuration": 0,
+          "type": "div",
+          "updateQueue": null,
+        },
+        "childExpirationTime": 0,
+        "effectTag": 1,
+        "elementType": [Function],
+        "expirationTime": 0,
+        "firstContextDependency": null,
+        "firstEffect": null,
+        "index": 0,
+        "key": null,
+        "lastEffect": null,
+        "memoizedProps": Object {
+          "onClick": [MockFunction],
+          "profile": Object {
+            "bio": "I love sports and tech",
+            "email": "bill.twinomuhwezi@andela.com",
+            "following": false,
+            "image": null,
+            "username": "kabanga",
+          },
+        },
+        "memoizedState": null,
+        "mode": 0,
+        "nextEffect": null,
+        "pendingProps": Object {
+          "onClick": [MockFunction],
+          "profile": Object {
+            "bio": "I love sports and tech",
+            "email": "bill.twinomuhwezi@andela.com",
+            "following": false,
+            "image": null,
+            "username": "kabanga",
+          },
+        },
+        "ref": null,
+        "return": FiberNode {
+          "_debugID": 49,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "mode": 0,
+          "nextEffect": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "onClick": [MockFunction],
+                    "profile": Object {
+                      "bio": "I love sports and tech",
+                      "email": "bill.twinomuhwezi@andela.com",
+                      "following": false,
+                      "image": null,
+                      "username": "kabanga",
+                    },
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="container profile"
+                >
+                  <div
+                    id="image"
+                  />
+                  <h1>
+                    kabanga
+                  </h1>
+                  <h6>
+                    I love sports and tech
+                  </h6>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Edit Profile
+                  </button>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "onClick": [MockFunction],
+              "profile": Object {
+                "bio": "I love sports and tech",
+                "email": "bill.twinomuhwezi@andela.com",
+                "following": false,
+                "image": null,
+                "username": "kabanga",
+              },
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": null,
+              "expirationTime": 1073741823,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1073741823,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "onClick": [MockFunction],
+                          "profile": Object {
+                            "bio": "I love sports and tech",
+                            "email": "bill.twinomuhwezi@andela.com",
+                            "following": false,
+                            "image": null,
+                            "username": "kabanga",
+                          },
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "elementType": null,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "onClick": [MockFunction],
+                    "profile": Object {
+                      "bio": "I love sports and tech",
+                      "email": "bill.twinomuhwezi@andela.com",
+                      "following": false,
+                      "image": null,
+                      "username": "kabanga",
+                    },
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="container profile"
+                >
+                  <div
+                    id="image"
+                  />
+                  <h1>
+                    kabanga
+                  </h1>
+                  <h6>
+                    I love sports and tech
+                  </h6>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                  >
+                    Edit Profile
+                  </button>
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "pingCache": null,
+              "timeoutHandle": -1,
+            },
+            "tag": 3,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "selfBaseDuration": 0,
+        "sibling": null,
+        "stateNode": [Circular],
+        "tag": 1,
+        "treeBaseDuration": 0,
+        "type": [Function],
+        "updateQueue": null,
+      },
+      "_reactInternalInstance": Object {},
+      "context": Object {},
+      "props": Object {
+        "onClick": [MockFunction],
+        "profile": Object {
+          "bio": "I love sports and tech",
+          "email": "bill.twinomuhwezi@andela.com",
+          "following": false,
+          "image": null,
+          "username": "kabanga",
+        },
+      },
+      "refs": Object {},
+      "state": null,
+      "updater": Object {
+        "enqueueForceUpdate": [Function],
+        "enqueueReplaceState": [Function],
+        "enqueueSetState": [Function],
+        "isMounted": [Function],
+      },
+    },
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "onClick": [MockFunction],
+      "profile": Object {
+        "bio": "I love sports and tech",
+        "email": "bill.twinomuhwezi@andela.com",
+        "following": false,
+        "image": null,
+        "username": "kabanga",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="container profile"
+      >
+        <div
+          id="image"
+        />
+        <h1>
+          kabanga
+        </h1>
+        <h6>
+          I love sports and tech
+        </h6>
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+        >
+          Edit Profile
+        </button>
+      </div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            id="image"
+          >
+            <FontAwesomeIcon
+              border={false}
+              className=""
+              color="#3F51B5"
+              fixedWidth={false}
+              flip={null}
+              icon="user-circle"
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size="10x"
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            />
+          </div>,
+          <h1>
+            kabanga
+          </h1>,
+          <h6>
+            I love sports and tech
+          </h6>,
+          <button
+            className="btn btn-outline-primary"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            Edit Profile
+          </button>,
+        ],
+        "className": "container profile",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div
+            id="image"
+          />,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <FontAwesomeIcon
+              border={false}
+              className=""
+              color="#3F51B5"
+              fixedWidth={false}
+              flip={null}
+              icon="user-circle"
+              inverse={false}
+              listItem={false}
+              mask={null}
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size="10x"
+              spin={false}
+              symbol={false}
+              title=""
+              transform={null}
+            />,
+            "id": "image",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "border": false,
+                "className": "",
+                "color": "#3F51B5",
+                "fixedWidth": false,
+                "flip": null,
+                "icon": "user-circle",
+                "inverse": false,
+                "listItem": false,
+                "mask": null,
+                "pull": null,
+                "pulse": false,
+                "rotation": null,
+                "size": "10x",
+                "spin": false,
+                "symbol": false,
+                "title": "",
+                "transform": null,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <h1>
+            kabanga
+          </h1>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "kabanga",
+          },
+          "ref": null,
+          "rendered": Array [
+            "kabanga",
+          ],
+          "type": "h1",
+        },
+        Object {
+          "instance": <h6>
+            I love sports and tech
+          </h6>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "I love sports and tech",
+          },
+          "ref": null,
+          "rendered": Array [
+            "I love sports and tech",
+          ],
+          "type": "h6",
+        },
+        Object {
+          "instance": <button
+            class="btn btn-outline-primary"
+            type="button"
+          >
+            Edit Profile
+          </button>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Edit Profile",
+            "className": "btn btn-outline-primary",
+            "onClick": [MockFunction],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Edit Profile",
+          ],
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": ProfilePage {
+        "_reactInternalFiber": FiberNode {
+          "_debugID": 50,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": FiberNode {
+            "_debugID": 49,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 1,
+            "elementType": [Function],
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "mode": 0,
+            "nextEffect": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="container profile"
+                    >
+                      <div
+                        id="image"
+                      />
+                      <h1>
+                        kabanga
+                      </h1>
+                      <h6>
+                        I love sports and tech
+                      </h6>
+                      <button
+                        class="btn btn-outline-primary"
+                        type="button"
+                      >
+                        Edit Profile
+                      </button>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "onClick": [MockFunction],
+                        "profile": Object {
+                          "bio": "I love sports and tech",
+                          "email": "bill.twinomuhwezi@andela.com",
+                          "following": false,
+                          "image": null,
+                          "username": "kabanga",
+                        },
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="container profile"
+                    >
+                      <div
+                        id="image"
+                      />
+                      <h1>
+                        kabanga
+                      </h1>
+                      <h6>
+                        I love sports and tech
+                      </h6>
+                      <button
+                        class="btn btn-outline-primary"
+                        type="button"
+                      >
+                        Edit Profile
+                      </button>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "onClick": [MockFunction],
+                        "profile": Object {
+                          "bio": "I love sports and tech",
+                          "email": "bill.twinomuhwezi@andela.com",
+                          "following": false,
+                          "image": null,
+                          "username": "kabanga",
+                        },
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "onClick": [MockFunction],
+                  "profile": Object {
+                    "bio": "I love sports and tech",
+                    "email": "bill.twinomuhwezi@andela.com",
+                    "following": false,
+                    "image": null,
+                    "username": "kabanga",
+                  },
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "onClick": [MockFunction],
+                  "profile": Object {
+                    "bio": "I love sports and tech",
+                    "email": "bill.twinomuhwezi@andela.com",
+                    "following": false,
+                    "image": null,
+                    "username": "kabanga",
+                  },
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 1,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 51,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 52,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": FiberNode {
+                "_debugID": 56,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 1,
+                "elementType": [Function],
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "border": false,
+                  "className": "",
+                  "color": "#3F51B5",
+                  "fixedWidth": false,
+                  "flip": null,
+                  "icon": "user-circle",
+                  "inverse": false,
+                  "listItem": false,
+                  "mask": null,
+                  "pull": null,
+                  "pulse": false,
+                  "rotation": null,
+                  "size": "10x",
+                  "spin": false,
+                  "symbol": false,
+                  "title": "",
+                  "transform": null,
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "border": false,
+                  "className": "",
+                  "color": "#3F51B5",
+                  "fixedWidth": false,
+                  "flip": null,
+                  "icon": "user-circle",
+                  "inverse": false,
+                  "listItem": false,
+                  "mask": null,
+                  "pull": null,
+                  "pulse": false,
+                  "rotation": null,
+                  "size": "10x",
+                  "spin": false,
+                  "symbol": false,
+                  "title": "",
+                  "transform": null,
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": null,
+                "tag": 0,
+                "treeBaseDuration": 0,
+                "type": [Function],
+                "updateQueue": null,
+              },
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "elementType": "div",
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  color="#3F51B5"
+                  fixedWidth={false}
+                  flip={null}
+                  icon="user-circle"
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size="10x"
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />,
+                "id": "image",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": <FontAwesomeIcon
+                  border={false}
+                  className=""
+                  color="#3F51B5"
+                  fixedWidth={false}
+                  flip={null}
+                  icon="user-circle"
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size="10x"
+                  spin={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                />,
+                "id": "image",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": FiberNode {
+                "_debugID": 53,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": "h1",
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "kabanga",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "kabanga",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": FiberNode {
+                  "_debugID": 54,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": null,
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "effectTag": 0,
+                  "elementType": "h6",
+                  "expirationTime": 0,
+                  "firstContextDependency": null,
+                  "firstEffect": null,
+                  "index": 2,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "I love sports and tech",
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "I love sports and tech",
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 55,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": null,
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": null,
+                    "childExpirationTime": 0,
+                    "effectTag": 0,
+                    "elementType": "button",
+                    "expirationTime": 0,
+                    "firstContextDependency": null,
+                    "firstEffect": null,
+                    "index": 3,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": "Edit Profile",
+                      "className": "btn btn-outline-primary",
+                      "onClick": [MockFunction],
+                      "type": "button",
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": "Edit Profile",
+                      "className": "btn btn-outline-primary",
+                      "onClick": [MockFunction],
+                      "type": "button",
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": null,
+                    "stateNode": <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>,
+                    "tag": 5,
+                    "treeBaseDuration": 0,
+                    "type": "button",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <h6>
+                    I love sports and tech
+                  </h6>,
+                  "tag": 5,
+                  "treeBaseDuration": 0,
+                  "type": "h6",
+                  "updateQueue": null,
+                },
+                "stateNode": <h1>
+                  kabanga
+                </h1>,
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": "h1",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                id="image"
+              />,
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "effectTag": 0,
+            "elementType": "div",
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <div
+                  id="image"
+                >
+                  <FontAwesomeIcon
+                    border={false}
+                    className=""
+                    color="#3F51B5"
+                    fixedWidth={false}
+                    flip={null}
+                    icon="user-circle"
+                    inverse={false}
+                    listItem={false}
+                    mask={null}
+                    pull={null}
+                    pulse={false}
+                    rotation={null}
+                    size="10x"
+                    spin={false}
+                    symbol={false}
+                    title=""
+                    transform={null}
+                  />
+                </div>,
+                <h1>
+                  kabanga
+                </h1>,
+                <h6>
+                  I love sports and tech
+                </h6>,
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={[MockFunction]}
+                  type="button"
+                >
+                  Edit Profile
+                </button>,
+              ],
+              "className": "container profile",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <div
+                  id="image"
+                >
+                  <FontAwesomeIcon
+                    border={false}
+                    className=""
+                    color="#3F51B5"
+                    fixedWidth={false}
+                    flip={null}
+                    icon="user-circle"
+                    inverse={false}
+                    listItem={false}
+                    mask={null}
+                    pull={null}
+                    pulse={false}
+                    rotation={null}
+                    size="10x"
+                    spin={false}
+                    symbol={false}
+                    title=""
+                    transform={null}
+                  />
+                </div>,
+                <h1>
+                  kabanga
+                </h1>,
+                <h6>
+                  I love sports and tech
+                </h6>,
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={[MockFunction]}
+                  type="button"
+                >
+                  Edit Profile
+                </button>,
+              ],
+              "className": "container profile",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": <div
+              class="container profile"
+            >
+              <div
+                id="image"
+              />
+              <h1>
+                kabanga
+              </h1>
+              <h6>
+                I love sports and tech
+              </h6>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+              >
+                Edit Profile
+              </button>
+            </div>,
+            "tag": 5,
+            "treeBaseDuration": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "elementType": [Function],
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "onClick": [MockFunction],
+            "profile": Object {
+              "bio": "I love sports and tech",
+              "email": "bill.twinomuhwezi@andela.com",
+              "following": false,
+              "image": null,
+              "username": "kabanga",
+            },
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "onClick": [MockFunction],
+            "profile": Object {
+              "bio": "I love sports and tech",
+              "email": "bill.twinomuhwezi@andela.com",
+              "following": false,
+              "image": null,
+              "username": "kabanga",
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 49,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 1,
+            "elementType": [Function],
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "mode": 0,
+            "nextEffect": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="container profile"
+                    >
+                      <div
+                        id="image"
+                      />
+                      <h1>
+                        kabanga
+                      </h1>
+                      <h6>
+                        I love sports and tech
+                      </h6>
+                      <button
+                        class="btn btn-outline-primary"
+                        type="button"
+                      >
+                        Edit Profile
+                      </button>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "onClick": [MockFunction],
+                        "profile": Object {
+                          "bio": "I love sports and tech",
+                          "email": "bill.twinomuhwezi@andela.com",
+                          "following": false,
+                          "image": null,
+                          "username": "kabanga",
+                        },
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "onClick": [MockFunction],
+                "profile": Object {
+                  "bio": "I love sports and tech",
+                  "email": "bill.twinomuhwezi@andela.com",
+                  "following": false,
+                  "image": null,
+                  "username": "kabanga",
+                },
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "elementType": null,
+                "expirationTime": 1073741823,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="container profile"
+                    >
+                      <div
+                        id="image"
+                      />
+                      <h1>
+                        kabanga
+                      </h1>
+                      <h6>
+                        I love sports and tech
+                      </h6>
+                      <button
+                        class="btn btn-outline-primary"
+                        type="button"
+                      >
+                        Edit Profile
+                      </button>
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "pingCache": null,
+                  "timeoutHandle": -1,
+                },
+                "tag": 3,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1073741823,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "onClick": [MockFunction],
+                            "profile": Object {
+                              "bio": "I love sports and tech",
+                              "email": "bill.twinomuhwezi@andela.com",
+                              "following": false,
+                              "image": null,
+                              "username": "kabanga",
+                            },
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "elementType": null,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "onClick": [MockFunction],
+                      "profile": Object {
+                        "bio": "I love sports and tech",
+                        "email": "bill.twinomuhwezi@andela.com",
+                        "following": false,
+                        "image": null,
+                        "username": "kabanga",
+                      },
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="container profile"
+                  >
+                    <div
+                      id="image"
+                    />
+                    <h1>
+                      kabanga
+                    </h1>
+                    <h6>
+                      I love sports and tech
+                    </h6>
+                    <button
+                      class="btn btn-outline-primary"
+                      type="button"
+                    >
+                      Edit Profile
+                    </button>
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "pingCache": null,
+                "timeoutHandle": -1,
+              },
+              "tag": 3,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "onClick": [MockFunction],
+                        "profile": Object {
+                          "bio": "I love sports and tech",
+                          "email": "bill.twinomuhwezi@andela.com",
+                          "following": false,
+                          "image": null,
+                          "username": "kabanga",
+                        },
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "onClick": [MockFunction],
+                  "profile": Object {
+                    "bio": "I love sports and tech",
+                    "email": "bill.twinomuhwezi@andela.com",
+                    "following": false,
+                    "image": null,
+                    "username": "kabanga",
+                  },
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "onClick": [MockFunction],
+                  "profile": Object {
+                    "bio": "I love sports and tech",
+                    "email": "bill.twinomuhwezi@andela.com",
+                    "following": false,
+                    "image": null,
+                    "username": "kabanga",
+                  },
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 1,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": [Circular],
+          "tag": 1,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_reactInternalInstance": Object {},
+        "context": Object {},
+        "props": Object {
+          "onClick": [MockFunction],
+          "profile": Object {
+            "bio": "I love sports and tech",
+            "email": "bill.twinomuhwezi@andela.com",
+            "following": false,
+            "image": null,
+            "username": "kabanga",
+          },
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+        },
+      },
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "onClick": [MockFunction],
+        "profile": Object {
+          "bio": "I love sports and tech",
+          "email": "bill.twinomuhwezi@andela.com",
+          "following": false,
+          "image": null,
+          "username": "kabanga",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="container profile"
+        >
+          <div
+            id="image"
+          />
+          <h1>
+            kabanga
+          </h1>
+          <h6>
+            I love sports and tech
+          </h6>
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+          >
+            Edit Profile
+          </button>
+        </div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              id="image"
+            >
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                color="#3F51B5"
+                fixedWidth={false}
+                flip={null}
+                icon="user-circle"
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size="10x"
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />
+            </div>,
+            <h1>
+              kabanga
+            </h1>,
+            <h6>
+              I love sports and tech
+            </h6>,
+            <button
+              className="btn btn-outline-primary"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              Edit Profile
+            </button>,
+          ],
+          "className": "container profile",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div
+              id="image"
+            />,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <FontAwesomeIcon
+                border={false}
+                className=""
+                color="#3F51B5"
+                fixedWidth={false}
+                flip={null}
+                icon="user-circle"
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size="10x"
+                spin={false}
+                symbol={false}
+                title=""
+                transform={null}
+              />,
+              "id": "image",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "border": false,
+                  "className": "",
+                  "color": "#3F51B5",
+                  "fixedWidth": false,
+                  "flip": null,
+                  "icon": "user-circle",
+                  "inverse": false,
+                  "listItem": false,
+                  "mask": null,
+                  "pull": null,
+                  "pulse": false,
+                  "rotation": null,
+                  "size": "10x",
+                  "spin": false,
+                  "symbol": false,
+                  "title": "",
+                  "transform": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <h1>
+              kabanga
+            </h1>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "kabanga",
+            },
+            "ref": null,
+            "rendered": Array [
+              "kabanga",
+            ],
+            "type": "h1",
+          },
+          Object {
+            "instance": <h6>
+              I love sports and tech
+            </h6>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "I love sports and tech",
+            },
+            "ref": null,
+            "rendered": Array [
+              "I love sports and tech",
+            ],
+            "type": "h6",
+          },
+          Object {
+            "instance": <button
+              class="btn btn-outline-primary"
+              type="button"
+            >
+              Edit Profile
+            </button>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edit Profile",
+              "className": "btn btn-outline-primary",
+              "onClick": [MockFunction],
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Edit Profile",
+            ],
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

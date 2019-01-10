@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import Routes from './routes/index';
 import './App.scss';
 import Notification from 'react-notify-toast';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import Routes from './routes/index';
+
+library.add(faUserCircle);
+require('dotenv').config();
 
 class App extends Component {
   render() {
