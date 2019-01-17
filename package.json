@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.6",
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0",
     "babel-core": "7.0.0-bridge.0",
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
