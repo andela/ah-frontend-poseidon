@@ -14,21 +14,21 @@ export const signUpActionCreatorFailure = signUpErrors => ({
   signUpErrors
 });
 
-export const authAction = (requestData, URL) => dispatch => {
-  const { username, email, password } = requestData;
-  const userData = {
-    user: {
-      username,
-      email,
-      password
-    }
-  };
+// export const authAction = (requestData, URL) => dispatch => {
+//   const { username, email, password } = requestData;
+//   const userData = {
+//     user: {
+//       username,
+//       email,
+//       password
+//     }
+//   };
 
-  return axios.post(URL, { ...userData }).then(response => {
-    const { data } = response;
-    localStorage.setItem("user", JSON.stringify(data));
-    return dispatch(signUpActionCreatorSuccess(response.data));
-  });
-};
+//   return axios.post(URL, { ...userData }).then(response => {
+//     const { data } = response;
+//     localStorage.setItem("user", JSON.stringify(data));
+//     return dispatch(signUpActionCreatorSuccess(response.data));
+//   });
+// };
 
-export default authAction;
+// export default authAction;
