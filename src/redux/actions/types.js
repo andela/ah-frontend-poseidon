@@ -1,7 +1,14 @@
-/** module containing action types */
+export const CREATE_ARTICLE = "CREATE_ARTICLE";
+export const EDIT_ARTICLE = "EDIT_ARTICLE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
+export const GET_ARTICLE = "GET_ARTICLE";
+export const GET_ALL_ARTICLES = "GET_ALL_ARTICLES";
+export const ERROR_OCCURRED = "ERROR_OCCURRED";
+export const DO_NOTHING = "DO_NOTHING";
+
 const ACTION_TYPE = {
-  SIGN_UP_SUCCESS: 'SIGN_UP_SUCCESS',
-  SIGN_UP_FAILURE: 'SIGN_UP_FAILURE',
+  SIGN_UP_SUCCESS: "SIGN_UP_SUCCESS",
+  SIGN_UP_FAILURE: "SIGN_UP_FAILURE"
 };
 
 export default ACTION_TYPE;
