@@ -9,20 +9,18 @@ axiosInstance.interceptors.response.use(
   response => response,
   error => Promise.reject(error.response.data)
 );
-
-export const postDataThunkNoHeader = (
+const postDataThunkNoHeader = (
   endpoint,
   data,
   actionCreatorSuccess,
   actionCreatorFailure,
   method
-) => dispatch => {
-  axiosInstance[method](endpoint, data)
+) => async dispatch => {
+  await axiosInstance[method](endpoint, data)
     .then(response => {
       dispatch(actionCreatorSuccess(response.data));
     })
     .catch(error => {
-      console.log(error);
       dispatch(actionCreatorFailure(error));
     });
 };

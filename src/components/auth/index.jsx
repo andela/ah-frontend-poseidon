@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const SignUpForm = ({
-  onSubmit, isSignUp, handleLogin, renderInput,
-}) => (
+const SignUpForm = ({ onSubmit, isSignUp, handleLogin, renderInput }) => (
   <div className="page-wrapper bg-blue p-t-100 p-b-100">
     <div className="wrapper wrapper--680">
       <div className="card card-1">
@@ -12,46 +10,48 @@ const SignUpForm = ({
         </div>
         <div className="card-body">
           <h4 className="sign-up" align="center">
-            {isSignUp ? 'Sign Up' : 'Log In'}
+            {isSignUp ? "Sign Up" : "Log In"}
           </h4>
           <form onSubmit={onSubmit}>
             {renderInput(
-              'inputUsername',
-              'Username',
-              'text',
-              'Username',
-              'form-control',
-              'Username',
-              '[A-z0-9\\s]{3,}',
-              'Username should be at-least 3 characters',
+              "inputUsername",
+              "Username",
+              "username",
+              "text",
+              "Username",
+              "form-control",
+              "Username",
+              "Username should be at-least 3 characters",
               true,
               true,
-            )
-            }
-            {isSignUp && renderInput(
-              'inputEmail',
-              'Email',
-              'email',
-              'email',
-              'form-control',
-              'email',
-              'Username should be at-least 3 characters',
-              true,
-              true,
+              "[A-z0-9\\s]{3,}"
             )}
+            {isSignUp &&
+              renderInput(
+                "inputEmail",
+                "Email",
+                "email",
+                "email",
+                "email",
+                "form-control",
+                "email",
+                "Username should be at-least 3 characters",
+                true,
+                true
+              )}
             {renderInput(
-              'inputPassword',
-              'Password',
-              'password',
-              'password',
-              'form-control',
-              'password',
-              '(?=.*\\d)(?=.*[A-Za-z]).{6,}',
-              'Password should contain at-least one digit, one alphabet and at-least six characters long',
+              "inputPassword",
+              "Password",
+              "password",
+              "password",
+              "password",
+              "form-control",
+              "password",
+              "Password should contain at-least one digit, one alphabet and at-least six characters long",
               true,
               true,
-            )
-            }
+              "(?=.*\\d)(?=.*[A-Za-z]).{6,}"
+            )}
             <div className="form-label-group">
               <button
                 type="submit"
@@ -60,7 +60,7 @@ const SignUpForm = ({
                 className="btn btn-primary m-t-100"
                 color="primary"
               >
-                <span>{isSignUp ? 'Sign Up' : 'Log In'}</span>
+                <span>{isSignUp ? "Sign Up" : "Log In"}</span>
               </button>
             </div>
           </form>
@@ -71,7 +71,7 @@ const SignUpForm = ({
               color="primary"
             >
               <span>
-                {' '}
+                {" "}
                 {isSignUp ? (
                   <div id="change-login" role="button" onClick={handleLogin}>
                     Already have an account? Log-in
@@ -93,7 +93,7 @@ const SignUpForm = ({
 SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
-  renderInput: PropTypes.func.isRequired,
+  renderInput: PropTypes.func.isRequired
 };
 
 export default SignUpForm;

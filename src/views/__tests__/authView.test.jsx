@@ -20,6 +20,11 @@ const mockSignUp = {
   Message: "Successfully signed up",
   token: "312regwh4tr4hetrj6y5tu6yutu7y8u"
 };
+
+const mockLogin = {
+  username: "naume",
+  token: "312regwh4tr4hetrj6y5tu6yutu7y8u"
+};
 const mockError = {
   errors: {
     username: ["Username already exists "]
@@ -37,6 +42,9 @@ const errorItems = [
   { title: "component will recieve props multiple error", error: mockErrors }
 ];
 const props = {
+  history: {
+    push: jest.fn()
+  },
   postDataThunkNoHeader: jest.fn(),
   signUpActionCreatorSuccess: jest.fn(),
   signUpActionCreatorFailure: jest.fn()
@@ -84,6 +92,21 @@ describe("authView component", () => {
     wrapUser.setProps(
       {
         signUpData: mockSignUp,
+        signUpErrors: null
+      },
+      () => {
+        expect(wrapUser.state()).toEqual(
+          expect.objectContaining({ loader: { loading: false } })
+        );
+      }
+    );
+  });
+
+  it(" user login changers props", () => {
+    const wrapUser = shallow(<AuthViewTest {...props} />);
+    wrapUser.setProps(
+      {
+        signUpData: mockLogin,
         signUpErrors: null
       },
       () => {
