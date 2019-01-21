@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
 import ButtonGroup from '../socialShare/buttonGroup';
+import StarRatingSystem from '../../views/ratingSystemView';
+
+fontawesome.library.add(solid, regular);
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
 
@@ -84,6 +90,17 @@ class Article extends Component {
             <br />
             <Tags tags={tags} />
             <br />
+            {
+                  username !== localStorage.getItem('username')
+                    ? (
+                      <div className="card">
+                        <div className="card-header">
+                          <StarRatingSystem slug={slug} />
+                        </div>
+                      </div>
+                    )
+                    : ''
+              }
             <hr />
             <div className="well">
               <h4>

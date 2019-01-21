@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './Dashboard.scss';
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
+import StarRating from '../../views/rateView';
+
+fontawesome.library.add(solid, regular);
 
 const Article = (props) => {
   const getPlainText = data => data.replace(/<(?:.|\n)*?>/gm, '');
 
   const {
-    title, body, author, created_on, image_url, description, slug
+    title, body, author, created_on, image_url, description, slug, average_rating
   } = props.article;
   return (
     <div className="jumbotron col-lg-12 col-md-12 article-row">
@@ -20,7 +26,7 @@ const Article = (props) => {
           <hr />
           <h6>{description}</h6>
           <p className="article-body">{getPlainText(body)}</p>
-          <button id='readMore' className="btn btn-primary" onClick={()=>props.getArticle(slug)}>Read more</button>
+          <button id="readMore" className="btn btn-primary" onClick={() => props.getArticle(slug)}>Read more</button>
           <div className="article-details">
             <i>
               Posted by : &nbsp;
@@ -29,6 +35,7 @@ const Article = (props) => {
               &nbsp;
               { moment(created_on).fromNow() }
             </i>
+            <StarRating rating={average_rating} />
           </div>
         </div>
       </div>
@@ -38,11 +45,12 @@ const Article = (props) => {
 
 Article.propTypes = {
   article: PropTypes.shape({
-    author: PropTypes.object.isRequired,
-    body: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
-  }).isRequired,
+    author: PropTypes.object,
+    body: PropTypes.string,
+    title: PropTypes.string,
+    createdAt: PropTypes.string,
+    average_rating: PropTypes.number,
+  }),
 };
 
 export default Article;

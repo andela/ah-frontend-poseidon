@@ -8,6 +8,7 @@ const mockArticles = [
     tagList: ['dragons', 'training'],
     createdAt: '2016-02-18T03:22:56.637Z',
     updatedAt: '2016-02-18T03:48:35.824Z',
+    average_rating: 2.5,
     favorited: false,
     favoritesCount: 0,
     author: {

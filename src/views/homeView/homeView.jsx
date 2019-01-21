@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Home from '../../components/dashboard/HomeComponent';
 import NavBar from '../../components/dashboard/NavBarComponent';
 import Articles from '../../components/articles/Articles';
@@ -25,11 +25,11 @@ export class HomeView extends Component {
     const { match } = this.props;
     if (match.params.articleId) {
       const { articleId } = match.params;
-      this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle)
+      this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle);
       this.setState({ loader: { loading: true } });
-      this.singleArticlePage(4000, true)
+      this.singleArticlePage(4000, true);
       setTimeout(() => {
-        this.setState({ goToArticles: true })
+        this.setState({ goToArticles: true });
         this.setState({ loader: { loading: false } });
       }, 7000);
     }
@@ -39,9 +39,9 @@ export class HomeView extends Component {
   singleArticlePage = (timeout, bool) => {
     setTimeout(() => {
       this.setState({
-        viewArticle: bool
-      })
-      this.isLoading(false)
+        viewArticle: bool,
+      });
+      this.isLoading(false);
     }, timeout);
   }
 
@@ -55,12 +55,13 @@ export class HomeView extends Component {
 
   getArticle = (slug) => {
     const { actions } = this.props;
-    actions.getOneArticle(slug)
-    this.singleArticlePage(0, true)
-    this.setState({ goToArticles: true })
+    actions.getOneArticle(slug);
+    this.singleArticlePage(0, true);
+    this.setState({ goToArticles: true });
   }
-  isLoading = bool => {
-    this.setState({ loader: { loading: bool } })
+
+  isLoading = (bool) => {
+    this.setState({ loader: { loading: bool } });
   }
 
   handleClick = tag => (e) => {
@@ -97,11 +98,11 @@ const mapStateToProps = ({ articles: { articles, nextPage, prevPage, currentPage
   articles: articles,
   nextPage: nextPage,
   prevPage: prevPage,
-  currentPage: currentPage
-})
+  currentPage: currentPage,
+});
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ getOneArticle, getDataThunk }, dispatch)
-})
+  actions: bindActionCreators({ getOneArticle, getDataThunk }, dispatch),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView);

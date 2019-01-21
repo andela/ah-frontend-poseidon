@@ -15,4 +15,5 @@ export const GET_ALL_ARTICLES = 'GET_ALL_ARTICLES';
 export const REQUEST_ARTICLE = 'REQUEST_ARTICLE';
 export const ERROR_OCCURRED = 'ERROR_OCCURRED';
 export const DO_NOTHING = 'DO_NOTHING';
+export const Rate_Article = 'RATE_ARTICLE';
 export const SHARE_ARTICLE = 'SHARE_ARTICLE';

@@ -9,8 +9,8 @@ import { CreateArticlePage, ArticlePage } from '.';
 import './articles.scss';
 
 export class ArticleView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       getTitle: '',
       getDescription: '',
@@ -29,7 +29,7 @@ export class ArticleView extends React.Component {
 
   handleChangeValue = param => e => this.setState({ [param]: e.target.value });
 
-  handleArticleBody = e => {
+  handleArticleBody = (e) => {
     const newHTML = e.target.innerText.trim();
     this.setState({ contentArea: newHTML });
   };
@@ -42,9 +42,9 @@ export class ArticleView extends React.Component {
         title: getTitle,
         description: getDescription,
         body: contentArea,
-        tags: getTags.split(',')
-      }
-    }
+        tags: getTags.split(','),
+      },
+    };
     const { singleArticlePage, isLoading } = this.props;
     this.props.actions.postDataThunk(endpoint, data, actionCreator, method);
     isLoading(true);
@@ -65,7 +65,7 @@ export class ArticleView extends React.Component {
       }, 3000);
       setTimeout(() => {
         deleteArticle(slug);
-        backToHome(e)
+        backToHome(e);
       }, 6000);
     }
     if (method === 'put') {
@@ -78,7 +78,7 @@ export class ArticleView extends React.Component {
         getTitle: title,
         getDescription: description,
         getTags: tags.toString(),
-      }))
+      }));
       this.props.singleArticlePage(0, false);
     }
 
@@ -107,7 +107,7 @@ export class ArticleView extends React.Component {
             contentArea={this.state.contentArea}
           />}
       </div>
-    )
+    );
   }
 }
 
