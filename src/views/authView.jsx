@@ -41,7 +41,7 @@ class AuthView extends React.Component {
       "You have succesfully Logged into Authorz Haven\
     success";
     localStorage.setItem("user", nextProps.token);
-    localStorage.setItem('username', nextProps.username);
+    localStorage.setItem("username", nextProps.username);
     notify.show(message, "success", 5000);
     if (!nextProps.Message) {
       this.props.history.push("/");
