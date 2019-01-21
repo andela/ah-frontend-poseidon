@@ -5,12 +5,13 @@ export const GET_ARTICLE = "GET_ARTICLE";
 export const GET_ALL_ARTICLES = "GET_ALL_ARTICLES";
 export const ERROR_OCCURRED = "ERROR_OCCURRED";
 export const DO_NOTHING = "DO_NOTHING";
-
+export const LIKE_ARTICLE = "LIKE_ARTICLE";
+export const UNLIKE_ARTICLE = "UNLIKE_ARTICLE";
 const ACTION_TYPE = {
   SIGN_UP_SUCCESS: "SIGN_UP_SUCCESS",
   SIGN_UP_FAILURE: "SIGN_UP_FAILURE"
 };
-export const VIEW_PROFILE = 'VIEW_PROFILE';
-export const EDIT_PROFILE = 'EDIT_PROFILE';
+export const VIEW_PROFILE = "VIEW_PROFILE";
+export const EDIT_PROFILE = "EDIT_PROFILE";
 
 export default ACTION_TYPE;

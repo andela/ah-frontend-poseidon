@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import './App.scss';
 import Notification from 'react-notify-toast';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Routes from "./routes";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import Routes from './routes/index';
+import {
+  faThumbsUp,
+  faThumbsDown, faUserCircle 
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUserCircle);
+library.add(faThumbsUp, faThumbsDown, faUserCircle) ;
 require('dotenv').config();
 
 class App extends Component {
