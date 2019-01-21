@@ -42,7 +42,6 @@ class AuthView extends React.Component {
     success";
     localStorage.setItem("user", nextProps.token);
     notify.show(message, "success", 5000);
-    console.log(nextProps);
     if (!nextProps.Message) {
       this.props.history.push("/");
     }
