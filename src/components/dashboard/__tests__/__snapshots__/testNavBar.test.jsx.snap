@@ -1,0 +1,1085 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test navbar renders NavBar Component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <nav
+        className="navbar navbar-expand-lg navbar-dark"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+        >
+          Authors Heaven
+        </a>
+        <button
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-target="#navbarSupportedContent"
+          data-toggle="collapse"
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul
+            className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+          >
+            <li
+              className="nav-item dropdown"
+            >
+              <a
+                aria-expanded="false"
+                aria-haspopup="true"
+                className="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+              >
+                Profile
+              </a>
+              <div
+                aria-labelledby="navbarDropdown"
+                className="dropdown-menu"
+                data-display="static"
+              >
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Notifications
+                </a>
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  View Profile
+                </a>
+                <div
+                  className="dropdown-divider"
+                />
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Create Article
+                </a>
+                <a
+                  className="dropdown-item"
+                  href="/"
+                >
+                  Your Articles
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <a
+            className="navbar-brand"
+            href="/"
+          >
+            Authors Heaven
+          </a>,
+          <button
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler"
+            data-target="#navbarSupportedContent"
+            data-toggle="collapse"
+            type="button"
+          >
+            <span
+              className="navbar-toggler-icon"
+            />
+          </button>,
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+          >
+            <ul
+              className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+            >
+              <li
+                className="nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  className="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                >
+                  Profile
+                </a>
+                <div
+                  aria-labelledby="navbarDropdown"
+                  className="dropdown-menu"
+                  data-display="static"
+                >
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Notifications
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    View Profile
+                  </a>
+                  <div
+                    className="dropdown-divider"
+                  />
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Create Article
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Your Articles
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>,
+        ],
+        "className": "navbar navbar-expand-lg navbar-dark",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Authors Heaven",
+            "className": "navbar-brand",
+            "href": "/",
+          },
+          "ref": null,
+          "rendered": "Authors Heaven",
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "aria-controls": "navbarSupportedContent",
+            "aria-expanded": "false",
+            "aria-label": "Toggle navigation",
+            "children": <span
+              className="navbar-toggler-icon"
+            />,
+            "className": "navbar-toggler",
+            "data-target": "#navbarSupportedContent",
+            "data-toggle": "collapse",
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "navbar-toggler-icon",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "span",
+          },
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+            >
+              <li
+                className="nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  className="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                >
+                  Profile
+                </a>
+                <div
+                  aria-labelledby="navbarDropdown"
+                  className="dropdown-menu"
+                  data-display="static"
+                >
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Notifications
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    View Profile
+                  </a>
+                  <div
+                    className="dropdown-divider"
+                  />
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Create Article
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Your Articles
+                  </a>
+                </div>
+              </li>
+            </ul>,
+            "className": "collapse navbar-collapse",
+            "id": "navbarSupportedContent",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <li
+                className="nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  className="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                >
+                  Profile
+                </a>
+                <div
+                  aria-labelledby="navbarDropdown"
+                  className="dropdown-menu"
+                  data-display="static"
+                >
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Notifications
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    View Profile
+                  </a>
+                  <div
+                    className="dropdown-divider"
+                  />
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Create Article
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Your Articles
+                  </a>
+                </div>
+              </li>,
+              "className": "navbar-nav ml-auto my-2 my-lg-0 dropleft",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    className="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                  >
+                    Profile
+                  </a>,
+                  <div
+                    aria-labelledby="navbarDropdown"
+                    className="dropdown-menu"
+                    data-display="static"
+                  >
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Notifications
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      View Profile
+                    </a>
+                    <div
+                      className="dropdown-divider"
+                    />
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Create Article
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Your Articles
+                    </a>
+                  </div>,
+                ],
+                "className": "nav-item dropdown",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-expanded": "false",
+                    "aria-haspopup": "true",
+                    "children": "Profile",
+                    "className": "nav-link dropdown-toggle",
+                    "data-toggle": "dropdown",
+                    "href": "#",
+                    "id": "navbarDropdown",
+                    "role": "button",
+                  },
+                  "ref": null,
+                  "rendered": "Profile",
+                  "type": "a",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-labelledby": "navbarDropdown",
+                    "children": Array [
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Notifications
+                      </a>,
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        View Profile
+                      </a>,
+                      <div
+                        className="dropdown-divider"
+                      />,
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Create Article
+                      </a>,
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Your Articles
+                      </a>,
+                    ],
+                    "className": "dropdown-menu",
+                    "data-display": "static",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Notifications",
+                        "className": "dropdown-item",
+                        "href": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Notifications",
+                      "type": "a",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "View Profile",
+                        "className": "dropdown-item",
+                        "href": "/",
+                      },
+                      "ref": null,
+                      "rendered": "View Profile",
+                      "type": "a",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "dropdown-divider",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Create Article",
+                        "className": "dropdown-item",
+                        "href": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Create Article",
+                      "type": "a",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Your Articles",
+                        "className": "dropdown-item",
+                        "href": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Your Articles",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "li",
+            },
+            "type": "ul",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "nav",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <nav
+          className="navbar navbar-expand-lg navbar-dark"
+        >
+          <a
+            className="navbar-brand"
+            href="/"
+          >
+            Authors Heaven
+          </a>
+          <button
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler"
+            data-target="#navbarSupportedContent"
+            data-toggle="collapse"
+            type="button"
+          >
+            <span
+              className="navbar-toggler-icon"
+            />
+          </button>
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+          >
+            <ul
+              className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+            >
+              <li
+                className="nav-item dropdown"
+              >
+                <a
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  className="nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                >
+                  Profile
+                </a>
+                <div
+                  aria-labelledby="navbarDropdown"
+                  className="dropdown-menu"
+                  data-display="static"
+                >
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Notifications
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    View Profile
+                  </a>
+                  <div
+                    className="dropdown-divider"
+                  />
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Create Article
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/"
+                  >
+                    Your Articles
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <a
+              className="navbar-brand"
+              href="/"
+            >
+              Authors Heaven
+            </a>,
+            <button
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              className="navbar-toggler"
+              data-target="#navbarSupportedContent"
+              data-toggle="collapse"
+              type="button"
+            >
+              <span
+                className="navbar-toggler-icon"
+              />
+            </button>,
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul
+                className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+              >
+                <li
+                  className="nav-item dropdown"
+                >
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    className="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                  >
+                    Profile
+                  </a>
+                  <div
+                    aria-labelledby="navbarDropdown"
+                    className="dropdown-menu"
+                    data-display="static"
+                  >
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Notifications
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      View Profile
+                    </a>
+                    <div
+                      className="dropdown-divider"
+                    />
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Create Article
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Your Articles
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>,
+          ],
+          "className": "navbar navbar-expand-lg navbar-dark",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Authors Heaven",
+              "className": "navbar-brand",
+              "href": "/",
+            },
+            "ref": null,
+            "rendered": "Authors Heaven",
+            "type": "a",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-controls": "navbarSupportedContent",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation",
+              "children": <span
+                className="navbar-toggler-icon"
+              />,
+              "className": "navbar-toggler",
+              "data-target": "#navbarSupportedContent",
+              "data-toggle": "collapse",
+              "type": "button",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "navbar-toggler-icon",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "span",
+            },
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="navbar-nav ml-auto my-2 my-lg-0 dropleft"
+              >
+                <li
+                  className="nav-item dropdown"
+                >
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    className="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                  >
+                    Profile
+                  </a>
+                  <div
+                    aria-labelledby="navbarDropdown"
+                    className="dropdown-menu"
+                    data-display="static"
+                  >
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Notifications
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      View Profile
+                    </a>
+                    <div
+                      className="dropdown-divider"
+                    />
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Create Article
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Your Articles
+                    </a>
+                  </div>
+                </li>
+              </ul>,
+              "className": "collapse navbar-collapse",
+              "id": "navbarSupportedContent",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <li
+                  className="nav-item dropdown"
+                >
+                  <a
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    className="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                  >
+                    Profile
+                  </a>
+                  <div
+                    aria-labelledby="navbarDropdown"
+                    className="dropdown-menu"
+                    data-display="static"
+                  >
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Notifications
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      View Profile
+                    </a>
+                    <div
+                      className="dropdown-divider"
+                    />
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Create Article
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href="/"
+                    >
+                      Your Articles
+                    </a>
+                  </div>
+                </li>,
+                "className": "navbar-nav ml-auto my-2 my-lg-0 dropleft",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <a
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      className="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                    >
+                      Profile
+                    </a>,
+                    <div
+                      aria-labelledby="navbarDropdown"
+                      className="dropdown-menu"
+                      data-display="static"
+                    >
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Notifications
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        View Profile
+                      </a>
+                      <div
+                        className="dropdown-divider"
+                      />
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Create Article
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="/"
+                      >
+                        Your Articles
+                      </a>
+                    </div>,
+                  ],
+                  "className": "nav-item dropdown",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-expanded": "false",
+                      "aria-haspopup": "true",
+                      "children": "Profile",
+                      "className": "nav-link dropdown-toggle",
+                      "data-toggle": "dropdown",
+                      "href": "#",
+                      "id": "navbarDropdown",
+                      "role": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Profile",
+                    "type": "a",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-labelledby": "navbarDropdown",
+                      "children": Array [
+                        <a
+                          className="dropdown-item"
+                          href="/"
+                        >
+                          Notifications
+                        </a>,
+                        <a
+                          className="dropdown-item"
+                          href="/"
+                        >
+                          View Profile
+                        </a>,
+                        <div
+                          className="dropdown-divider"
+                        />,
+                        <a
+                          className="dropdown-item"
+                          href="/"
+                        >
+                          Create Article
+                        </a>,
+                        <a
+                          className="dropdown-item"
+                          href="/"
+                        >
+                          Your Articles
+                        </a>,
+                      ],
+                      "className": "dropdown-menu",
+                      "data-display": "static",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Notifications",
+                          "className": "dropdown-item",
+                          "href": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Notifications",
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "View Profile",
+                          "className": "dropdown-item",
+                          "href": "/",
+                        },
+                        "ref": null,
+                        "rendered": "View Profile",
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "className": "dropdown-divider",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Create Article",
+                          "className": "dropdown-item",
+                          "href": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Create Article",
+                        "type": "a",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Your Articles",
+                          "className": "dropdown-item",
+                          "href": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Your Articles",
+                        "type": "a",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "li",
+              },
+              "type": "ul",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "nav",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
