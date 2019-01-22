@@ -73,7 +73,7 @@ ShallowWrapper {
                 </a>
                 <a
                   className="dropdown-item"
-                  href="/"
+                  href="/profile"
                 >
                   View Profile
                 </a>
@@ -158,7 +158,7 @@ ShallowWrapper {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/"
+                    href="/profile"
                   >
                     View Profile
                   </a>
@@ -264,7 +264,7 @@ ShallowWrapper {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/"
+                    href="/profile"
                   >
                     View Profile
                   </a>
@@ -322,7 +322,7 @@ ShallowWrapper {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/"
+                    href="/profile"
                   >
                     View Profile
                   </a>
@@ -376,7 +376,7 @@ ShallowWrapper {
                     </a>
                     <a
                       className="dropdown-item"
-                      href="/"
+                      href="/profile"
                     >
                       View Profile
                     </a>
@@ -434,7 +434,7 @@ ShallowWrapper {
                       </a>,
                       <a
                         className="dropdown-item"
-                        href="/"
+                        href="/profile"
                       >
                         View Profile
                       </a>,
@@ -479,7 +479,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "View Profile",
                         "className": "dropdown-item",
-                        "href": "/",
+                        "href": "/profile",
                       },
                       "ref": null,
                       "rendered": "View Profile",
@@ -599,7 +599,7 @@ ShallowWrapper {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/"
+                    href="/profile"
                   >
                     View Profile
                   </a>
@@ -684,7 +684,7 @@ ShallowWrapper {
                     </a>
                     <a
                       className="dropdown-item"
-                      href="/"
+                      href="/profile"
                     >
                       View Profile
                     </a>
@@ -790,7 +790,7 @@ ShallowWrapper {
                     </a>
                     <a
                       className="dropdown-item"
-                      href="/"
+                      href="/profile"
                     >
                       View Profile
                     </a>
@@ -848,7 +848,7 @@ ShallowWrapper {
                     </a>
                     <a
                       className="dropdown-item"
-                      href="/"
+                      href="/profile"
                     >
                       View Profile
                     </a>
@@ -902,7 +902,7 @@ ShallowWrapper {
                       </a>
                       <a
                         className="dropdown-item"
-                        href="/"
+                        href="/profile"
                       >
                         View Profile
                       </a>
@@ -960,7 +960,7 @@ ShallowWrapper {
                         </a>,
                         <a
                           className="dropdown-item"
-                          href="/"
+                          href="/profile"
                         >
                           View Profile
                         </a>,
@@ -1005,7 +1005,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": "View Profile",
                           "className": "dropdown-item",
-                          "href": "/",
+                          "href": "/profile",
                         },
                         "ref": null,
                         "rendered": "View Profile",

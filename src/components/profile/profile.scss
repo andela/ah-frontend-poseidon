@@ -1,0 +1,68 @@
+$primayColor: #3f51b5;
+$no-display: none;
+
+body {
+  background: $no-display;
+}
+
+#imageUpload {
+  display: $no-display;
+}
+
+.file-upload {
+  display: $no-display;
+}
+
+.profile {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.profileImage {
+  cursor: pointer;
+}
+
+div .btn-file {
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  
+  &:hover {
+    background-color: $primayColor;
+    border-color: $primayColor;
+  }
+}
+
+div .btn-outline-primary {
+  margin-right: 5px;
+  &:hover {
+    background-color: $primayColor;
+    border-color: $primayColor;
+  }
+}
+
+.profile-field {
+  text-align: center;
+}
+
+#profileImage {
+  cursor: pointer;
+}
+
+div .username, .bio {
+  border: 1px #d3d3d3 solid;
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+}
+
+.rounded-circle {
+  width: 20%;
+}
+
+.alert-message {
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 5px;
+}
