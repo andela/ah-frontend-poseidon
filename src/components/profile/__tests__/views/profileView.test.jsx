@@ -66,7 +66,7 @@ describe('connected component', () => {
     },
   };
 
-  store = mockStore({ profile: {} });
+  store = mockStore({ profile: { profile: {} } });
   mount(
     <Provider store={store}>
       <Profile {...props} />

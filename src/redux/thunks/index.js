@@ -23,7 +23,7 @@ const postDataThunkNoHeader = (
     })
     .catch((error) => {
       dispatch(actionCreatorFailure(error));
-    })
+    });
 };
 
 const getDataThunk = (endpoint, actionCreator) => {
@@ -48,10 +48,10 @@ const postDataThunk = (endpoint, data, actionCreator, method) => {
     console.log(data)
     return axiosInstance[method](endpoint, data)
       .then(response => {
-        dispatch(actionCreator(response.data));
+        return dispatch(actionCreator(response.data));
       })
       .catch(err => {
-        dispatch(errorOcurred(err));
+        return dispatch(errorOcurred(err));
       });
   };
 };
