@@ -94,4 +94,15 @@ describe('article Reducer', () => {
     expect(reducer(articles, ActionCreators.requestArticle({ articles: { slug: 'david' } }),
     )).toEqual(expected);
   });
+
+  it('should hanlde share artilce', () => {
+    const articles = {
+      articles: [{ a: 'b' }, { slug: 'davido' }],
+    };
+    const expected = {
+      articles: [{ a: 'b' }, { slug: 'davido' }],
+    };
+    expect(reducer(articles, ActionCreators.shareArticle({ articles: { slug: 'davido' } }),
+    )).toEqual(expected);
+  });
 });

@@ -50,6 +50,11 @@ export default (state = {}, action) => {
         currentPage: action.articles.current_page,
       };
 
+    case types.SHARE_ARTICLE:
+      return {
+        ...state,
+      };
+
     default:
       return state;
   }

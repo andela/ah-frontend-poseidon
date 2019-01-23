@@ -98,3 +98,26 @@ describe('Articles Container', () => {
     expect(instance.handleChangeValue).toBeCalled();
   });
 });
+
+describe('social share', () => {
+  let store;
+  const { articles } = article;
+  const props = {
+    viewArticle: true,
+  };
+
+  it('handles share email', () => {
+    const newProps = {
+      ...props,
+    };
+    const mockStore = configureStore([thunk]);
+    store = mockStore({ articles: { article: articles } });
+    const mountedWrapper = mount(
+      <Provider store={store}>
+        <ArticlesContainer {...newProps} />
+      </Provider>,
+    );
+    mountedWrapper.find('#share-email').simulate('click', 'the-20190111145839981441');
+    expect(mountedWrapper.find('#share-email')).toBeDefined();
+  });
+});

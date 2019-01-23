@@ -10,7 +10,7 @@ describe('Article page', () => {
   const onClick = jest.fn();
 
   beforeEach(() => {
-    wrapper = shallow(<ArticlePage article={article.articles} onClickHandler={onClick} />);
+    wrapper = shallow(<ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} />);
   });
 
   afterEach(() => {
@@ -34,9 +34,10 @@ describe('Article page', () => {
   it('renders a tags', () => {
     expect(wrapper.find('.badge badge-info')).toBeDefined();
   });
+
   it('data innerHTML should be equal to article body', () => {
     jest.resetModules();
     jest.clearAllMocks();
-    wrapper = mount(<ArticlePage article={article.articles} onClickHandler={onClick} />);
+    wrapper = mount(<ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} />);
   });
 });

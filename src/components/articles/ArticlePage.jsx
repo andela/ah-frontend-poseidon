@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
+import ButtonGroup from '../socialShare/buttonGroup';
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
 
@@ -26,7 +27,9 @@ class Article extends Component {
         tags,
       },
       onClickHandler,
+      shareHandler,
     } = this.props;
+
     return (
       <div className="container singleArticle">
         <div className="row">
@@ -72,7 +75,7 @@ class Article extends Component {
             <hr />
             <img
               src={image_url || 'http://placehold.it/700x300'}
-              className="img-responsive"
+              className="img-responsive article-img"
             />
             <hr />
             <p className="lead">{description}</p>
@@ -88,6 +91,7 @@ class Article extends Component {
                 {' '}
                 Leave a Comment:
               </h4>
+              <ButtonGroup slug={slug} shareHandler={shareHandler} />
               <form>
                 <div className="form-group">
                   <textarea className="form-control" rows="3" />
