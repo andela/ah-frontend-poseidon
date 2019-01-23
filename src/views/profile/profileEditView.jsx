@@ -52,9 +52,9 @@ export class ProfileEditView extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { postDataThunk, history } = this.props;
-    postDataThunk('user/', this.state, editProfile, 'put');
-    history.push('/profile');
-    window.location.reload();
+    postDataThunk('user/', this.state, editProfile, 'put').then(() => {
+      history.push('/profile');
+    });
   }
 
   handleCancelClick = (event) => {
@@ -103,7 +103,7 @@ const actionCreators = {
 ProfileEditView.propTypes = {
   getPrivateDataThunk: PropTypes.func.isRequired,
   postDataThunk: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, actionCreators)(ProfileEditView);

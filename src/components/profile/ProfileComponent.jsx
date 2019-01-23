@@ -20,7 +20,7 @@ export class ProfilePage extends Component {
 
 ProfilePage.propTypes = {
   profile: PropTypes.shape({
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     username: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
   }).isRequired,

@@ -20,7 +20,7 @@ export class ProfileView extends Component {
 
   render() {
     if (this.props.profile) {
-      const { profile: { profile } } = this.props;
+      const { profile: { profile = {} } } = this.props;
       return (
         <div>
           <NavBar />
@@ -38,7 +38,7 @@ export class ProfileView extends Component {
 
 ProfileView.propTypes = {
   getPrivateDataThunk: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => {

@@ -16,7 +16,7 @@ describe('Profile edit view', () => {
 
   const props = {
     getPrivateDataThunk: jest.fn(),
-    postDataThunk: jest.fn(),
+    postDataThunk: jest.fn(() => Promise.resolve({})),
     profile: {
       profile: {
         username: 'kabanga',
