@@ -41,10 +41,9 @@ const errorItems = [
   { title: "component will recieve props single error", error: mockError },
   { title: "component will recieve props multiple error", error: mockErrors }
 ];
+const historyMock = { push: jest.fn() };
 const props = {
-  history: {
-    push: jest.fn()
-  },
+  history:historyMock,
   postDataThunkNoHeader: jest.fn(),
   signUpActionCreatorSuccess: jest.fn(),
   signUpActionCreatorFailure: jest.fn()
@@ -138,7 +137,7 @@ describe("authView component", () => {
 describe(" Chnages isSignUp to false on click", () => {
   const wrapper = mount(
     <Provider store={store}>
-      <AuthViewConnected props={props} />
+      <AuthViewConnected props={props} history={historyMock}/>
     </Provider>
   );
   const event = {
@@ -170,5 +169,12 @@ describe(" Chnages isSignUp to false on click", () => {
     expect(wrapper.find("AuthView").state("loader")).toEqual({
       loading: true
     });
+
+  })   
+  it("test change to reset password form",()=>{
+    wrapper.find('#reset').simulate('click')
+    expect(props.history.push).toHaveBeenCalled()   
+  
   });
+  
 });

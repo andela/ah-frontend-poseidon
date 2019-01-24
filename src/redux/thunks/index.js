@@ -10,7 +10,7 @@ axiosInstance.interceptors.response.use(
   response => response,
   error => Promise.reject(error.response.data),
 );
-const postDataThunkNoHeader = (
+export const postDataThunkNoHeader = (
   endpoint,
   data,
   actionCreatorSuccess,
@@ -45,7 +45,6 @@ const postDataThunk = (endpoint, data, actionCreator, method) => {
     axiosInstance.defaults.headers.common.Authorization = 'Token '.concat(
       token
     );
-    console.log(data)
     return axiosInstance[method](endpoint, data)
       .then(response => {
         return dispatch(actionCreator(response.data));
@@ -55,6 +54,7 @@ const postDataThunk = (endpoint, data, actionCreator, method) => {
       });
   };
 };
+
 
 const getPrivateDataThunk = (endpoint, actionCreator) => {
   return (dispatch) => {
