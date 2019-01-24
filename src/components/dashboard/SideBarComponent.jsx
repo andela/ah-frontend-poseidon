@@ -14,6 +14,18 @@ class SideBar extends Component {
       </li>);
   };
 
+  renderTags = (article) => {
+    const { tags = [], id } = article;
+    const { getTaggedArticles } = this.props;
+    return (
+      <div className="nav-item" key={id}>
+        <div className="tag-item">
+          {tags.map((tag, i) =><a key={i}><span key={i} className="badge badge-info" id="tag-name" onClick={getTaggedArticles(tag)}>{tag}</span></a>)}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { articles } = this.props;
     return (
@@ -22,6 +34,10 @@ class SideBar extends Component {
           <ul className="nav flex-column">
             { articles.map(article => (this.renderArticle(article))) }
           </ul>
+          <div>
+            <i className="fa fa-tags">Tags: </i>
+            {articles.map(article => (this.renderTags(article)))}
+          </div>
         </div>
       </nav>
     );
@@ -45,6 +61,7 @@ SideBar.propTypes = {
       id: PropTypes.number,
     }),
   ),
+  getTaggedArticles: PropTypes.func.isRequired,
 };
 
 SideBar.defaultProps = {

@@ -4,24 +4,27 @@ import { bindActionCreators } from 'redux'
 import Home from '../../components/dashboard/HomeComponent';
 import NavBar from '../../components/dashboard/NavBarComponent';
 import Articles from '../../components/articles/Articles';
-import { requestArticle, getOneArticle, getAllArticles } from '../../redux/actions/ArticleActionCreators'
-import CircularProgressLoader from '../../components/progress/index'
+import { requestArticle, getOneArticle, getAllArticles } from '../../redux/actions/ArticleActionCreators';
+import CircularProgressLoader from '../../components/progress/index';
 import { getDataThunk } from '../../redux/thunks';
+
 
 export class HomeView extends Component {
   state = {
     goToArticles: false,
     viewArticle: false,
+    tagView: false,
+    tagName: '',
     loader: {
       success: false,
-      loading: false
-    }
+      loading: false,
+    },
   }
 
   componentDidMount() {
-    const { match } = this.props
+    const { match } = this.props;
     if (match.params.articleId) {
-      const { articleId } = match.params
+      const { articleId } = match.params;
       this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle)
       this.setState({ loader: { loading: true } });
       this.singleArticlePage(4000, true)
@@ -60,8 +63,18 @@ export class HomeView extends Component {
     this.setState({ loader: { loading: bool } })
   }
 
+  handleClick = tag => (e) => {
+    e.preventDefault();
+    const { actions: { getDataThunk } } = this.props;
+    getDataThunk('articles?tags='.concat(tag), getAllArticles);
+    this.setState({
+      tagView: true,
+      tagName: tag,
+    });
+  }
+
   render() {
-    const { viewArticle, goToArticles, loader } = this.state;
+    const { viewArticle, goToArticles, loader, tagView, tagName } = this.state;
     const { articles, nextPage, prevPage, currentPage } = this.props;
     return (
       <div>
@@ -74,7 +87,7 @@ export class HomeView extends Component {
             singleArticlePage={this.singleArticlePage} /> :
           <Home getArticle={this.getArticle} articles={articles}
             nextPage={nextPage}
-            prevPage={prevPage} currentPage={currentPage} />}
+            prevPage={prevPage} currentPage={currentPage} getTaggedArticles={this.handleClick} tagView={tagView} tagName={tagName}/>}
       </div>
     );
   }

@@ -12,9 +12,7 @@ import HomeView from '../views/homeView/homeView';
 import { getDataThunk } from '../redux/thunks';
 import { getAllArticles } from '../redux/actions/ArticleActionCreators';
 
-
 export const store = configureStore();
-
 store.dispatch(getDataThunk('articles', getAllArticles));
 
 class Routes extends Component {
