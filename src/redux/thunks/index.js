@@ -23,7 +23,7 @@ export const postDataThunkNoHeader = (
     })
     .catch((error) => {
       dispatch(actionCreatorFailure(error));
-    })
+    });
 };
 
 const getDataThunk = (endpoint, actionCreator) => {

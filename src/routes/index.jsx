@@ -8,6 +8,7 @@ import ProfileView from '../views/profile/profileView';
 import ProfileEditView from '../views/profile/profileEditView';
 import AuthView from '../views/authView';
 import PasswordResetView from '../views/PasswordResetView';
+import Comments from '../components/comments/commentsComponent';
 
 
 const store = configureStore();
@@ -25,6 +26,7 @@ class Routes extends Component {
               <Route path="/edit" component={ProfileEditView} />
               <Route path="/reset-password" component={PasswordResetView} />
               <Route path="/password-reset/:token" component={PasswordResetView} />
+              <Route path="/comments" component={Comments} />
             </Switch>
         </ BrowserRouter>
       </Provider>
