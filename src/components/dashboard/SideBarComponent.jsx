@@ -36,11 +36,11 @@ SideBar.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
-      tagList: PropTypes.array.isRequired,
-      createdAt: PropTypes.string.isRequired,
-      updatedAt: PropTypes.string.isRequired,
+      tags: PropTypes.array.isRequired,
+      created_on: PropTypes.string.isRequired,
+      updated_on: PropTypes.string.isRequired,
       favorited: PropTypes.boolean,
-      favoritesCount: PropTypes.number.isRequired,
+      favourites_count: PropTypes.number.isRequired,
       author: PropTypes.object.isRequired,
       id: PropTypes.number.isRequired,
     }),
@@ -48,4 +48,4 @@ SideBar.propTypes = {
 };
 
 
-export default SideBar;
+export default SideBar

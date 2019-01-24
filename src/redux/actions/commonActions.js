@@ -1,3 +1,7 @@
 import * as types from './types';
 
-export const errorOcurred = errMsg => ({ type: types.ERROR_OCCURRED, errMsg });
+const errorOccurred = errMsg => ({ type: types.ERROR_OCCURRED, errMsg });
+
+const doNothing = msg => ({ type: types.DO_NOTHING, msg });
+
+export { errorOccurred, doNothing };

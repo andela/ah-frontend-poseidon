@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { ProfilePage } from '../../ProfileComponent';
 
 describe('Test profile page', () => {
@@ -35,7 +36,7 @@ describe('Test profile page', () => {
   });
 
   it('renders fontawesome icon', () => {
-    expect(wrapper.contains(<FontAwesomeIcon icon="user-circle" size={'10x'} color="#3F51B5" />)).toBeTruthy();
+    expect(wrapper.contains(<FontAwesomeIcon icon={faUserCircle} size={'10x'} color="#3F51B5" />)).toBeTruthy();
   });
 
   it('renders image with url', () => {
