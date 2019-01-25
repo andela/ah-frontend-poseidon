@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { notify } from 'react-notify-toast';
+import notify from 'msg-notify';
 import SignUpForm from '../components/auth';
 import postDataThunkNoHeader, { postDataThunk } from '../redux/thunks';
 import { signUpActionCreatorSuccess, signUpActionCreatorFailure } from '../redux/actions/authentication';
@@ -18,10 +18,10 @@ class PasswordResetView extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      const { signUpData, signUpErrors } = nextProps;
+      const { signUpData, errors } = nextProps;
       signUpData 
         ? this.redirectOnSuccesfullPasswordReset(signUpData) 
-        : notify.show(signUpErrors.user.detail, 'error', 4000);
+        : notify(errors.user.detail, 'error')
       this.setState({ loader: { loading: false } });
     }
 
@@ -36,7 +36,7 @@ class PasswordResetView extends React.Component {
     }
 
       redirectOnSuccesfullPasswordReset = nextProps => {
-        notify.show(nextProps.Message, "success", 4000);
+        notify(nextProps.Message, "success");
         if (nextProps.Message==="Your password has been updated succesfully") {
           this.props.history.push("/signup");
         }}
@@ -140,7 +140,7 @@ const actionCreators = {
 };
 const mapStateToProps = state => ({
   signUpData: state.authReducer.signUpSuccess,
-  signUpErrors: state.authReducer.signUpFailure,
+  errors: state.authReducer.signUpFailure,
 });
 
 export default connect(mapStateToProps, actionCreators)(PasswordResetView);

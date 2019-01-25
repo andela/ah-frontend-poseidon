@@ -18,7 +18,7 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
 
-        signUpFailure: action.errors
+        signUpFailure: action.errors,
       };
     default:
       return state;
