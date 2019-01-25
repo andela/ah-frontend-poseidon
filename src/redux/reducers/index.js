@@ -5,6 +5,7 @@ import profile from "./profileReducer";
 import articles from "./ArticleReducer";
 import error from "./ErrorReducer";
 import optionsReducer from "./optionReducer";
+import comments from './commentsReducer';
 
 const rootReducer = () =>
   combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = () =>
     authReducer,
     articles,
     error,
-    optionsReducer
+    optionsReducer,
+    comments
   });
 
 export default rootReducer;

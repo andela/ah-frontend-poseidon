@@ -1,18 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import fontawesome from '@fortawesome/fontawesome';
-import solid from '@fortawesome/fontawesome-free-solid';
-import regular from '@fortawesome/fontawesome-free-regular';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
 import ButtonGroup from '../socialShare/buttonGroup';
 import LikeDislikeView from '../../views/LikeDislikeView';
 import StarRatingSystem from '../../views/ratingSystemView';
-
-fontawesome.library.add(solid, regular);
+import Comments from '../comments/commentsComponent';
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
 class Article extends Component {
@@ -45,7 +40,7 @@ class Article extends Component {
           <div className="col-lg-8">
             <h1>{title}</h1>
             <div className="row">
-              <div className="col-9 card-title mb-4">
+              <div className="col-8 card-title mb-4">
                 <div className="d-flex justify-content-start">
                   <div className="image-container">
                     <img className="rounded-circle" src={image || 'http://placehold.it/70x70'} id="imgProfile" />
@@ -90,29 +85,20 @@ class Article extends Component {
             <hr />
             <LikeDislikeView />
             <br />
-            {username !== localStorage.getItem('username') ? (
-              <div className="card">
-                <div className="card-header">
-                  <StarRatingSystem slug={slug} />
-                </div>
-              </div>
-            ) : (
-              ''
-            )}
-            <div className="well">
-              <h4>
-                <FontAwesomeIcon icon="paper-plane" />
-                {' '}
-                Leave a Comment:
-              </h4>
-              <ButtonGroup slug={slug} shareHandler={shareHandler} />
-              <form>
-                <div className="form-group">
-                  <textarea className="form-control" rows="3" />
-                </div>
-                <button className="btn btn-primary" type="submit">Comment</button>
-              </form>
-            </div>
+            {
+                  username !== localStorage.getItem('username')
+                    ? (
+                      <div className="card">
+                        <div className="card-header">
+                          <StarRatingSystem slug={slug} />
+                        </div>
+                      </div>
+                    )
+                    : ''
+              }
+            <hr />
+            <ButtonGroup slug={slug} shareHandler={shareHandler} /> 
+            <Comments slug={slug} />
           </div>
         </div>
         <hr />

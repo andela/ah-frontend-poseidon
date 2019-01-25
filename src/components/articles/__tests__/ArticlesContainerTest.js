@@ -28,7 +28,13 @@ describe('Articles Container', () => {
   beforeEach(() => {
     ArticlePage.prototype.componentDidMount = () => 'Test';
     const mockStore = configureStore([thunk]);
-    store = mockStore({ articles: { article: articles } });
+    store = mockStore({
+      articles: { article: articles },
+      comments: {
+        comments: [{}],
+        current_comment: {},
+      },
+    });
     wrapper = mount(
       <Provider store={store}>
         <ArticlesContainer {...props} />
@@ -133,7 +139,13 @@ describe('social share', () => {
       viewArticle: true,
     };
     const mockStore = configureStore([thunk]);
-    store = mockStore({ articles: { article: articles } });
+    
+    store = mockStore({ articles: { article: articles },
+      comments: {
+        comments: [{}],
+        current_comment: {},
+      },
+    });
     const mountedWrapper = mount(
       <Provider store={store}>
         <ArticlesContainer {...newProps} />
