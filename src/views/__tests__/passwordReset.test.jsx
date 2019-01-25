@@ -87,7 +87,7 @@ describe('password reset', () => {
   it('component will recieve props on failure', () => {
     wrapper.setProps({
       signUpData: null,
-      signUpErrors: {
+      errors: {
         user: {
           detail: 'Not found.',
         },
