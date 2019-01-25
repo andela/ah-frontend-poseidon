@@ -20,7 +20,7 @@ return (
             <div className="col-lg-8">
             <h1>{article.title}</h1>
                 <div className="row">
-                <div class="col-md-1.5 img">
+                <div className="col-md-1.5 img">
                 <img className='rounded-circle' src={article.author.image || "http://placehold.it/300x300"}/>
                     <blockquote>
                     <h6>{article.author.username}</h6>
@@ -38,7 +38,7 @@ return (
                 </div>
                 </div>
                 <hr/>
-                <img src={article.image_url || "http://placehold.it/700x300"} className="img-responsive" />
+                <img src={article.image_url || "http://placehold.it/700x300"} className="img-responsive article-img" />
                 <hr />
                 <p className="lead">{article.description}</p>
                 <div id='data' className='panel'>
