@@ -7,6 +7,12 @@ describe('handles liking and disliking of articles', () => {
   let wrapper;
 
   it('should handle liking when articles has likes greater than 0', () => {
+    const localStorage = {
+      getItem: something => JSON.stringify('#808080')
+    };
+
+    global.localStorage = localStorage;
+
     const article = {
       likes: 2
     };
@@ -19,6 +25,11 @@ describe('handles liking and disliking of articles', () => {
   });
 
   it('should handle liking when articles has likes less than 0', () => {
+    const localStorage = {
+      getItem: something => JSON.stringify('#3f51b5')
+    };
+
+    global.localStorage = localStorage;
     const article = {
       article: {
         likes: 0
@@ -33,6 +44,11 @@ describe('handles liking and disliking of articles', () => {
   });
 
   it('should handle dislikng when articles has dislikes greater than 0', () => {
+    const localStorage = {
+      getItem: something => JSON.stringify('#3f51b5')
+    };
+
+    global.localStorage = localStorage;
     const article = {
       dislikes: 2
     };
@@ -41,10 +57,15 @@ describe('handles liking and disliking of articles', () => {
     );
     wrapper.instance().ondislike();
     const color = localStorage.getItem('dislikeColor');
-    expect(JSON.parse(color)).toBe('#808080');
+    expect(JSON.parse(color)).toBe('#3f51b5');
   });
 
   it('should handle dislikng when articles has dislikes less than 0', () => {
+    const localStorage = {
+      getItem: something => JSON.stringify('#3f51b5')
+    };
+
+    global.localStorage = localStorage;
     const article = {
       article: {
         dislikes: 0
@@ -77,10 +98,5 @@ describe('handles liking and disliking of articles', () => {
     const status = { likeStatus: { likes: 1, dislikes: 1 } };
     wrapper.setProps = { likeStatus: { likes: 1, dislikes: 1 } };
     wrapper.instance().UNSAFE_componentWillReceiveProps(status);
-    // const likes = article.nextprops.likeStatus.likes;
-    // const dislikes = article.nextprops.likeStatus.dislikes;
-
-    //   expect(article.likes).toBe({ likes });
-    //   expect(article.likes).toBe({ likes });
   });
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import LikeDislikeComponent from '../components/articles/LikeDislikeComponent';
 import { postDataThunk } from '.././redux/thunks';
@@ -31,17 +31,14 @@ export class LikeDislikeView extends Component {
   //Method to handlelike
   onLike = () => {
     const { article, postDataThunk } = this.props;
-    console.log('>>>>>>>>>>>>>>>>');
+    const { likeColor, dislikeColor } = this.state;
     if (article.likes > 1) {
       this.setState(
         {
           likeColor: '#808080'
         },
         () => {
-          localStorage.setItem(
-            'likeColor',
-            JSON.stringify(this.state.likeColor)
-          );
+          localStorage.setItem('likeColor', JSON.stringify(likeColor));
         }
       );
     } else {
@@ -51,14 +48,8 @@ export class LikeDislikeView extends Component {
           dislikeColor: '#808080'
         },
         () => {
-          localStorage.setItem(
-            'dislikeColor',
-            JSON.stringify(this.state.dislikeColor)
-          );
-          localStorage.setItem(
-            'likeColor',
-            JSON.stringify(this.state.likeColor)
-          );
+          localStorage.setItem('dislikeColor', JSON.stringify(dislikeColor));
+          localStorage.setItem('likeColor', JSON.stringify(likeColor));
         }
       );
     }
@@ -68,17 +59,14 @@ export class LikeDislikeView extends Component {
   //Method to handle disliking
   ondislike = () => {
     const { article, postDataThunk } = this.props;
-    console.log(article.likes);
+    const { likeColor, dislikeColor } = this.state;
     if (article.dislikes > 1) {
       this.setState(
         {
           dislikeColor: '#808080'
         },
         () => {
-          localStorage.setItem(
-            'dislikeColor',
-            JSON.stringify(this.state.dislikeColor)
-          );
+          localStorage.setItem('dislikeColor', JSON.stringify(dislikeColor));
         }
       );
     } else {
@@ -88,14 +76,8 @@ export class LikeDislikeView extends Component {
           dislikeColor: '#3f51b5'
         },
         () => {
-          localStorage.setItem(
-            'dislikeColor',
-            JSON.stringify(this.state.dislikeColor)
-          );
-          localStorage.setItem(
-            'likeColor',
-            JSON.stringify(this.state.likeColor)
-          );
+          localStorage.setItem('dislikeColor', JSON.stringify(dislikeColor));
+          localStorage.setItem('likeColor', JSON.stringify(likeColor));
         }
       );
     }
@@ -135,10 +117,6 @@ const mapStateToProps = state => {
 
 const actionCreators = {
   postDataThunk
-};
-
-LikeDislikeView.propTypes = {
-  postDataThunk: PropTypes.func.isRequired
 };
 
 export default connect(

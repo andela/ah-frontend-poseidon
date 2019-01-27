@@ -91,7 +91,10 @@ class Article extends Component {
             <div id="data" className="panel" />
             <br />
             <br />
+
             <Tags tags={tags} />
+            <hr />
+            <LikeDislikeView />
             <br />
             {username !== localStorage.getItem('username') ? (
               <div className="card">
@@ -102,12 +105,12 @@ class Article extends Component {
             ) : (
               ''
             )}
-            <LikeDislikeView />
-            <hr />
+
             <div className="well">
               <h4>
                 <i className="fa fa-paper-plane-o" /> Leave a Comment:
               </h4>
+
               <ButtonGroup slug={slug} shareHandler={shareHandler} />
               <form>
                 <div className="form-group">
