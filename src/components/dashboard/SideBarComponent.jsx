@@ -20,7 +20,7 @@ class SideBar extends Component {
       <nav className="col-md-2 d-none d-md-block bg-light sidebar">
         <div className="sidebar-sticky">
           <ul className="nav flex-column">
-            {articles.map(article => (this.renderArticle(article)))}
+            { articles.map(article => (this.renderArticle(article))) }
           </ul>
         </div>
       </nav>
@@ -32,20 +32,24 @@ class SideBar extends Component {
 SideBar.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      body: PropTypes.string.isRequired,
-      tags: PropTypes.array.isRequired,
-      created_on: PropTypes.string.isRequired,
-      updated_on: PropTypes.string.isRequired,
+      slug: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      body: PropTypes.string,
+      tags: PropTypes.array,
+      created_on: PropTypes.string,
+      updated_on: PropTypes.string,
       favorited: PropTypes.boolean,
-      favourites_count: PropTypes.number.isRequired,
-      author: PropTypes.object.isRequired,
-      id: PropTypes.number.isRequired,
+      favourites_count: PropTypes.number,
+      author: PropTypes.object,
+      id: PropTypes.number,
     }),
-  ).isRequired,
+  ),
+};
+
+SideBar.defaultProps = {
+  articles: [],
 };
 
 
-export default SideBar
+export default SideBar;

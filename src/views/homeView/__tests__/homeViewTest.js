@@ -2,12 +2,12 @@
 
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import HomeViewTest, { HomeView } from '../homeView';
-import Editor from '../../components/articles/Editor';
-import mockArticles from '../../components/dashboard/mockData';
+import HomeViewTest from '../homeView';
+import Editor from '../../../components/articles/Editor';
+import mockArticles from '../../../components/dashboard/mockData';
 
 let store;
 jest.useFakeTimers();
@@ -35,9 +35,6 @@ describe('Home view test', () => {
 
   beforeEach(() => {
     Editor.prototype.componentDidMount = () => 'Test';
-    Object.defineProperty(global.document, 'execCommand', { value: jest.fn(), writable: true });
-    Object.defineProperty(global.document, 'getElementById', { value: jest.fn(() => ({ innerHTML: ['none'] })), writable: true });
-    Object.defineProperty(global, 'prompt', { value: jest.fn(() => (['none'] ))});
     store = mockStore({
       articles: {
         articles: mockArticles,

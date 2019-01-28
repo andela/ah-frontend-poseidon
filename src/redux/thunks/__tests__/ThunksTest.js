@@ -6,7 +6,7 @@ import postDataThunkNoHeader, { axiosInstance, getDataThunk, postDataThunk, getP
 import { CREATE_ARTICLE, GET_ALL_ARTICLES, ERROR_OCCURRED } from '../../actions/types';
 import { getAllArticles, createArticle } from '../../actions/ArticleActionCreators';
 import { errorOccurred } from '../../actions/commonActions';
-import { articles, article, error } from '../../../__mocks__/articleMockData';
+import { mockArticles, article, error } from '../../../__mocks__/articleMockData';
 
 const data = {
   article: {
@@ -27,10 +27,11 @@ describe('getDatathunk', () => {
   });
 
   it('Should return all articles', () => {
-    httpMock.onGet('articles').reply(200, articles);
+    httpMock.onGet('articles').reply(200, mockArticles);
     store
       .dispatch(getDataThunk('articles', getAllArticles))
       .then(() => {
+        const { articles } = mockArticles;
         expect(store.getActions()).toEqual([{ type: GET_ALL_ARTICLES, articles }]);
       });
   });
@@ -38,7 +39,7 @@ describe('getDatathunk', () => {
   it('Should handle ERROR_OCCURRED', () => {
     httpMock.onGet('articles/').reply(403, error);
     store
-      .dispatch(getDataThunk('articles', getAllArticles))
+      .dispatch(getDataThunk('articles/', getAllArticles))
       .then(() => {
         expect(store.getActions()).toEqual([{ type: ERROR_OCCURRED, errMsg: error }]);
       });
@@ -54,12 +55,16 @@ describe('postDatathunk', () => {
       title: 'Should return created article with no HEADER',
     },
     {
+      header: getPrivateDataThunk('articles/', createArticle),
+      title: 'Should return created article with no HEADER',
+    },
+    {
       header: postDataThunk('articles/', data, createArticle, 'post'),
       title: 'Should return created article with HEADER',
     }];
   const postDataError = [
     {
-      header: postDataThunkNoHeader('articles/', data, createArticle, errorOccurred, 'put'),
+      header: postDataThunkNoHeader('articles/', data, createArticle, errorOccurred, 'post'),
       title: 'Should handle ERROR_OCCURRED',
     },
     {
@@ -67,7 +72,7 @@ describe('postDatathunk', () => {
       title: 'privateDataThunk ERROR_OCCURRED',
     },
     {
-      header: postDataThunk('articles/', data, createArticle,'put'),
+      header: postDataThunk('articles/', data, createArticle, 'post'),
       title: 'Should handle ERROR_OCCURRED',
     }];
   beforeEach(() => {
@@ -78,6 +83,7 @@ describe('postDatathunk', () => {
   postData.forEach(post => (
     it(post.title, () => {
       httpMock.onPost('articles/').reply(201, article);
+      httpMock.onGet('articles/').reply(201, article);
       store
         .dispatch(post.header)
         .then(() => {
@@ -114,10 +120,11 @@ describe('postDatathunk', () => {
   postDataError.forEach(post => (
     it(post.title, () => {
       httpMock.onPost('articles/').reply(403, error);
+      httpMock.onGet('articles/').reply(403, error);
       store
         .dispatch(post.header)
         .then(() => {
-          expect(store.getActions()).toEqual([{ type: ERROR_OCCURRED, error }]);
+          expect(store.getActions()).toEqual([{ type: ERROR_OCCURRED, errMsg: error }]);
         });
     })
   ))

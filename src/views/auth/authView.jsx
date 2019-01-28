@@ -1,16 +1,16 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
-import 'msg-notify/dist/notify.css'
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import 'msg-notify/dist/notify.css';
 import notify from 'msg-notify';
-import PropTypes from "prop-types";
-import SignUpForm from "../components/auth";
-import { API } from "../constants";
-import postDataThunkNoHeader from "../redux/thunks";
+import PropTypes from 'prop-types';
+import SignUpForm from '../../components/auth';
+import { API } from '../../constants';
+import postDataThunkNoHeader from '../../redux/thunks';
 import {
   signUpActionCreatorSuccess,
-  signUpActionCreatorFailure
-} from "../redux/actions/authentication";
-import CircularProgressLoader from "../components/progress";
+  signUpActionCreatorFailure,
+} from '../../redux/actions/authentication';
+import CircularProgressLoader from '../../components/progress';
 
 class AuthView extends React.Component {
   state = {

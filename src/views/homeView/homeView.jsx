@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Home from '../components/HomeComponent';
-import NavBar from '../components/dashboard/NavBarComponent';
-import Articles from '../components/articles/Articles';
-import { requestArticle, getOneArticle, getAllArticles } from '../redux/actions/ArticleActionCreators'
-import CircularProgressLoader from '../components/progress/index'
-import { getDataThunk } from '../redux/thunks';
+import Home from '../../components/dashboard/HomeComponent';
+import NavBar from '../../components/dashboard/NavBarComponent';
+import Articles from '../../components/articles/Articles';
+import { requestArticle, getOneArticle, getAllArticles } from '../../redux/actions/ArticleActionCreators'
+import CircularProgressLoader from '../../components/progress/index'
+import { getDataThunk } from '../../redux/thunks';
 
 export class HomeView extends Component {
   state = {
@@ -42,12 +42,12 @@ export class HomeView extends Component {
     }, timeout);
   }
 
-  changeToCreateArticle = bool => e => {
-    e.preventDefault()
+  changeToCreateArticle = bool => (e) => {
+    e.preventDefault();
     this.setState({
       goToArticles: bool,
-    })
-    this.singleArticlePage(0, false)
+    });
+    this.singleArticlePage(0, false);
   }
 
   getArticle = (slug) => {

@@ -58,7 +58,8 @@ const postDataThunk = (endpoint, data, actionCreator, method) => (dispatch) => {
   axiosInstance.defaults.headers.common.Authorization = 'Token '.concat(token);
   return axiosInstance[method](endpoint, data).then((response) => {
     dispatch(actionCreator(response.data));
-  }).catch(err => dispatch(errorOccurred(err)));
+  }).catch((err) => {
+    dispatch(errorOccurred(err))});
 };
 
 

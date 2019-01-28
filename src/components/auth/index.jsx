@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -25,21 +27,24 @@ const SignUpForm = (props) => {
               {title}
             </h4>
             <form onSubmit={onSubmit}>
-              {isResetPassword && addNewPassword && renderInput(
-                'inputUsername',
-                'Username',
-                'username',
-                'text',
-                'Username',
-                'form-control',
-                'Username',
-                'Username should be at-least 3 characters',
-                true,
-                true,
-                '[A-z0-9\\s]{3,}',
-              )}
-              {isSignUp && addNewPassword
-                && renderInput(
+              {isResetPassword &&
+                addNewPassword &&
+                renderInput(
+                  'inputUsername',
+                  'Username',
+                  'username',
+                  'text',
+                  'Username',
+                  'form-control',
+                  'Username',
+                  'Username should be at-least 3 characters',
+                  true,
+                  true,
+                  '[A-z0-9\\s]{3,}'
+                )}
+              {isSignUp &&
+                addNewPassword &&
+                renderInput(
                   'inputEmail',
                   'Email',
                   'email',
@@ -49,21 +54,22 @@ const SignUpForm = (props) => {
                   'email',
                   'Username should be at-least 3 characters',
                   true,
-                  true,
+                  true
                 )}
-              {isResetPassword && renderInput(
-                'inputPassword',
-                'Password',
-                'password',
-                'password',
-                'password',
-                'form-control',
-                'password',
-                'Password should contain at-least one digit, one alphabet and at-least six characters long',
-                true,
-                true,
-                '(?=.*\\d)(?=.*[A-Za-z]).{6,}',
-              )}
+              {isResetPassword &&
+                renderInput(
+                  'inputPassword',
+                  'Password',
+                  'password',
+                  'password',
+                  'password',
+                  'form-control',
+                  'password',
+                  'Password should contain at-least one digit, one alphabet and at-least six characters long',
+                  true,
+                  true,
+                  '(?=.*\\d)(?=.*[A-Za-z]).{6,}'
+                )}
               <div className="form-label-group">
                 <button
                   type="submit"
@@ -78,7 +84,7 @@ const SignUpForm = (props) => {
             </form>
             <div className="form-label-group">
               <button
-                type="link"
+                type="button"
                 className="btn btn-link m-t-100"
                 color="primary"
               >
@@ -90,12 +96,20 @@ const SignUpForm = (props) => {
                     </div>
                   ) : (
                     <div role="button" onClick={handleLogin}>
-                        Don't have an account? Register
-                      </div>
+                      Don't have an account? Register
+                    </div>
                   )}
                 </span>
               </button>
-              <div id="reset" className="btn btn-link m-t-100" type="link" color="primary" hidden={!isResetPassword || !addNewPassword} onClick={changeToResetPassword}>
+              <div
+                id="reset"
+                role="button"
+                className="btn btn-link m-t-100"
+                type="link"
+                color="primary"
+                hidden={!isResetPassword || !addNewPassword}
+                onClick={changeToResetPassword}
+              >
                 Forgot password? Click here to reset
               </div>
             </div>
@@ -107,18 +121,27 @@ const SignUpForm = (props) => {
 };
 
 SignUpForm.propTypes = {
-  onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   handleLogin: PropTypes.func,
   renderInput: PropTypes.func,
   changeToResetPassword: PropTypes.func,
-  isSignUp: PropTypes.boolean,
-  isResetPassword: PropTypes.func,
-  addNewPassword: PropTypes.func,
-  changeToResetPassword: PropTypes.func,
+  isSignUp: PropTypes.bool,
+  isResetPassword: PropTypes.bool,
+  addNewPassword: PropTypes.bool,
   title: PropTypes.string,
   buttonName: PropTypes.string,
+};
 
+SignUpForm.defaultProps = {
+  onSubmit: () => {},
+  handleLogin: () => {},
+  renderInput: () => {},
+  changeToResetPassword: () => {},
+  isSignUp: true,
+  isResetPassword: true,
+  addNewPassword: true,
+  title: '',
+  buttonName: '',
 };
 
 export default SignUpForm;

@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { ProfilePage } from '../../ProfileComponent';
+import { ProfilePage } from '../ProfileComponent';
 
 describe('Test profile page', () => {
   let wrapper;
