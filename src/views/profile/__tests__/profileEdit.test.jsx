@@ -1,10 +1,9 @@
 import { mount, shallow } from 'enzyme';
 import React from 'react';
-import cloudinary from 'cloudinary-react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import ProfileEditPage, { ProfileEditView } from '../../../../views/profile/profileEditView';
+import ProfileEditPage, { ProfileEditView } from '../profileEditView';
 
 
 const mockStore = configureStore([thunk]);

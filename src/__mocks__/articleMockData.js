@@ -1,5 +1,5 @@
-const articles = {
-  data: {
+const mockArticles = {
+  articles: {
     articles: {
       links: {
         next: 'https://ah-backend-poseidon-staging.herokuapp.com/api/articles?page=2',
@@ -39,30 +39,32 @@ const articles = {
 };
 
 const article = {
-  slug: 'the-20190111145839981441',
-  title: 'the sand in the sky',
-  description: 'this the story that am going to end here..',
-  body: 'this is the body that am...',
-  created_on: '2019-01-11T14:58:39.981957Z',
-  average_rating: 0,
-  updated_on: '2019-01-11T14:58:39.981999Z',
-  image_url: null,
-  author: {
-    username: 'John',
-    email: 'john@dev.com',
-    bio: '',
-    image: null,
-    following: false,
+  articles: {
+    slug: 'the-20190111145839981441',
+    title: 'the sand in the sky',
+    description: 'this the story that am going to end here..',
+    body: 'this is the body that am...',
+    created_on: '2019-01-11T14:58:39.981957Z',
+    average_rating: 0,
+    updated_on: '2019-01-11T14:58:39.981999Z',
+    image_url: null,
+    author: {
+      username: 'John',
+      email: 'john@dev.com',
+      bio: '',
+      image: null,
+      following: false,
+    },
+    favourites_count: 0,
+    tags: [
+      'React',
+    ],
+    view_counts: 0,
+    read_time: '0 min read',
+    id: 34,
+    likes: 0,
+    dislikes: 0,
   },
-  favourites_count: 0,
-  tags: [
-    'React',
-  ],
-  view_counts: 0,
-  read_time: '0 min read',
-  id: 34,
-  likes: 0,
-  dislikes: 0,
 };
 
 const error = {
@@ -73,4 +75,4 @@ const error = {
   },
 };
 
-export { articles, article, error };
+export { mockArticles, article, error };

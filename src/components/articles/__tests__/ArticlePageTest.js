@@ -10,8 +10,7 @@ describe('Article page', () => {
   const onClick = jest.fn();
 
   beforeEach(() => {
-    Object.defineProperty(global.document, 'getElementById', { value: jest.fn(() => ({ innerHTML: ['none'] })), writable: true });
-    wrapper = shallow(<ArticlePage article={article} onClickHandler={onClick} />);
+    wrapper = shallow(<ArticlePage article={article.articles} onClickHandler={onClick} />);
   });
 
   afterEach(() => {
@@ -24,7 +23,7 @@ describe('Article page', () => {
   });
 
   it('renders a article title', () => {
-    expect(wrapper.contains(<h1>{article.title}</h1>)).toBeTruthy();
+    expect(wrapper.contains(<h1>{article.articles.title}</h1>)).toBeTruthy();
   });
 
   it('onClick event should be triggered when button is edit/delete button is clicked', () => {
@@ -38,6 +37,6 @@ describe('Article page', () => {
   it('data innerHTML should be equal to article body', () => {
     jest.resetModules();
     jest.clearAllMocks();
-    wrapper = mount(<ArticlePage article={article} onClickHandler={onClick} />);
+    wrapper = mount(<ArticlePage article={article.articles} onClickHandler={onClick} />);
   });
 });

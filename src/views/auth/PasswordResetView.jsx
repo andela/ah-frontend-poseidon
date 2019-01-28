@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import notify from 'msg-notify';
-import SignUpForm from '../components/auth';
-import postDataThunkNoHeader, { postDataThunk } from '../redux/thunks';
-import { signUpActionCreatorSuccess, signUpActionCreatorFailure } from '../redux/actions/authentication';
-import CircularProgressLoader from '../components/progress';
+import SignUpForm from '../../components/auth';
+import postDataThunkNoHeader, { postDataThunk } from '../../redux/thunks';
+import { signUpActionCreatorSuccess, signUpActionCreatorFailure } from '../../redux/actions/authentication';
+import CircularProgressLoader from '../../components/progress';
 
 class PasswordResetView extends React.Component {
     state = {

@@ -1,8 +1,8 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import './App.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import Routes from './routes/index';
 

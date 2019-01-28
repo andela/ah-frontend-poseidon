@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import './profile.scss';
 
 
-export class ProfilePage extends Component {
+export class ProfilePage extends PureComponent {
   render() {
     const { profile: { image, username, bio }, onClick } = this.props;
     return (
@@ -22,8 +22,15 @@ export class ProfilePage extends Component {
 ProfilePage.propTypes = {
   profile: PropTypes.shape({
     image: PropTypes.string,
-    username: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
-  }).isRequired,
+    username: PropTypes.string,
+    bio: PropTypes.string,
+  }),
+  onClick: PropTypes.func.isRequired,
 };
+
+ProfilePage.defaultProps = {
+  profile: {},
+
+};
+
 export default ProfilePage;

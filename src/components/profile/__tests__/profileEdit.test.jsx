@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileEditComponent from '../../profileEditComponent';
+import ProfileEditComponent from '../profileEditComponent';
 import { mount, shallow } from 'enzyme';
 
 describe('Test profile edit page', () => {

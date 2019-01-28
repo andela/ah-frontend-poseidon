@@ -1,10 +1,11 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { notify } from 'react-notify-toast';
 import thunk from 'redux-thunk';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import PasswordResetView, { PasswordTest } from '../PasswordResetView';
-import { Provider } from 'react-redux';
+
 
 const show = jest.fn();
 notify.show = show;
@@ -23,46 +24,48 @@ describe('password reset', () => {
 
   const props = {
     history: {
-      push: jest.fn()
+      push: jest.fn(),
     },
     match: {
-      params: { token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJtYXJrYXllYmFyZSIsImVtYWlsIjoibWFyay5heWViYXJlQGFuZGVsYS5jb20iLCJleHAiOjE1NDgwNzc0MzF9.TpHwiXfKYxr1gK3JljqaUIic9nKFFysW0kfHrYP41ho' } 
+      params: { token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJtYXJrYXllYmFyZSIsImVtYWlsIjoibWFyay5heWViYXJlQGFuZGVsYS5jb20iLCJleHAiOjE1NDgwNzc0MzF9.TpHwiXfKYxr1gK3JljqaUIic9nKFFysW0kfHrYP41ho' },
     },
     postDataThunk: jest.fn(),
     postDataThunkNoHeader: jest.fn(),
     signUpActionCreatorSuccess: jest.fn(),
-    signUpActionCreatorFailure: jest.fn(),  
-    isResetPassword:true,
-    addNewPassword:true,
+    signUpActionCreatorFailure: jest.fn(),
+    isResetPassword: true,
+    addNewPassword: true,
   };
 
   const store = mockStore(expectedStore);
 
   beforeEach(() => {
     wrapper = mount(
-      <PasswordTest {...props} store={store} />
-    );
-  });  
-  it('renders password reset view', () => {
-    mount(<Provider store={store}>
-      <PasswordResetView {...props} />
-    </Provider> 
+      <PasswordTest {...props} store={store} />,
     );
   });
-  it('renders view on reset link clicked', () => {     
+  it('renders password reset view', () => {
+    mount(
+      <Provider store={store}>
+        <PasswordResetView {...props} />
+      </Provider>,
+    );
+  });
+  it('renders view on reset link clicked', () => {
     Object.defineProperty(window, 'location', {
       writable: true,
-      value: { href: 'http://localhost/password-reset' }  
+      value: { href: 'http://localhost/password-reset' },
     });
+    expect(wrapper.state().loader.loading).toBe(false);
   });
   it('tests reset of password link sent to email', () => {
     wrapper.setState({
       isResetPassword: false,
       addNewPassword: true,
     });
-    const event = { preventDefault: jest.fn(), target: { elements: { email: { value: 'm@gmail.com' } } } }
+    const event = { preventDefault: jest.fn(), target: { elements: { email: { value: 'm@gmail.com' } } } };
     const spy = jest.spyOn(wrapper.instance().props, 'postDataThunkNoHeader');
-    wrapper.find('form').simulate('submit', event)
+    wrapper.find('form').simulate('submit', event);
     expect(spy).toHaveBeenCalled();
   });
   it('tests new password created', () => {
@@ -70,11 +73,12 @@ describe('password reset', () => {
       isResetPassword: true,
       addNewPassword: false,
     });
-    const event = { preventDefault: jest.fn(), target: { elements: { password: { value: "JDH56HX9Wom" } } } }
-    const spy = jest.spyOn(wrapper.instance().props, 'postDataThunk')
-    wrapper.find('form').simulate('submit', event)
-    expect(spy).toHaveBeenCalled()
+    const event = { preventDefault: jest.fn(), target: { elements: { password: { value: 'JDH56HX9Wom' } } } };
+    const spy = jest.spyOn(wrapper.instance().props, 'postDataThunk');
+    wrapper.find('form').simulate('submit', event);
+    expect(spy).toHaveBeenCalled();
   });
+
   it('component will recieve props on success', () => {
     const wrapUser = mount(<PasswordTest {...props} {...expectedStore} />);
     wrapUser.setProps({
@@ -84,6 +88,7 @@ describe('password reset', () => {
       expect(wrapUser.state()).toEqual(expect.objectContaining({ loader: { loading: false } }));
     });
   });
+
   it('component will recieve props on failure', () => {
     wrapper.setProps({
       signUpData: null,
@@ -96,15 +101,16 @@ describe('password reset', () => {
       expect(wrapper.state()).toEqual(expect.objectContaining({ loader: { loading: false } }));
     });
   });
+
   it('component load new page', () => {
     wrapper.setState({
       isResetPassword: true,
       addNewPassword: false,
-    });     
-    const spy = jest.spyOn(wrapper.instance(), 'redirectOnSuccesfullPasswordReset')
+    });
+    const spy = jest.spyOn(wrapper.instance(), 'redirectOnSuccesfullPasswordReset');
     wrapper.setProps({
-      signUpData: { Message: 'Your password has been updated succesfully' }
-    })
-    expect(spy).toHaveBeenCalled()  
+      signUpData: { Message: 'Your password has been updated succesfully' },
+    });
+    expect(spy).toHaveBeenCalled();
   });
 });

@@ -1,13 +1,15 @@
-import React from "react";
-import configureStore from "redux-mock-store";
-import { shallow, mount } from "enzyme";
-import { Provider } from "react-redux";
-import { MemoryRouter } from "react-router-dom";
-import thunk from "redux-thunk";
-import AuthViewConnected, { AuthViewTest } from "../authView";
+import React from 'react';
+import configureStore from 'redux-mock-store';
+import { shallow, mount } from 'enzyme';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import thunk from 'redux-thunk';
+import AuthViewConnected, { AuthViewTest } from '../authView';
+
+// const jest = require('jest');
 
 const mockSTore = configureStore([thunk]);
-jest.mock("react-notify-toast");
+jest.mock('react-notify-toast');
 const expectedStore = {
   authReducer: {
     signUpFailure: null,
@@ -17,29 +19,29 @@ const expectedStore = {
 
 const store = mockSTore(expectedStore);
 const mockSignUp = {
-  Message: "Successfully signed up",
-  token: "312regwh4tr4hetrj6y5tu6yutu7y8u"
+  Message: 'Successfully signed up',
+  token: '312regwh4tr4hetrj6y5tu6yutu7y8u'
 };
 
 const mockLogin = {
-  username: "naume",
-  token: "312regwh4tr4hetrj6y5tu6yutu7y8u"
+  username: 'naume',
+  token: '312regwh4tr4hetrj6y5tu6yutu7y8u'
 };
 const mockError = {
   errors: {
-    username: ["Username already exists "]
+    username: ['Username already exists ']
   }
 };
 const mockErrors = {
   errors: {
-    username: ["Username already exists "],
-    password: ["password should be at-least 8 characters"]
+    username: ['Username already exists '],
+    password: ['password should be at-least 8 characters']
   }
 };
 
 const errorItems = [
-  { title: "component will recieve props single error", error: mockError },
-  { title: "component will recieve props multiple error", error: mockErrors }
+  { title: 'component will recieve props single error', error: mockError },
+  { title: 'component will recieve props multiple error', error: mockErrors }
 ];
 const historyMock = { push: jest.fn() };
 const props = {
@@ -49,8 +51,8 @@ const props = {
   signUpActionCreatorFailure: jest.fn()
 };
 
-describe("authView component", () => {
-  it("it renders ", () => {
+describe('authView component', () => {
+  it('it renders ', () => {
     const wrapper = mount(
       <Provider store={store}>
         <AuthViewConnected props={props} />
@@ -61,18 +63,18 @@ describe("authView component", () => {
       handleSignup: jest.fn(),
       target: {
         elements: {
-          username: { value: "poseidon" },
-          email: { value: "poseidon@mail.com" },
-          password: { value: "poseidon234" }
+          username: { value: 'poseidon' },
+          email: { value: 'poseidon@mail.com' },
+          password: { value: 'poseidon234' }
         }
       }
     };
-    const wrappedForm = wrapper.find("form");
-    wrappedForm.simulate("submit", event);
-    expect(wrapper.find("AuthView").state("loader")).toEqual({ loading: true });
+    const wrappedForm = wrapper.find('form');
+    wrappedForm.simulate('submit', event);
+    expect(wrapper.find('AuthView').state('loader')).toEqual({ loading: true });
   });
 
-  it("renders authView without crashing", () => {
+  it('renders authView without crashing', () => {
     const wrapper = mount(
       <Provider store={store}>
         <MemoryRouter>
@@ -86,7 +88,7 @@ describe("authView component", () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  it("component will recieve props user", () => {
+  it('component will recieve props user', () => {
     const wrapUser = shallow(<AuthViewTest {...props} />);
     wrapUser.setProps(
       {
@@ -101,7 +103,7 @@ describe("authView component", () => {
     );
   });
 
-  it(" user login changers props", () => {
+  it(' user login changers props', () => {
     const wrapUser = shallow(<AuthViewTest {...props} />);
     wrapUser.setProps(
       {
@@ -134,7 +136,7 @@ describe("authView component", () => {
   );
 });
 
-describe(" Chnages isSignUp to false on click", () => {
+describe(' Chnages isSignUp to false on click', () => {
   const wrapper = mount(
     <Provider store={store}>
       <AuthViewConnected props={props} history={historyMock}/>
@@ -145,33 +147,33 @@ describe(" Chnages isSignUp to false on click", () => {
     handleSignup: jest.fn(),
     target: {
       elements: {
-        username: { value: "poseidon" },
-        password: { value: "poseidon234" }
+        username: { value: 'poseidon' },
+        password: { value: 'poseidon234' }
       }
     }
   };
-  const wrapped = wrapper.find("#change-login");
+  const wrapped = wrapper.find('#change-login');
 
-  it("isSignup changes to false when handleChangeFormStatus is activated", () => {
-    wrapped.simulate("click", event);
-    expect(wrapper.find("AuthView").state("isSignUp")).toEqual(false);
+  it('isSignup changes to false when handleChangeFormStatus is activated', () => {
+    wrapped.simulate('click', event);
+    expect(wrapper.find('AuthView').state('isSignUp')).toEqual(false);
   });
 
-  it("isSignup changes to true when handleChangeFormStatus is activated", () => {
-    wrapped.simulate("click", event);
-    expect(wrapper.find("AuthView").state("isSignUp")).toEqual(true);
+  it('isSignup changes to true when handleChangeFormStatus is activated', () => {
+    wrapped.simulate('click', event);
+    expect(wrapper.find('AuthView').state('isSignUp')).toEqual(true);
   });
 
-  it("handleLogin should be called on login ", () => {
-    wrapped.simulate("click", event);
-    const wrappedForm = wrapper.find("form");
-    wrappedForm.simulate("submit", event);
-    expect(wrapper.find("AuthView").state("loader")).toEqual({
+  it('handleLogin should be called on login ', () => {
+    wrapped.simulate('click', event);
+    const wrappedForm = wrapper.find('form');
+    wrappedForm.simulate('submit', event);
+    expect(wrapper.find('AuthView').state('loader')).toEqual({
       loading: true
     });
 
   })   
-  it("test change to reset password form",()=>{
+  it('test change to reset password form',()=>{
     wrapper.find('#reset').simulate('click')
     expect(props.history.push).toHaveBeenCalled()   
   

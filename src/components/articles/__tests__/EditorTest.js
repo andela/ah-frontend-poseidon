@@ -18,9 +18,6 @@ describe('Editor', () => {
 
   beforeAll(() => {
     Editor.prototype.execCmd = mockCmd;
-    Object.defineProperty(global.document, 'execCommand', { value: jest.fn(), writable: true });
-    Object.defineProperty(global.document, 'getElementById', { value: jest.fn(() => ({ innerHTML: ['none'] })), writable: true });
-    Object.defineProperty(global, 'prompt', { value: jest.fn(() => (['none'] ))});
   });
   beforeEach(() => {
     editor = shallow(<Editor {...props} />);
