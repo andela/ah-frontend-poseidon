@@ -11,6 +11,6 @@ describe('Tags Component', () => {
   });
   it('renders tags array items', () => {
     const wrapper = shallow(<Tags tags={['react', 'redux']} />);
-    expect(wrapper.contains(<span key="0" className="badge badge-info">react</span>)).toBeTruthy();
+    expect(wrapper.contains(<span key="0" className="badge badge-info space">react</span>)).toBeTruthy();
   });
 });

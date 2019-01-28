@@ -40,7 +40,6 @@ class AuthView extends React.Component {
 
   redirectOnSuccesfullLogin = (nextProps) => {
     const message = nextProps.Message
-      // eslint-disable-next-line no-multi-str
       || 'You have succesfully Logged into Authorz Haven\
     success';
     localStorage.setItem('user', nextProps.token);
@@ -56,10 +55,9 @@ class AuthView extends React.Component {
 
   changeToResetPassword = () => {
     // event.preventDefault()
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.history.push('/reset-password')
-    ;
-  };
+    this.props.history.push('/reset-password');
+
+};
 
   extractError = (errors) => {
     const errs = Object.keys(errors).map(key => errors[key]);

@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import * as Actions from '../../redux/thunks';
 import Home from '../../components/dashboard/HomeComponent';
 import NavBar from '../../components/dashboard/NavBarComponent';
 import Articles from '../../components/articles/Articles';
 import {
-  requestArticle,
-  getOneArticle,
-  getAllArticles
+  requestArticle, getOneArticle, getAllArticles, deleteArticle, shareArticle,
 } from '../../redux/actions/ArticleActionCreators';
 import CircularProgressLoader from '../../components/progress/index';
-import { getDataThunk } from '../../redux/thunks';
 
 export class HomeView extends Component {
   state = {
@@ -67,7 +65,12 @@ export class HomeView extends Component {
     this.setState({ loader: { loading: bool } });
   };
 
-  handleClick = tag => e => {
+  getArticlesPage = (url) => {
+    const { actions: { getDataThunk } } = this.props;
+    getDataThunk(url, getAllArticles);
+  }
+
+  handleClick = tag => (e) => {
     e.preventDefault();
     const {
       actions: { getDataThunk }
@@ -80,46 +83,56 @@ export class HomeView extends Component {
   };
 
   render() {
-    const { viewArticle, goToArticles, loader, tagView, tagName } = this.state;
-    const { articles, nextPage, prevPage, currentPage } = this.props;
+    const {
+ viewArticle, goToArticles, loader, tagView, tagName,
+} = this.state;
+    const {
+      articles, nextPage, prevPage, currentPage, actions,
+    } = this.props;
+    const homeProps = {
+      getArticle: this.getArticle,
+      articles,
+      nextPage,
+      prevPage,
+      currentPage,
+      getArticlesPage: this.getArticlesPage,
+      getTaggedArticles: this.handleClick,
+      tagView,
+      tagName,
+    };
+    const articlesProps = {
+      viewArticle,
+      isLoading: this.isLoading,
+      backToHome: this.changeToCreateArticle(false),
+      singleArticlePage: this.singleArticlePage,
+      ...actions,
+    };
     return (
       <div>
         <CircularProgressLoader {...loader} />
         <NavBar createArticle={this.changeToCreateArticle(true)} />
-        {goToArticles ? (
-          <Articles
-            viewArticle={viewArticle}
-            isLoading={this.isLoading}
-            backToHome={this.changeToCreateArticle(false)}
-            singleArticlePage={this.singleArticlePage}
-          />
-        ) : (
-          <Home
-            getArticle={this.getArticle}
-            articles={articles}
-            nextPage={nextPage}
-            prevPage={prevPage}
-            currentPage={currentPage}
-            getTaggedArticles={this.handleClick}
-            tagView={tagView}
-            tagName={tagName}
-          />
-        )}
+        {goToArticles
+          ? <Articles {...articlesProps} /> : <Home {...homeProps} />}
       </div>
     );
   }
 }
+
 const mapStateToProps = ({
-  articles: { articles, nextPage, prevPage, currentPage }
+  articles: {
+    articles, nextPage, prevPage, currentPage,
+  },
 }) => ({
-  articles: articles,
-  nextPage: nextPage,
-  prevPage: prevPage,
-  currentPage: currentPage
+  articles,
+  nextPage,
+  prevPage,
+  currentPage,
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ getOneArticle, getDataThunk }, dispatch)
+  actions: bindActionCreators({
+    ...Actions, getOneArticle, deleteArticle, shareArticle,
+  }, dispatch),
 });
 
 export default connect(

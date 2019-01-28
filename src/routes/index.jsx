@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';

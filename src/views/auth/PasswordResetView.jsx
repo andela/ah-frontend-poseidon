@@ -19,9 +19,9 @@ class PasswordResetView extends React.Component {
 
     componentWillReceiveProps(nextProps) {
       const { signUpData, errors } = nextProps;
-      signUpData 
-        ? this.redirectOnSuccesfullPasswordReset(signUpData) 
-        : notify(errors.user.detail, 'error')
+      signUpData
+        ? this.redirectOnSuccesfullPasswordReset(signUpData)
+        : notify(errors.user.detail, 'error');
       this.setState({ loader: { loading: false } });
     }
 
@@ -29,19 +29,20 @@ class PasswordResetView extends React.Component {
       if (window.location.href.includes('password-reset')) {
         this.setState({ addNewPassword: false });
         localStorage.setItem('user', this.props.match.params.token);
-      } 
+      }
       else {
         this.setState({ isResetPassword: false });
       }
     }
 
-      redirectOnSuccesfullPasswordReset = nextProps => {
-        notify(nextProps.Message, "success");
-        if (nextProps.Message==="Your password has been updated succesfully") {
-          this.props.history.push("/signup");
-        }}
+      redirectOnSuccesfullPasswordReset = (nextProps) => {
+        notify(nextProps.Message, 'success');
+        if (nextProps.Message === 'Your password has been updated succesfully') {
+          this.props.history.push('/signup');
+        } 
+}
 
-       handleResetSubmit = (e) => { 
+       handleResetSubmit = (e) => {
          e.preventDefault();
          const {
            postDataThunkNoHeader,
@@ -50,7 +51,7 @@ class PasswordResetView extends React.Component {
          } = this.props;
 
          const email = e.target.elements.email.value;
-        
+
          postDataThunkNoHeader('password-reset/', {
            user: {
              email,
@@ -58,10 +59,10 @@ class PasswordResetView extends React.Component {
          }, signUpActionCreatorSuccess, signUpActionCreatorFailure, 'post');
          this.setState({ loader: { loading: true } });
        };
-      
+
        handleNewPasswordSubmit=(e) => {
          e.preventDefault();
-        
+
          const {
            postDataThunk,
            signUpActionCreatorSuccess,
@@ -104,7 +105,7 @@ class PasswordResetView extends React.Component {
             />
           </div>
         );
-      
+
         render() {
           const { isResetPassword, addNewPassword, isSignUp } = this.state;
           const buttonName = !isResetPassword ? 'Send Link' : 'Reset Password';

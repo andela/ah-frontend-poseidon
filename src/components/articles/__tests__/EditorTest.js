@@ -4,9 +4,10 @@ import { shallow, mount, render } from '../../../__tests__/setup/setupEnzyme';
 import Editor from '../Editor';
 
 describe('Editor', () => {
-  let editor, wrapper;
-  let mockCmd = jest.fn();
-  let mockComponentDidMount = jest.fn();
+  let editor;
+  let wrapper;
+  const mockCmd = jest.fn();
+  const mockComponentDidMount = jest.fn();
   const props = {
     handleArticleBody: jest.fn,
     contentArea: ''
@@ -31,12 +32,9 @@ describe('Editor', () => {
 
   it('should trigger createLink onClick event', () => {
     global.document = {
-      execCommand: () => jest.fn()
+      execCommand: () => jest.fn(),
     };
-    wrapper
-      .find('#createLink')
-      .first()
-      .simulate('click');
+    wrapper.find('#createLink').first().simulate('click');
   });
 
   it('should trigger command onClick event', () => {
