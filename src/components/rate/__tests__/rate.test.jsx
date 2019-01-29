@@ -9,13 +9,6 @@ import Rating from '../index';
 fontawesome.library.add(solid, regular);
 
 global.fontawesome = fontawesome;
-// // import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// const fontawesome = require('@fortawesome/react-fontawesome');
-// // jest.genMockFromModule('react-fontawesome');
-// const FontAwesomeIcon = (props) => {
-//   return <i className="fa"/>
-// }
-// Object.defineProperty(fontawesome, 'FontAwesome', {value: FontAwesomeIcon, writable: true });
 
 describe('Rate component', () => {
   it('renders without crashing', () => {
@@ -28,4 +21,3 @@ describe('Rate component', () => {
   });
 });
 
-// export FontAwesomeIcon;
