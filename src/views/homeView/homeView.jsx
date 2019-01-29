@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Home from '../../components/dashboard/HomeComponent';
 import NavBar from '../../components/dashboard/NavBarComponent';
 import Articles from '../../components/articles/Articles';
-import { requestArticle, getOneArticle, getAllArticles } from '../../redux/actions/ArticleActionCreators';
+import {
+  requestArticle,
+  getOneArticle,
+  getAllArticles
+} from '../../redux/actions/ArticleActionCreators';
 import CircularProgressLoader from '../../components/progress/index';
 import { getDataThunk } from '../../redux/thunks';
-
 
 export class HomeView extends Component {
   state = {
@@ -17,61 +20,63 @@ export class HomeView extends Component {
     tagName: '',
     loader: {
       success: false,
-      loading: false,
-    },
-  }
+      loading: false
+    }
+  };
 
   componentDidMount() {
     const { match } = this.props;
     if (match.params.articleId) {
       const { articleId } = match.params;
-      this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle)
+      this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle);
       this.setState({ loader: { loading: true } });
-      this.singleArticlePage(4000, true)
+      this.singleArticlePage(4000, true);
       setTimeout(() => {
-        this.setState({ goToArticles: true })
+        this.setState({ goToArticles: true });
         this.setState({ loader: { loading: false } });
       }, 7000);
     }
   }
 
-
   singleArticlePage = (timeout, bool) => {
     setTimeout(() => {
       this.setState({
         viewArticle: bool
-      })
-      this.isLoading(false)
+      });
+      this.isLoading(false);
     }, timeout);
-  }
+  };
 
-  changeToCreateArticle = bool => (e) => {
+  changeToCreateArticle = bool => e => {
     e.preventDefault();
     this.setState({
-      goToArticles: bool,
+      goToArticles: bool
     });
     this.singleArticlePage(0, false);
-  }
+  };
 
-  getArticle = (slug) => {
+  getArticle = slug => {
     const { actions } = this.props;
-    actions.getOneArticle(slug)
-    this.singleArticlePage(0, true)
-    this.setState({ goToArticles: true })
-  }
-  isLoading = bool => {
-    this.setState({ loader: { loading: bool } })
-  }
+    actions.getOneArticle(slug);
+    this.singleArticlePage(0, true);
+    this.setState({ goToArticles: true });
+  };
 
-  handleClick = tag => (e) => {
+  isLoading = bool => {
+    this.setState({ loader: { loading: bool } });
+  };
+
+  handleClick = tag => e => {
     e.preventDefault();
-    const { actions: { getDataThunk } } = this.props;
+    const {
+      actions: { getDataThunk }
+    } = this.props;
     getDataThunk('articles?tags='.concat(tag), getAllArticles);
     this.setState({
       tagView: true,
-      tagName: tag,
+      tagName: tag
     });
-  }
+  };
 
   render() {
     const { viewArticle, goToArticles, loader, tagView, tagName } = this.state;
@@ -80,28 +85,43 @@ export class HomeView extends Component {
       <div>
         <CircularProgressLoader {...loader} />
         <NavBar createArticle={this.changeToCreateArticle(true)} />
-        {goToArticles ?
-          <Articles viewArticle={viewArticle}
+        {goToArticles ? (
+          <Articles
+            viewArticle={viewArticle}
             isLoading={this.isLoading}
             backToHome={this.changeToCreateArticle(false)}
-            singleArticlePage={this.singleArticlePage} /> :
-          <Home getArticle={this.getArticle} articles={articles}
+            singleArticlePage={this.singleArticlePage}
+          />
+        ) : (
+          <Home
+            getArticle={this.getArticle}
+            articles={articles}
             nextPage={nextPage}
-            prevPage={prevPage} currentPage={currentPage} getTaggedArticles={this.handleClick} tagView={tagView} tagName={tagName}/>}
+            prevPage={prevPage}
+            currentPage={currentPage}
+            getTaggedArticles={this.handleClick}
+            tagView={tagView}
+            tagName={tagName}
+          />
+        )}
       </div>
     );
   }
 }
-
-const mapStateToProps = ({ articles: { articles, nextPage, prevPage, currentPage } }) => ({
+const mapStateToProps = ({
+  articles: { articles, nextPage, prevPage, currentPage }
+}) => ({
   articles: articles,
   nextPage: nextPage,
   prevPage: prevPage,
   currentPage: currentPage
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ getOneArticle, getDataThunk }, dispatch)
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeView);

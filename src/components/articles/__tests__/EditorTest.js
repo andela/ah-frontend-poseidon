@@ -5,15 +5,15 @@ import Editor from '../Editor';
 
 describe('Editor', () => {
   let editor, wrapper;
-  let mockCmd = jest.fn()
+  let mockCmd = jest.fn();
   let mockComponentDidMount = jest.fn();
   const props = {
     handleArticleBody: jest.fn,
-    contentArea: '',
+    contentArea: ''
   };
   const props2 = {
     handleArticleBody: jest.fn,
-    contentArea: 'test',
+    contentArea: 'test'
   };
 
   beforeAll(() => {
@@ -31,16 +31,25 @@ describe('Editor', () => {
 
   it('should trigger createLink onClick event', () => {
     global.document = {
-      execCommand: () => jest.fn(),
-    }
-    wrapper.find('#createLink').first().simulate('click');
+      execCommand: () => jest.fn()
+    };
+    wrapper
+      .find('#createLink')
+      .first()
+      .simulate('click');
   });
 
   it('should trigger command onClick event', () => {
-    wrapper.find('#command').first().simulate('click');
+    wrapper
+      .find('#command')
+      .first()
+      .simulate('click');
   });
   it('should trigger horizontalRule onClick event', () => {
-    wrapper.find('#horizontalRule').first().simulate('click');
+    wrapper
+      .find('#horizontalRule')
+      .first()
+      .simulate('click');
   });
 
   it('Editor snapshot', () => {

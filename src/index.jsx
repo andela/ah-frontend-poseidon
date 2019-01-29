@@ -5,7 +5,16 @@ import './index.css';
 import './App.scss';
 import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faUserCircle,
+  faThumbsDown,
+  faThumbsUp
+} from '@fortawesome/free-solid-svg-icons';
 
+library.add(faUserCircle, faThumbsDown, faThumbsUp);
+require('dotenv').config();
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 

@@ -1,10 +1,10 @@
-.basic-button{
+.basic-button {
   background-color: #3f51b5;
   border: 1px solid #c8c8c8;
   border-color: #007bff;
   width: 70px;
   height: 40px;
-  border-radius: .25em;
+  border-radius: 0.25em;
   text-decoration-color: #c8c8c8;
   &--disabled {
     cursor: not-allowed;
@@ -12,10 +12,12 @@
     border: 1px solid #c8c8c8;
     width: 70px;
     height: 40px;
-    border-radius: .25em;
+    border-radius: 0.25em;
   }
 }
-.basic-button:hover{background-color: #5a70ee}
+.basic-button:hover {
+  background-color: #5a70ee;
+}
 
 .articles-text-input {
   border: none;
@@ -39,34 +41,38 @@
   height: 30px;
 }
 
-.commands{
+.commands {
   border: none;
   margin: 5px;
   background-color: transparent;
 }
-.commands:hover{
+.commands:hover {
   background-color: #3f51b5;
 }
-#contentArea{
+#contentArea {
   outline: 0px;
   height: 420px;
   background-color: lightgray;
   overflow: scroll;
 }
-.ui-group-buttons .or{
-  position:relative;
-  float:left;width:.3em;
-  height:1.3em;
-  z-index:3;
-  font-size:12px}
+.ui-group-buttons .or {
+  position: relative;
+  float: left;
+  width: 0.3em;
+  height: 1.3em;
+  z-index: 3;
+  font-size: 12px;
+}
 
-.btn-group{
+.btn-group {
   margin-left: 30%;
 }
-#nextPage{width: 7em}
+#nextPage {
+  width: 7em;
+}
 .share {
   text: {
-    align:center;
+    align: center;
   }
 }
 .article-img {

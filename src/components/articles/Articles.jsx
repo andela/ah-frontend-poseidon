@@ -3,14 +3,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../../redux/thunks';
 import {
-  createArticle, getAllArticles, getOneArticle, deleteArticle, shareArticle,
+  createArticle,
+  getAllArticles,
+  getOneArticle,
+  deleteArticle,
+  shareArticle
 } from '../../redux/actions/ArticleActionCreators';
 import { CreateArticlePage, ArticlePage } from '.';
 import './articles.scss';
 
 export class ArticleView extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       getTitle: '',
       getDescription: '',
@@ -19,7 +23,7 @@ export class ArticleView extends React.Component {
       viewArticle: false,
       endpointOption: 'articles/',
       createAction: createArticle,
-      createMethod: 'post',
+      createMethod: 'post'
     };
 
     this.handleCreate = this.handleCreate.bind(this);
@@ -34,7 +38,7 @@ export class ArticleView extends React.Component {
     this.setState({ contentArea: newHTML });
   };
 
-  handleCreate = (endpoint, actionCreator, method) => (e) => {
+  handleCreate = (endpoint, actionCreator, method) => e => {
     e.preventDefault();
     const { getTitle, getDescription, contentArea, getTags } = this.state;
     const data = {
@@ -44,16 +48,15 @@ export class ArticleView extends React.Component {
         body: contentArea,
         tags: getTags.split(',')
       }
-    }
+    };
     const { singleArticlePage, isLoading } = this.props;
     this.props.actions.postDataThunk(endpoint, data, actionCreator, method);
     isLoading(true);
     singleArticlePage(4000, true);
-
   };
 
   handleDelete = (slug, data, action, method) => e => {
-    e.preventDefault()
+    e.preventDefault();
     const { postDataThunk, deleteArticle, getDataThunk } = this.props.actions;
     const { backToHome, isLoading } = this.props;
     if (method === 'delete') {
@@ -65,11 +68,11 @@ export class ArticleView extends React.Component {
       }, 3000);
       setTimeout(() => {
         deleteArticle(slug);
-        backToHome(e)
+        backToHome(e);
       }, 6000);
     }
     if (method === 'put') {
-      const { body, title, description, tags } = this.props.article
+      const { body, title, description, tags } = this.props.article;
       this.setState(prevState => ({
         endpointOption: `articles/${slug}/`,
         createAction: action,
@@ -77,48 +80,67 @@ export class ArticleView extends React.Component {
         contentArea: body,
         getTitle: title,
         getDescription: description,
-        getTags: tags.toString(),
-      }))
+        getTags: tags.toString()
+      }));
       this.props.singleArticlePage(0, false);
     }
+  };
 
-  }
-
-  handleShare = slug => (e) => {
+  handleShare = slug => e => {
     e.preventDefault();
     const endpoint = `/${slug}/email`;
     const data = '';
     const { actions } = this.props;
     const { createMethod } = this.state;
     actions.postDataThunk(endpoint, data, shareArticle, createMethod);
-  }
+  };
 
   render() {
     return (
-      <div className='container wrapperId'>
-        {this.props.viewArticle ? <ArticlePage article={this.props.article} onClickHandler={this.handleDelete} shareHandler={this.handleShare} /> :
+      <div className="container wrapperId">
+        {this.props.viewArticle ? (
+          <ArticlePage
+            article={this.props.article}
+            onClickHandler={this.handleDelete}
+            shareHandler={this.handleShare}
+          />
+        ) : (
           <CreateArticlePage
             titleValue={this.state.getTitle}
             descriptionValue={this.state.getDescription}
             tagsValue={this.state.getTags}
-            handleCreate={this.handleCreate(this.state.endpointOption, this.state.createAction, this.state.createMethod)}
+            handleCreate={this.handleCreate(
+              this.state.endpointOption,
+              this.state.createAction,
+              this.state.createMethod
+            )}
             handleChangeValue={this.handleChangeValue}
             handleArticleBody={this.handleArticleBody}
             contentArea={this.state.contentArea}
-          />}
+          />
+        )}
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  article: state.articles.article,
+  article: state.articles.article
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({
-    ...Actions, getOneArticle, deleteArticle, shareArticle,
-  }, dispatch),
+  actions: bindActionCreators(
+    {
+      ...Actions,
+      getOneArticle,
+      deleteArticle,
+      shareArticle
+    },
+    dispatch
+  )
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ArticleView);

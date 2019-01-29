@@ -1,16 +1,25 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
 import ButtonGroup from '../socialShare/buttonGroup';
+import LikeDislikeView from '../../views/LikeDislikeView';
+import StarRatingSystem from '../../views/ratingSystemView';
+
+fontawesome.library.add(solid, regular);
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
 
 class Article extends Component {
   componentDidMount() {
-    const { article: { body } } = this.props;
+    const {
+      article: { body }
+    } = this.props;
     document.getElementById('data').innerHTML = body;
   }
 
@@ -24,10 +33,10 @@ class Article extends Component {
         slug,
         title,
         description,
-        tags,
+        tags
       },
       onClickHandler,
-      shareHandler,
+      shareHandler
     } = this.props;
 
     return (
@@ -84,12 +93,20 @@ class Article extends Component {
             <br />
             <Tags tags={tags} />
             <br />
+            {username !== localStorage.getItem('username') ? (
+              <div className="card">
+                <div className="card-header">
+                  <StarRatingSystem slug={slug} />
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
+            <LikeDislikeView />
             <hr />
             <div className="well">
               <h4>
-                <i className="fa fa-paper-plane-o" />
-                {' '}
-                Leave a Comment:
+                <i className="fa fa-paper-plane-o" /> Leave a Comment:
               </h4>
               <ButtonGroup slug={slug} shareHandler={shareHandler} />
               <form>
@@ -137,7 +154,7 @@ Article.propTypes = {
       email: PropTypes.string,
       bio: PropTypes.string,
       image: PropTypes.string,
-      following: PropTypes.bool,
+      following: PropTypes.bool
     }),
     favourites_count: PropTypes.number,
     tags: PropTypes.array,
@@ -145,8 +162,8 @@ Article.propTypes = {
     read_time: PropTypes.string,
     id: PropTypes.number,
     likes: PropTypes.number,
-    dislikes: PropTypes.number,
-  }),
+    dislikes: PropTypes.number
+  })
 };
 
 Article.defaultProps = {
@@ -164,7 +181,7 @@ Article.defaultProps = {
       email: '',
       bio: '',
       image: null,
-      following: false,
+      following: false
     },
     favourites_count: 0,
     tags: [],
@@ -172,8 +189,8 @@ Article.defaultProps = {
     read_time: '',
     id: 0,
     likes: 0,
-    dislikes: 0,
-  },
+    dislikes: 0
+  }
 };
 
 export default Article;
