@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { mount } from 'enzyme';
@@ -19,7 +18,7 @@ const testClickButton = (wrapper, buttonId, mockMethod) => {
 
 const mockStore = configureStore([thunk]);
 
-const props = {
+let props = {
   actions: {
     getOneArticle: jest.fn(),
     getDataThunk: jest.fn(),
@@ -29,6 +28,8 @@ const props = {
   nextPage: '',
   prevPage: '',
   currentPage: 1,
+  tagView: false,
+  tagName: '',
 };
 describe('Home view test', () => {
   let wrapper;
@@ -66,5 +67,10 @@ describe('Home view test', () => {
     props.match = { params: { articleId: 'how-to-train-your-dragon' } };
     wrapper = mount(<Provider store={store}><HomeViewTest {...props} /></Provider>);
     jest.runAllTimers();
+  });
+
+  it('should handle click event on tag', () => {
+    wrapper.find('#tag-name').first().simulate('click');
+    expect(wrapper.find('#tag-name')).toBeDefined();
   });
 });

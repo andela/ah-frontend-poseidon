@@ -5,19 +5,32 @@ import SideBar from './SideBarComponent';
 import Article from './ArticleComponent';
 import './Dashboard.scss';
 import '../articles/articles.scss';
+import TagHeader from '../articles/taggedArticles/pageHeaderComponent';
 
 
 class Home extends React.Component {
   render() {
-    const { articles, getArticle } = this.props;
+    const {
+      articles, getArticle, getTaggedArticles, tagView, tagName,
+    } = this.props;
     const articleList = articles || [];
-    return (
+    if (tagView) {
+      return (
+        <div className="container-fluid">
+          <div className="row">
+            <TagHeader tagName={tagName}/>
+            <div className="col-lg-10 col-md-10 article-content">
+              {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
+            </div>
+          </div>
+        </div>
+      );
+    } return (
       <div className="container-fluid">
         <div className="row">
-          <SideBar articles={articleList} />
+          <SideBar articles={articleList} getTaggedArticles={getTaggedArticles}/>
           <div className="col-lg-10 col-md-10 article-content">
-            {articleList.map(article => (
-              <Article getArticle={getArticle} article={article} key={article.id} />))}
+            {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
           </div>
         </div>
       </div>
@@ -43,6 +56,9 @@ Home.propTypes = {
     }),
   ),
   getArticle: PropTypes.func.isRequired,
+  getTaggedArticles: PropTypes.func.isRequired,
+  tagView: PropTypes.bool.isRequired,
+  tagName: PropTypes.string.isRequired,
 };
 
 Home.defaultProps = {
