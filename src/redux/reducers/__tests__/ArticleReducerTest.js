@@ -13,8 +13,7 @@ describe('article Reducer', () => {
       articles: [{}],
       article: {},
     };
-    expect(reducer({ articles: [] }, ActionCreators.createArticle({ articles: {} }),
-    )).toEqual(expected);
+    expect(reducer({ articles: [] }, ActionCreators.createArticle({ articles: {} }))).toEqual(expected);
   });
 
   it('should handle EDIT_ARTICLE to return updated state', () => {
@@ -26,21 +25,19 @@ describe('article Reducer', () => {
       articles: [{ id: 1, title: 'react' }],
     };
 
-    expect(reducer(articles, ActionCreators.editArticle({articles: { id: 1, title: 'react' } }),
-    )).toEqual(expected);
+    expect(reducer(articles, ActionCreators.editArticle({ articles: { id: 1, title: 'react' } }))).toEqual(expected);
   });
 
   it('should handle initial state when there is nothing to update', () => {
     const articles = {
-      articles: [{ id: 1, title: 'oop' }]
+      articles: [{ id: 1, title: 'oop' }],
     };
     const expected = {
       article: { id: 2, title: 'react' },
       articles: [{ id: 1, title: 'oop' }],
     };
 
-    expect(reducer(articles, ActionCreators.editArticle({ articles: { id: 2, title: 'react' } }),
-    )).toEqual(expected);
+    expect(reducer(articles, ActionCreators.editArticle({ articles: { id: 2, title: 'react' } }))).toEqual(expected);
   });
 
   it('should handle DELETE_ARTICLE', () => {
@@ -53,8 +50,7 @@ describe('article Reducer', () => {
       articles: [],
     };
 
-    expect(reducer(articles, ActionCreators.deleteArticle('oop'),
-    )).toEqual(expected);
+    expect(reducer(articles, ActionCreators.deleteArticle('oop'))).toEqual(expected);
   });
 
   it('should handle GET_ALL_ARTICLES', () => {
@@ -64,10 +60,9 @@ describe('article Reducer', () => {
       prevPage: null,
       currentPage: 1,
     };
-    expect(reducer(state, ActionCreators.getAllArticles({ articles: {
-      results: [{}], links: { next: null, previous: null}, current_page: 1 },
-    }),
-    )).toEqual(expected);
+    expect(reducer(state, ActionCreators.getAllArticles({
+      articles: { results: [{}], links: { next: null, previous: null }, current_page: 1 },
+    }))).toEqual(expected);
   });
 
   it('should handle GET_ARTICLE', () => {
@@ -79,8 +74,7 @@ describe('article Reducer', () => {
       articles: [{ a: 'b' }, { slug: 'david' }],
     };
 
-    expect(reducer(articles, ActionCreators.getOneArticle('david'),
-    )).toEqual(expected);
+    expect(reducer(articles, ActionCreators.getOneArticle('david'))).toEqual(expected);
   });
   it('should handle REQUEST_ARTICLE', () => {
     const articles = {
@@ -91,8 +85,11 @@ describe('article Reducer', () => {
       articles: [{ a: 'b' }, { slug: 'david' }],
     };
 
-    expect(reducer(articles, ActionCreators.requestArticle({ articles: { slug: 'david' } }),
-    )).toEqual(expected);
+    expect(reducer(articles, ActionCreators.requestArticle({ articles: { slug: 'david' } }))).toEqual(expected);
+  });
+
+  it('should return a rating action', () => {
+    expect(ActionCreators.rateArticle(3)).toBeTruthy();
   });
 
   it('should hanlde share artilce', () => {

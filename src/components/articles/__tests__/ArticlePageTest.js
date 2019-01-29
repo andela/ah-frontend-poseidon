@@ -1,11 +1,17 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import ArticlePage from '../ArticlePage';
 import { article } from '../../../__mocks__/articleMockData';
 
-describe('Article page', () => {
+const mockSTore = configureStore([thunk]);
+const expectedStore = {};
+const store = mockSTore(expectedStore);
 
+describe('Article page', () => {
   let wrapper;
   const onClick = jest.fn();
 
@@ -17,7 +23,7 @@ describe('Article page', () => {
     jest.resetModules();
     jest.clearAllMocks();
   });
-  
+
   it('renders without any errors', () => {
     expect(wrapper.find('.container')).toBeDefined();
   });
@@ -38,6 +44,6 @@ describe('Article page', () => {
   it('data innerHTML should be equal to article body', () => {
     jest.resetModules();
     jest.clearAllMocks();
-    wrapper = mount(<ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} />);
+    wrapper = mount(<Provider store={store}><ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} /></Provider>);
   });
 });
