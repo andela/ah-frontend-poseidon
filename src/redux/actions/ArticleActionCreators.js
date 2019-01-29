@@ -12,6 +12,9 @@ const getAllArticles = ({ articles }) => ({ type: types.GET_ALL_ARTICLES, articl
 
 const requestArticle = article => ({ type: types.REQUEST_ARTICLE, article });
 
+const shareArticle = articleSlug => ({ type: types.SHARE_ARTICLE, articleSlug });
+
 export {
   createArticle, editArticle, deleteArticle, getOneArticle, getAllArticles, requestArticle,
+  shareArticle,
 };
