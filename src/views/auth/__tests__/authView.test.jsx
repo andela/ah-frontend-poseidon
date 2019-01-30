@@ -19,13 +19,11 @@ const store = mockSTore(expectedStore);
 const mockSignUp = {
   Message: 'Successfully signed up',
   token: '312regwh4tr4hetrj6y5tu6yutu7y8u',
-  Message: 'Successfully signed up',
-  token: '312regwh4tr4hetrj6y5tu6yutu7y8u',
 };
 
 const mockLogin = {
   username: 'naume',
-  token: '312regwh4tr4hetrj6y5tu6yutu7y8u'
+  token: '312regwh4tr4hetrj6y5tu6yutu7y8u',
 };
 const mockError = {
   errors: {
@@ -41,7 +39,7 @@ const mockErrors = {
 
 const errorItems = [
   { title: 'component will recieve props single error', error: mockError },
-  { title: 'component will recieve props multiple error', error: mockErrors }
+  { title: 'component will recieve props multiple error', error: mockErrors },
 ];
 const historyMock = { push: jest.fn() };
 const props = {
@@ -151,9 +149,9 @@ describe(' Chnages isSignUp to false on click', () => {
     target: {
       elements: {
         username: { value: 'poseidon' },
-        password: { value: 'poseidon234' }
-      }
-    }
+        password: { value: 'poseidon234' },
+      },
+    },
   };
   const wrapped = wrapper.find('#change-login');
 
@@ -174,12 +172,11 @@ describe(' Chnages isSignUp to false on click', () => {
     expect(wrapper.find('AuthView').state('loader')).toEqual({
       loading: true,
     });
+  });
+  it('test change to reset password form', () => {
+    wrapper.find('#reset').simulate('click');
+    expect(props.history.push).toHaveBeenCalled();
 
-  })   
-  it('test change to reset password form',()=>{
-    wrapper.find('#reset').simulate('click')
-    expect(props.history.push).toHaveBeenCalled()   
-  
   });
   it('test change to reset password form', () => {
     wrapper.find('#reset').simulate('click');

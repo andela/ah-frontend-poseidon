@@ -4,7 +4,7 @@ import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { mount } from '../../../__tests__/setup/setupEnzyme';
+import { mount } from 'enzyme';
 import ArticlesContainer, { ArticleView } from '../Articles';
 import { article } from '../../../__mocks__/articleMockData';
 import ArticlePage from '../ArticlePage';
@@ -20,7 +20,10 @@ describe('Articles Container', () => {
     backToHome: jest.fn(),
     singleArticlePage: jest.fn,
     isLoading: jest.fn,
-    article: articles,
+    article,
+    postDataThunk: jest.fn(),
+    getDataThunk: jest.fn(),
+    deleteArticle: jest.fn(),
   };
   beforeEach(() => {
     ArticlePage.prototype.componentDidMount = () => 'Test';
@@ -97,18 +100,37 @@ describe('Articles Container', () => {
     wrapper.find('#title').simulate('change', { target: value });
     expect(instance.handleChangeValue).toBeCalled();
   });
+
+  it('should implement change when inputs receive data', () => {
+    const result = [{ secure_url: 'https://res.cloudinary.com/dos4j4vpc/image/upload/v1547647373/poseidon/cpih2ylhazsnidell5yl.jpg' }];
+    global.cloudinary = {
+      openUploadWidget: (params, cb) => {
+        cb(null, result);
+      },
+    };
+    wrapper.find('.file-upload').simulate('click');
+  });
 });
 
 describe('social share', () => {
   let store;
   const { articles } = article;
   const props = {
-    viewArticle: true,
+    viewArticle: false,
+    backToHome: jest.fn(),
+    singleArticlePage: jest.fn,
+    isLoading: jest.fn,
+    article,
+    postDataThunk: jest.fn(),
+    getDataThunk: jest.fn(),
+    deleteArticle: jest.fn(),
+    
   };
 
   it('handles share email', () => {
     const newProps = {
       ...props,
+      viewArticle: true,
     };
     const mockStore = configureStore([thunk]);
     store = mockStore({ articles: { article: articles } });

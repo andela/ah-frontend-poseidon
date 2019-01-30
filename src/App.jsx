@@ -4,7 +4,6 @@ import './App.scss';
 import fontawesome from '@fortawesome/fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
-
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';

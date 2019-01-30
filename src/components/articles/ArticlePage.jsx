@@ -4,22 +4,21 @@ import PropTypes from 'prop-types';
 import fontawesome from '@fortawesome/fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
 import ButtonGroup from '../socialShare/buttonGroup';
 import LikeDislikeView from '../../views/LikeDislikeView';
 import StarRatingSystem from '../../views/ratingSystemView';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 fontawesome.library.add(solid, regular);
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
-
 class Article extends Component {
   componentDidMount() {
     const {
-      article: { body }
+      article: { body },
     } = this.props;
     document.getElementById('data').innerHTML = body;
   }
@@ -28,11 +27,11 @@ class Article extends Component {
     const {
       article: {
         author: { image, username },
+        title,
         created_on,
-        image_url,
         read_time,
         slug,
-        title,
+        image_url,
         description,
         tags,
       },
@@ -42,108 +41,81 @@ class Article extends Component {
 
     return (
       <div className="container singleArticle">
-        <div className="row">
+        <div id="central">
           <div className="col-lg-8">
             <h1>{title}</h1>
             <div className="row">
-              <div className="col-md-1.5 img">
-                <img
-                  className="rounded-circle"
-                  src={image || 'http://placehold.it/300x300'}
-                />
-                <blockquote>
-                  <h6>{username}</h6>
-                  <i>{DateDisplay(created_on)}</i>
-                  <h6>{read_time}</h6>
-                </blockquote>
+              <div className="col-9 card-title mb-4">
+                <div className="d-flex justify-content-start">
+                  <div className="image-container">
+                    <img className="rounded-circle" src={image || 'http://placehold.it/70x70'} id="imgProfile" />
+                  </div>
+                  <div className="userData ml-3">
+                    <h3 className="d-block">{username}</h3>
+                    <h6 className="d-block">{DateDisplay(created_on)}</h6>
+                    <h6 className="d-block">{read_time}</h6>
+                  </div>
+                </div>
               </div>
-
-              <div
-                className="col-3"
-                hidden={username !== localStorage.getItem('username')}
-              >
+              <div className="col" hidden={username !== localStorage.getItem('username')}>
                 <button
-                  id="edit"
                   type="button"
-                  className="btn btn-primary"
+                  id="edit"
+                  className="btn btn-primary space"
                   onClick={onClickHandler(slug, null, editArticle, 'put')}
                   value="Edit"
-                >
-                  Edit
+                  >
+                Edit
                 </button>
                 <button
-                  id="del"
                   type="button"
+                  id="del"
                   className="btn btn-primary"
                   onClick={onClickHandler(slug, null, doNothing, 'delete')}
                   value="Delete"
-                >
-                  Delete
+                  >
+                Delete
                 </button>
               </div>
             </div>
             <hr />
-            <img
-              src={image_url || 'http://placehold.it/700x300'}
-              className="img-responsive article-img"
-            />
+            {image_url ? <img src={image_url} className="img-responsive article-img" /> : ''}
             <hr />
             <p className="lead">{description}</p>
             <div id="data" className="panel" />
             <br />
             <br />
-
             <Tags tags={tags} />
+            <br />
             <hr />
             <LikeDislikeView />
             <br />
-            {
-                  username !== localStorage.getItem('username')
-                    ? (
-                      <div className="card">
-                        <div className="card-header">
-                          <StarRatingSystem slug={slug} />
-                        </div>
-                      </div>
-                    )
-                    : ''
-              }
-            <hr />
+            {username !== localStorage.getItem('username') ? (
+              <div className="card">
+                <div className="card-header">
+                  <StarRatingSystem slug={slug} />
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
             <div className="well">
               <h4>
                 <FontAwesomeIcon icon="paper-plane" />
                 {' '}
                 Leave a Comment:
               </h4>
-
               <ButtonGroup slug={slug} shareHandler={shareHandler} />
               <form>
                 <div className="form-group">
                   <textarea className="form-control" rows="3" />
                 </div>
-                <button className="btn btn-primary" type="submit">
-                  Comment
-                </button>
+                <button className="btn btn-primary" type="submit">Comment</button>
               </form>
-            </div>
-            <hr />
-            <div>
-              <h3>
-                <FontAwesomeIcon icon="comment" />
-                User One says:
-                <small> 9:41 PM on August 24, 2014</small>
-              </h3>
-              <p>Excellent post! Thank You the great article, it was useful!</p>
-
-              <h3>
-                <FontAwesomeIcon icon="comment" />
-                User Two says:
-                <small> 9:47 PM on August 24, 2014</small>
-              </h3>
-              <p>Excellent post! Thank You the great article, it was useful!</p>
             </div>
           </div>
         </div>
+        <hr />
       </div>
     );
   }

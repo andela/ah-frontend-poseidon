@@ -17,7 +17,6 @@ const authReducer = (state = initialState, action) => {
     case ACTION_TYPE.SIGN_UP_FAILURE:
       return {
         ...state,
-
         signUpFailure: action.errors,
       };
     default:

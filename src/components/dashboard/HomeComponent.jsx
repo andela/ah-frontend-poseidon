@@ -11,26 +11,49 @@ import TagHeader from '../articles/taggedArticles/pageHeaderComponent';
 class Home extends React.Component {
   render() {
     const {
-      articles, getArticle, getTaggedArticles, tagView, tagName,
+      articles, getArticle, getTaggedArticles, tagView, tagName, getArticlesPage, nextPage,
+      prevPage, currentPage,
     } = this.props;
     const articleList = articles || [];
-    if (tagView) {
-      return (
-        <div className="container-fluid">
-          <div className="row">
-            <TagHeader tagName={tagName}/>
-            <div className="col-lg-10 col-md-10 article-content">
-              {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
-            </div>
-          </div>
-        </div>
-      );
-    } return (
+    return (
       <div className="container-fluid">
         <div className="row">
-          <SideBar articles={articleList} getTaggedArticles={getTaggedArticles}/>
+          {tagView ? <TagHeader tagName={tagName} />
+            : <SideBar articles={articleList} getTaggedArticles={getTaggedArticles} />}
           <div className="col-lg-10 col-md-10 article-content">
-            {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
+            {
+              articleList.map(article => (
+                <Article
+                  getArticle={getArticle}
+                  article={article}
+                  key={article.id}
+                />))}
+            <div className="btn-group align-middle">
+              <button
+                type="button"
+                disabled={!prevPage}
+                id="prevPage"
+                className="btn btn-outline-primary"
+                onClick={() => getArticlesPage(`${prevPage}/dgjd`)}
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline-primary rounded-circle"
+              >
+                {currentPage}
+              </button>
+              <button
+                type="button"
+                disabled={!nextPage}
+                id="nextPage"
+                className="btn btn-outline-primary"
+                onClick={() => getArticlesPage(nextPage)}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -56,9 +79,13 @@ Home.propTypes = {
     }),
   ),
   getArticle: PropTypes.func.isRequired,
+  getArticlesPage: PropTypes.func.isRequired,
   getTaggedArticles: PropTypes.func.isRequired,
   tagView: PropTypes.bool.isRequired,
   tagName: PropTypes.string.isRequired,
+  nextPage: PropTypes.string,
+  prevPage: PropTypes.string,
+  currentPage: PropTypes.number,
 };
 
 Home.defaultProps = {

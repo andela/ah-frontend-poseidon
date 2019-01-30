@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import HomeViewTest from '../homeView';
+import HomeViewTest, { HomeView } from '../homeView';
 import Editor from '../../../components/articles/Editor';
 import mockArticles from '../../../components/dashboard/mockData';
 
@@ -18,18 +18,28 @@ const testClickButton = (wrapper, buttonId, mockMethod) => {
 
 const mockStore = configureStore([thunk]);
 
-let props = {
+const homeProps = {
+  getArticle: jest.fn(),
+  articles: mockArticles,
+  nextPage: 'https://ah-backend-poseidon-staging.herokuapp.com/api/articles?page=2',
+  prevPage: '',
+  currentPage: 1,
+  getArticlesPage: jest.fn()
+};
+
+const props = {
   actions: {
     getOneArticle: jest.fn(),
     getDataThunk: jest.fn(),
+    postDataThunk: jest.fn(),
+    deleteArticle: jest.fn(),
   },
   match: { params: 'none' },
   articles: mockArticles,
-  nextPage: '',
+  nextPage: 'https://ah-backend-poseidon-staging.herokuapp.com/api/articles?page=2',
   prevPage: '',
   currentPage: 1,
-  tagView: false,
-  tagName: '',
+
 };
 describe('Home view test', () => {
   let wrapper;
@@ -42,6 +52,7 @@ describe('Home view test', () => {
         article: mockArticles[1],
       },
     });
+    localStorage.setItem('user', 'usertoken');
     wrapper = mount(<Provider store={store}><HomeViewTest {...props} /></Provider>);
   });
   it('renders without crashing', () => {
@@ -51,7 +62,6 @@ describe('Home view test', () => {
     const event = {
       preventDefault: jest.fn(),
     };
-
     wrapper.find('#newArticle').simulate('click', event);
     jest.runAllTimers();
     expect(wrapper.find('#newArticle')).toBeDefined();
@@ -72,5 +82,10 @@ describe('Home view test', () => {
   it('should handle click event on tag', () => {
     wrapper.find('#tag-name').first().simulate('click');
     expect(wrapper.find('#tag-name')).toBeDefined();
+  });
+  it('should fetch and display next articles (pagination)', () => {
+    wrapper = mount(<HomeView {...props} />);
+    const spy = jest.spyOn(wrapper.instance(), 'getArticlesPage');
+    wrapper.find('#nextPage').simulate('click');
   });
 });

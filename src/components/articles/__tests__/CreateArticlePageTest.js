@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { shallow, mount, render } from '../../../__tests__/setup/setupEnzyme';
+import { shallow } from 'enzyme';
 import CreateArticlePage from '../CreateArticlePage';
 import Editor from '../Editor';
 
