@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTags } from '@fortawesome/free-solid-svg-icons';
 
-export default ({tags})=>{
-    return(
-      <div>
-        <i className="fa fa-tags">Tags: </i>
-        {tags.map((tag,i) =><a key={i}><span key={i} className='badge badge-info'>{tag}</span></a>)}
-      </div>
-    )
-}
+library.add(faTags);
+export default ({ tags }) => (
+  <div>
+    <FontAwesomeIcon icon="tags" />
+    {' '}
+Tags:
+    {tags.map((tag, i) => <a key={i}><span key={i} className="badge badge-info">{tag}</span></a>)}
+  </div>
+);

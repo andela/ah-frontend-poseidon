@@ -10,6 +10,7 @@ import { doNothing } from '../../redux/actions/commonActions';
 import ButtonGroup from '../socialShare/buttonGroup';
 import LikeDislikeView from '../../views/LikeDislikeView';
 import StarRatingSystem from '../../views/ratingSystemView';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 fontawesome.library.add(solid, regular);
 
@@ -33,10 +34,10 @@ class Article extends Component {
         slug,
         title,
         description,
-        tags
+        tags,
       },
       onClickHandler,
-      shareHandler
+      shareHandler,
     } = this.props;
 
     return (
@@ -96,19 +97,23 @@ class Article extends Component {
             <hr />
             <LikeDislikeView />
             <br />
-            {username !== localStorage.getItem('username') ? (
-              <div className="card">
-                <div className="card-header">
-                  <StarRatingSystem slug={slug} />
-                </div>
-              </div>
-            ) : (
-              ''
-            )}
-
+            {
+                  username !== localStorage.getItem('username')
+                    ? (
+                      <div className="card">
+                        <div className="card-header">
+                          <StarRatingSystem slug={slug} />
+                        </div>
+                      </div>
+                    )
+                    : ''
+              }
+            <hr />
             <div className="well">
               <h4>
-                <i className="fa fa-paper-plane-o" /> Leave a Comment:
+                <FontAwesomeIcon icon="paper-plane" />
+                {' '}
+                Leave a Comment:
               </h4>
 
               <ButtonGroup slug={slug} shareHandler={shareHandler} />
@@ -124,13 +129,15 @@ class Article extends Component {
             <hr />
             <div>
               <h3>
-                <i className="fa fa-comment">User One says:</i>
+                <FontAwesomeIcon icon="comment" />
+                User One says:
                 <small> 9:41 PM on August 24, 2014</small>
               </h3>
               <p>Excellent post! Thank You the great article, it was useful!</p>
 
               <h3>
-                <i className="fa fa-comment">User Two says:</i>
+                <FontAwesomeIcon icon="comment" />
+                User Two says:
                 <small> 9:47 PM on August 24, 2014</small>
               </h3>
               <p>Excellent post! Thank You the great article, it was useful!</p>
@@ -157,7 +164,7 @@ Article.propTypes = {
       email: PropTypes.string,
       bio: PropTypes.string,
       image: PropTypes.string,
-      following: PropTypes.bool
+      following: PropTypes.bool,
     }),
     favourites_count: PropTypes.number,
     tags: PropTypes.array,
@@ -165,8 +172,8 @@ Article.propTypes = {
     read_time: PropTypes.string,
     id: PropTypes.number,
     likes: PropTypes.number,
-    dislikes: PropTypes.number
-  })
+    dislikes: PropTypes.number,
+  }),
 };
 
 Article.defaultProps = {
@@ -184,7 +191,7 @@ Article.defaultProps = {
       email: '',
       bio: '',
       image: null,
-      following: false
+      following: false,
     },
     favourites_count: 0,
     tags: [],
@@ -192,8 +199,8 @@ Article.defaultProps = {
     read_time: '',
     id: 0,
     likes: 0,
-    dislikes: 0
-  }
+    dislikes: 0,
+  },
 };
 
 export default Article;

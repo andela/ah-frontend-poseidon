@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTags } from '@fortawesome/free-solid-svg-icons';
 import './Dashboard.scss';
+
+library.add(faTags);
 
 class SideBar extends Component {
   renderArticle = (article) => {
@@ -20,7 +25,7 @@ class SideBar extends Component {
     return (
       <div className="nav-item" key={id}>
         <div className="tag-item">
-          {tags.map((tag, i) =><a key={i}><span key={i} className="badge badge-info" id="tag-name" onClick={getTaggedArticles(tag)}>{tag}</span></a>)}
+          {tags.map((tag, i) => <a key={i}><span key={i} className="badge badge-info" id="tag-name" onClick={getTaggedArticles(tag)}>{tag}</span></a>)}
         </div>
       </div>
     );
@@ -35,7 +40,9 @@ class SideBar extends Component {
             { articles.map(article => (this.renderArticle(article))) }
           </ul>
           <div>
-            <i className="fa fa-tags">Tags: </i>
+            <FontAwesomeIcon icon="tags" />
+            {' '}
+Tags:
             {articles.map(article => (this.renderTags(article)))}
           </div>
         </div>

@@ -8,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 Object.defineProperty(global.document, 'getElementById', {
   value: jest.fn(() => ({ innerHTML: ['none'] })),
-  writable: true
+  writable: true,
 });
 
 Object.defineProperty(global.document, 'execCommand', {

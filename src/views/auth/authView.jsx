@@ -8,7 +8,7 @@ import { API } from '../../constants';
 import postDataThunkNoHeader from '../../redux/thunks';
 import {
   signUpActionCreatorSuccess,
-  signUpActionCreatorFailure
+  signUpActionCreatorFailure,
 } from '../../redux/actions/authentication';
 import CircularProgressLoader from '../../components/progress';
 
@@ -22,14 +22,15 @@ class AuthView extends React.Component {
     addNewPassword: true,
     loader: {
       success: false,
-      loading: false
-    }
+      loading: false,
+    },
   };
 
   componentWillReceiveProps(nextProps) {
     const { signUpData, signUpErrors } = nextProps;
 
     if (signUpData || signUpErrors) {
+      // eslint-disable-next-line
       signUpData
         ? this.redirectOnSuccesfullLogin(signUpData)
         : notify(this.extractError(signUpErrors.errors).toString(), 'error');
@@ -60,25 +61,25 @@ class AuthView extends React.Component {
     ;
   };
 
-  extractError = errors => {
+  extractError = (errors) => {
     const errs = Object.keys(errors).map(key => errors[key]);
     return errs && errs.length > 1 ? errs[0] : errs;
   };
 
-  handleChangeFormStatus = event => {
+  handleChangeFormStatus = (event) => {
     event.preventDefault();
     const { isSignUp } = this.state;
     const newStatus = !isSignUp;
     this.setState({ isSignUp: newStatus });
   };
 
-  handleLogin = event => {
+  handleLogin = (event) => {
     event.preventDefault();
 
     const {
       postDataThunkNoHeader,
       signUpActionCreatorSuccess,
-      signUpActionCreatorFailure
+      signUpActionCreatorFailure,
     } = this.props;
 
     const username = event.target.elements.username.value;
@@ -88,23 +89,23 @@ class AuthView extends React.Component {
       {
         user: {
           username,
-          password
-        }
+          password,
+        },
       },
       signUpActionCreatorSuccess,
       signUpActionCreatorFailure,
-      'post'
+      'post',
     );
 
     this.setState({ loader: { loading: true } });
   };
 
-  handleSignup = event => {
+  handleSignup = (event) => {
     event.preventDefault();
     const {
       postDataThunkNoHeader,
       signUpActionCreatorSuccess,
-      signUpActionCreatorFailure
+      signUpActionCreatorFailure,
     } = this.props;
 
     const username = event.target.elements.username.value;
@@ -117,12 +118,12 @@ class AuthView extends React.Component {
         user: {
           username,
           email,
-          password
-        }
+          password,
+        },
       },
       signUpActionCreatorSuccess,
       signUpActionCreatorFailure,
-      'post'
+      'post',
     );
     this.setState({ loader: { loading: true } });
   };
@@ -138,7 +139,7 @@ class AuthView extends React.Component {
     title,
     required,
     autoFocus,
-    pattern
+    pattern,
   ) => (
       <div className="form-label-group">
         <label htmlFor={htmlFor}>{label}</label>
@@ -188,32 +189,32 @@ AuthView.propTypes = {
   signUpActionCreatorFailure: PropTypes.func.isRequired,
   signUpData: PropTypes.shape({
     Message: PropTypes.string,
-    token: PropTypes.string
+    token: PropTypes.string,
   }),
   signUpErrors: PropTypes.shape({
-    errors: PropTypes.shape()
-  })
+    errors: PropTypes.shape(),
+  }),
 };
 
 AuthView.defaultProps = {
   signUpErrors: {},
-  signUpData: {}
+  signUpData: {},
 };
 
 const actionCreators = {
   postDataThunkNoHeader,
   signUpActionCreatorSuccess,
-  signUpActionCreatorFailure
+  signUpActionCreatorFailure,
 };
 const mapStateToProps = state => ({
   signUpData: state.authReducer.signUpSuccess,
   signUpErrors: state.authReducer.signUpFailure,
-  auth: state.loginreducer
+  auth: state.loginreducer,
 });
 
 export { AuthView as AuthViewTest };
 
 export default connect(
   mapStateToProps,
-  actionCreators
+  actionCreators,
 )(AuthView);
