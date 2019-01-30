@@ -36,9 +36,12 @@ class SideBar extends Component {
     return (
       <nav className="col-md-2 d-none d-md-block bg-light sidebar">
         <div className="sidebar-sticky">
+          <h6>Article Titles</h6>
+          <hr />
           <ul className="nav flex-column">
             { articles.map(article => (this.renderArticle(article))) }
           </ul>
+          <hr />
           <div>
             <FontAwesomeIcon icon="tags" />
             {' '}

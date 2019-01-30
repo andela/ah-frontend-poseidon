@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createArticle, getAllArticles, shareArticle } from '../../redux/actions/ArticleActionCreators';
+import notify from 'msg-notify';
+import {
+  createArticle, getAllArticles, shareArticle, bookMarkArticle,
+} from '../../redux/actions/ArticleActionCreators';
 import { CreateArticlePage, ArticlePage } from '.';
 import './articles.scss';
 
@@ -16,14 +19,14 @@ export class ArticleView extends React.Component {
       viewArticle: false,
       endpointOption: 'articles/',
       createAction: createArticle,
-      createMethod: 'post'
+      createMethod: 'post',
     };
 
     this.handleCreate = this.handleCreate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleShare = this.handleShare.bind(this);
+    this.handleBookMark = this.handleBookMark.bind(this);
   }
-
   handleChangeValue = param => e => this.setState({ [param]: e.target.value });
 
   handleArticleBody = (e) => {
@@ -104,14 +107,26 @@ export class ArticleView extends React.Component {
     }
   };
 
-  handleShare = slug => e => {
+  handleBookMark = slug => async (e) => {
+    e.preventDefault();
+    const endpoint = `/${slug}/bookmark/`;
+    const data = '';
+    const { postDataThunk } = this.props;
+    const { createMethod } = this.state;
+    await postDataThunk(endpoint, data, bookMarkArticle, createMethod);
+    const { message } = this.props;
+    notify(message.message.message, 'success');
+  }
+
+  handleShare = slug => (e) => {
     e.preventDefault();
     const endpoint = `/${slug}/email`;
     const data = '';
     const { postDataThunk } = this.props;
     const { createMethod } = this.state;
     postDataThunk(endpoint, data, shareArticle, createMethod);
-  }
+    notify('Check your email', 'success');
+  };
 
   render() {
     const { viewArticle, article } = this.props;
@@ -130,15 +145,16 @@ export class ArticleView extends React.Component {
     };
     return (
       <div className="container wrapperId">
-        {viewArticle ? <ArticlePage article={article} onClickHandler={this.handleDelete} shareHandler={this.handleShare} />
+        {viewArticle ? <ArticlePage article={article} onClickHandler={this.handleDelete} shareHandler={this.handleShare} bookMark={this.handleBookMark} />
           : <CreateArticlePage {...createArticleProps} />}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ articles: { article } }) => ({
+const mapStateToProps = ({ articles: { article }, message }) => ({
   article,
+  message,
 });
 
 export default connect(mapStateToProps)(ArticleView);
