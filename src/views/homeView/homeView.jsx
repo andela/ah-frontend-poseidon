@@ -58,6 +58,7 @@ export class HomeView extends Component {
   getArticle = slug => {
     const { actions } = this.props;
     actions.getOneArticle(slug);
+    actions.getDataThunk(`articles/${slug}`, getOneArticle(slug));
     this.singleArticlePage(0, true);
     this.setState({ goToArticles: true });
   };

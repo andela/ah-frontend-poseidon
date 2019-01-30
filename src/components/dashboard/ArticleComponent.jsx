@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './Dashboard.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import fontawesome from '@fortawesome/fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
@@ -13,7 +14,7 @@ const Article = (props) => {
   const getPlainText = data => data.replace(/<(?:.|\n)*?>/gm, '');
 
   const {
-    title, body, author, created_on, image_url, description, slug, average_rating
+    title, body, author, created_on, image_url, description, slug, average_rating, view_counts,
   } = props.article;
   return (
     <div className="jumbotron col-lg-12 col-md-12 article-row">
@@ -36,6 +37,11 @@ const Article = (props) => {
               { moment(created_on).fromNow() }
             </i>
             <StarRating rating={average_rating} />
+            <p className="btn float-right">
+              <FontAwesomeIcon icon="eye" />
+              {' '}
+              views {view_counts}
+            </p>
           </div>
         </div>
       </div>
