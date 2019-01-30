@@ -87,3 +87,26 @@ p {
 .star-rating {
   width: 20%;
 }
+.kep-login-facebook.metro{
+    height: 43px;
+    background-color: #29487d;
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 245, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+    padding: 0px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Roboto, sans-serif;
+    transition: opacity 0.5s ease 0s;
+    margin-top: 2em;
+    
+}
+button {
+    -webkit-appearance: button;
+    height: 43px;
+    transition: opacity 0.5s ease 0s;
+    margin-left: 2em;
+}

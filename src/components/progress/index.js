@@ -5,8 +5,8 @@ import { BounceLoader } from 'react-spinners';
 const CircularProgressLoader = ({ loading }) => {
   /** function component to render a circular spinner */
   const override = '    display: \'block\',\n'
-      + '    margin: \'0 auto\',\n'
-      + '    \'border-color\': \'red\',';
+    + '    margin: \'0 auto\',\n'
+    + '    \'border-color\': \'red\',';
 
   return (
     !loading

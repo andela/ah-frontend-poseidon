@@ -135,10 +135,15 @@ describe('authView component', () => {
 });
 
 describe(' Chnages isSignUp to false on click', () => {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  document.getElementsByTagName('head')[0].appendChild(script);
+
+  const div = document.createElement('div');
   const wrapper = mount(
     <Provider store={store}>
       <AuthViewConnected props={props} history={historyMock} />
-    </Provider>,
+    </Provider>, div,
   );
   const event = {
     preventDefault: jest.fn(),

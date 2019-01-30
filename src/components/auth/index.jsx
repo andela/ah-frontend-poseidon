@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Facebook from '../Facebook';
+import Google from '../Google';
 
 const SignUpForm = (props) => {
   const {
@@ -82,6 +82,13 @@ const SignUpForm = (props) => {
                 </button>
               </div>
             </form>
+            {' '}
+            <div className="form-label-group">
+              <div hidden={isSignUp}>
+                <Facebook />
+                <Google />
+              </div>
+            </div>
             <div className="form-label-group">
               <button
                 type="button"
@@ -95,10 +102,10 @@ const SignUpForm = (props) => {
                       Already have an account? Log-in
                     </div>
                   ) : (
-                    <div role="button" onClick={handleLogin}>
-                      Don't have an account? Register
+                      <div role="button" onClick={handleLogin}>
+                        Don't have an account? Register
                     </div>
-                  )}
+                    )}
                 </span>
               </button>
               <div
@@ -133,10 +140,10 @@ SignUpForm.propTypes = {
 };
 
 SignUpForm.defaultProps = {
-  onSubmit: () => {},
-  handleLogin: () => {},
-  renderInput: () => {},
-  changeToResetPassword: () => {},
+  onSubmit: () => { },
+  handleLogin: () => { },
+  renderInput: () => { },
+  changeToResetPassword: () => { },
   isSignUp: true,
   isResetPassword: true,
   addNewPassword: true,

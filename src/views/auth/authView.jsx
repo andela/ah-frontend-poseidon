@@ -37,15 +37,16 @@ class AuthView extends React.Component {
     }
   }
 
-  redirectOnSuccesfullLogin = nextProps => {
-    const message =
-      nextProps.Message ||
-      'You have succesfully Logged into Authorz Haven\
+  redirectOnSuccesfullLogin = (nextProps) => {
+    const message = nextProps.Message
+      // eslint-disable-next-line no-multi-str
+      || 'You have succesfully Logged into Authorz Haven\
     success';
     localStorage.setItem('user', nextProps.token);
     localStorage.setItem('username', nextProps.username);
     notify(message, 'success');
     if (!nextProps.Message) {
+      // eslint-disable-next-line react/destructuring-assignment
       this.props.history.push('/');
     }
 
@@ -54,7 +55,9 @@ class AuthView extends React.Component {
 
   changeToResetPassword = () => {
     // event.preventDefault()
-    this.props.history.push('/reset-password');
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.history.push('/reset-password')
+    ;
   };
 
   extractError = errors => {
@@ -137,21 +140,21 @@ class AuthView extends React.Component {
     autoFocus,
     pattern
   ) => (
-    <div className="form-label-group">
-      <label htmlFor={htmlFor}>{label}</label>
-      <input
-        type={type}
-        id={id}
-        name={name}
-        className={className}
-        placeholder={placeHolder}
-        pattern={pattern}
-        title={title}
-        required={required}
-        autoFocus={autoFocus}
-      />
-    </div>
-  );
+      <div className="form-label-group">
+        <label htmlFor={htmlFor}>{label}</label>
+        <input
+          type={type}
+          id={id}
+          name={name}
+          className={className}
+          placeholder={placeHolder}
+          pattern={pattern}
+          title={title}
+          required={required}
+          autoFocus={autoFocus}
+        />
+      </div>
+    );
 
   render() {
     const { loader, errors, isSignUp } = this.state;
