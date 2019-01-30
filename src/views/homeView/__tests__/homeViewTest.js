@@ -27,7 +27,7 @@ const homeProps = {
   getArticlesPage: jest.fn()
 };
 
-const props = {
+const props = {             
   actions: {
     getOneArticle: jest.fn(),
     getDataThunk: jest.fn(),
@@ -50,6 +50,10 @@ describe('Home view test', () => {
       articles: {
         articles: mockArticles,
         article: mockArticles[1],
+      },
+      comments: {
+        comments: [{}],
+        current_comment: {},
       },
     });
     localStorage.setItem('user', 'usertoken');

@@ -34,7 +34,7 @@ class Home extends React.Component {
                 disabled={!prevPage}
                 id="prevPage"
                 className="btn btn-outline-primary"
-                onClick={() => getArticlesPage(`${prevPage}/dgjd`)}
+                onClick={() => getArticlesPage(prevPage)}
               >
                 Previous
               </button>

@@ -19,3 +19,7 @@ export const Rate_Article = 'RATE_ARTICLE';
 export const SHARE_ARTICLE = 'SHARE_ARTICLE';
 export const LIKE_ARTICLE = 'LIKE_ARTICLE';
 export const DISLIKE_ARTICLE = 'DISLIKE_ARTICLE';
+export const COMMENTS = {
+  GET_COMMENTS: 'GET_COMMENTS',
+  POST_COMMENT: 'POST_COMMENT',
+};
