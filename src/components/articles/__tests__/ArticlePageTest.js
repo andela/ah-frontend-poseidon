@@ -16,7 +16,13 @@ describe('Article page', () => {
   const onClick = jest.fn();
 
   beforeEach(() => {
-    wrapper = shallow(<ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} />);
+    wrapper = shallow(
+      <ArticlePage
+        article={article.articles}
+        onClickHandler={onClick}
+        shareHandler={onClick}
+      />
+    );
   });
 
   afterEach(() => {
@@ -44,6 +50,14 @@ describe('Article page', () => {
   it('data innerHTML should be equal to article body', () => {
     jest.resetModules();
     jest.clearAllMocks();
-    wrapper = mount(<Provider store={store}><ArticlePage article={article.articles} onClickHandler={onClick} shareHandler={onClick} /></Provider>);
+    wrapper = shallow(
+      <Provider store={store}>
+        <ArticlePage
+          article={article.articles}
+          onClickHandler={onClick}
+          shareHandler={onClick}
+        />
+      </Provider>
+    );
   });
 });

@@ -8,8 +8,11 @@ import './articles/articles.scss';
 class Home extends React.Component {
   render() {
     const {
-      articles, getArticle,
-      nextPage, prevPage, currentPage,
+      articles,
+      getArticle,
+      nextPage,
+      prevPage,
+      currentPage
     } = this.props;
     const articleList = articles || [];
     return (
@@ -17,14 +20,19 @@ class Home extends React.Component {
         <div className="row">
           <SideBar articles={articleList} />
           <div className="col-lg-10 col-md-10 article-content">
-            {articleList.map(article => (<Article getArticle={getArticle} article={article} key={article.id} />))}
+            {articleList.map(article => (
+              <Article
+                getArticle={getArticle}
+                article={article}
+                key={article.id}
+              />
+            ))}
           </div>
         </div>
       </div>
     );
   }
 }
-
 
 Home.propTypes = {
   articles: PropTypes.arrayOf(
@@ -39,9 +47,9 @@ Home.propTypes = {
       favorited: PropTypes.boolean,
       favourites_count: PropTypes.number.isRequired,
       author: PropTypes.object.isRequired,
-      id: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+      id: PropTypes.number.isRequired
+    })
+  ).isRequired
 };
 
 export default Home;

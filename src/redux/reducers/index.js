@@ -1,12 +1,18 @@
 /** module to combine all reducers */
-import { combineReducers } from 'redux';
-import authReducer from './authentication';
-import profile from './profileReducer';
-import articles from './ArticleReducer';
-import error from './ErrorReducer';
+import { combineReducers } from "redux";
+import authReducer from "./authentication";
+import profile from "./profileReducer";
+import articles from "./ArticleReducer";
+import error from "./ErrorReducer";
+import optionsReducer from "./optionReducer";
 
-const rootReducer = () => combineReducers({
-  profile, authReducer, articles, error,
-});
+const rootReducer = () =>
+  combineReducers({
+    profile,
+    authReducer,
+    articles,
+    error,
+    optionsReducer
+  });
 
 export default rootReducer;

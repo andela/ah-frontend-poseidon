@@ -2,10 +2,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from 'redux-logger';
 import rootReducer from '../reducers';
 
-export default function (initialState = {}) {
+export default function(initialState = {}) {
   /** This creates the Redux store */
-  return createStore(rootReducer(), initialState, composeWithDevTools(applyMiddleware(thunk)));
+  return createStore(
+    rootReducer(),
+    initialState,
+    composeWithDevTools(applyMiddleware(thunk))
+  );
 }
