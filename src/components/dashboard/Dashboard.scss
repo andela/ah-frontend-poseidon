@@ -19,6 +19,10 @@ p {
   z-index: 120;
 }
 
+.nav-link {
+  color: $grey;
+}
+
 .article-content {
   margin: {
     left: auto;
@@ -27,9 +31,6 @@ p {
   }
 }
 
-.nav-link {
-  color: $grey;
-}
 
 .jumbotron {
   margin-right: 5px;
@@ -97,3 +98,20 @@ div.article-row {
   cursor: pointer;
 }
 .tem{justify-content: center;}
+
+.search-by {
+  border: none;
+  color: rgba(255,255,255,.5);
+
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.article-found {
+  margin: {
+    top: 20%;
+    left: 20%;
+  }
+}

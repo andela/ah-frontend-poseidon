@@ -32,7 +32,9 @@ describe('getDatathunk', () => {
       .dispatch(getDataThunk('articles', getAllArticles))
       .then(() => {
         const { articles } = mockArticles;
-        expect(store.getActions()).toEqual([{ type: GET_ALL_ARTICLES, articles }]);
+        expect(
+          store.getActions(),
+        ).toEqual([{ type: GET_ALL_ARTICLES, articles }, { type: ERROR_OCCURRED, errMsg: null }]);
       });
   });
 

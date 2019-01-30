@@ -52,7 +52,12 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <NavBar />,
+        <NavBar
+          createArticle={[Function]}
+          keyPress={[Function]}
+          searchClick={[Function]}
+          searchInput={[Function]}
+        />,
         <ProfilePage
           onClick={[Function]}
           profile={
@@ -73,7 +78,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "createArticle": [Function],
+          "keyPress": [Function],
+          "searchClick": [Function],
+          "searchInput": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -106,7 +116,12 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <NavBar />,
+          <NavBar
+            createArticle={[Function]}
+            keyPress={[Function]}
+            searchClick={[Function]}
+            searchInput={[Function]}
+          />,
           <ProfilePage
             onClick={[Function]}
             profile={
@@ -127,7 +142,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "createArticle": [Function],
+            "keyPress": [Function],
+            "searchClick": [Function],
+            "searchInput": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

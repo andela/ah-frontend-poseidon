@@ -39,8 +39,16 @@ const props = {
   nextPage: 'https://ah-backend-poseidon-staging.herokuapp.com/api/articles?page=2',
   prevPage: '',
   currentPage: 1,
-
+  handleSearchInput: jest.fn(),
+  handleSearchClick: jest.fn(),
 };
+
+const state = {
+  keyword: '',
+  author: '',
+  tags: '',
+};
+
 describe('Home view test', () => {
   let wrapper;
 
@@ -55,9 +63,12 @@ describe('Home view test', () => {
         comments: [{}],
         current_comment: {},
       },
+      error: {
+        error: null,
+      },
     });
     localStorage.setItem('user', 'usertoken');
-    wrapper = mount(<Provider store={store}><HomeViewTest {...props} /></Provider>);
+    wrapper = mount(<Provider store={store}><HomeViewTest {...props} {...state} /></Provider>);
   });
   it('renders without crashing', () => {
     expect(wrapper.find('SideBar')).toBeDefined();
@@ -87,9 +98,55 @@ describe('Home view test', () => {
     wrapper.find('#tag-name').first().simulate('click');
     expect(wrapper.find('#tag-name')).toBeDefined();
   });
+
   it('should fetch and display next articles (pagination)', () => {
-    wrapper = mount(<HomeView {...props} />);
+    wrapper = mount(<HomeView {...props} error={null} />);
     const spy = jest.spyOn(wrapper.instance(), 'getArticlesPage');
     wrapper.find('#nextPage').simulate('click');
   });
+
+  it('should change state when search input is given', () => {
+    const event = { target: { name: 'keyword', value: 'dragon' } };
+    wrapper.find('.search').simulate('change', event);
+    expect(wrapper.find('.search')).toBeDefined();
+  });
+
+  it('should handle click event on search icon', () => {
+    const event = { target: { name: 'keyword', value: 'dragon' } };
+    wrapper.find('.search').simulate('change', event);
+    wrapper.find('.search-icon').first().simulate('click');
+    expect(wrapper.find('.search-icon')).toBeDefined();
+  });
+
+  it('should handle click event on apply filter - author', () => {
+    const event = { target: { name: 'author', value: 'jake' } };
+    wrapper.find('.author').simulate('change', event);
+    wrapper.find('.filter').first().simulate('click');
+    expect(wrapper.find('.filter')).toBeDefined();
+  });
+
+  it('should handle click event on apply filter - tags', () => {
+    const event = { target: { name: 'tags', value: 'dragons' } };
+    wrapper.find('.tags').simulate('change', event);
+    wrapper.find('.filter').first().simulate('click');
+    expect(wrapper.find('.filter')).toBeDefined();
+  });
+
+  it('should handle click event on apply filter - tags&author', () => {
+    const event1 = { target: { name: 'author', value: 'jake' } };
+    wrapper.find('.author').simulate('change', event1);
+    const event = { target: { name: 'tags', value: 'dragons' } };
+    wrapper.find('.tags').simulate('change', event);
+    wrapper.find('.filter').first().simulate('click');
+    expect(wrapper.find('.filter')).toBeDefined();
+  });
+
+  it('should key press event', () => {
+    const getData = wrapper.instance().props.children.props.actions.getDataThunk;
+    const event = { target: { name: 'keyword', value: 'dragon' } };
+    wrapper.find('.search').simulate('change', event);
+    wrapper.find('.search').simulate('keypress', { charCode: 13, preventDefault: jest.fn() });
+    expect(getData).toHaveBeenCalled();
+  });
+
 });
