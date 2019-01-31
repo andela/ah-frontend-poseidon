@@ -41,6 +41,15 @@ const errorItems = [
   { title: 'component will recieve props single error', error: mockError },
   { title: 'component will recieve props multiple error', error: mockErrors },
 ];
+const propItems = [
+  { title: 'component will recieve props user' },
+  { title: 'user login changes props' },
+
+];
+const signUpState = [
+  { title: 'isSignup changes to false when handleChangeFormStatus is activated', isSignUp: false },
+  { title: 'isSignup changes to true when handleChangeFormStatus is activated', isSignUp: true },
+];
 const historyMock = { push: jest.fn() };
 const props = {
   history: historyMock,
@@ -86,22 +95,7 @@ describe('authView component', () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  it('component will recieve props user', () => {
-    const wrapUser = shallow(<AuthViewTest {...props} />);
-    wrapUser.setProps(
-      {
-        signUpData: mockSignUp,
-        signUpErrors: null,
-      },
-      () => {
-        expect(wrapUser.state()).toEqual(
-          expect.objectContaining({ loader: { loading: false } }),
-        );
-      },
-    );
-  });
-
-  it(' user login changers props', () => {
+  propItems.forEach(item => it(item.title, () => {
     const wrapUser = shallow(<AuthViewTest {...props} />);
     wrapUser.setProps(
       {
@@ -114,7 +108,7 @@ describe('authView component', () => {
         );
       },
     );
-  });
+  }));
 
   errorItems.forEach(item => it(item.title, () => {
     const wrapError = shallow(<AuthViewTest {...props} />);
@@ -155,15 +149,10 @@ describe(' Chnages isSignUp to false on click', () => {
   };
   const wrapped = wrapper.find('#change-login');
 
-  it('isSignup changes to false when handleChangeFormStatus is activated', () => {
+  signUpState.forEach(item => it(item.title, () => {
     wrapped.simulate('click', event);
-    expect(wrapper.find('AuthView').state('isSignUp')).toEqual(false);
-  });
-
-  it('isSignup changes to true when handleChangeFormStatus is activated', () => {
-    wrapped.simulate('click', event);
-    expect(wrapper.find('AuthView').state('isSignUp')).toEqual(true);
-  });
+    expect(wrapper.find('AuthView').state('isSignUp')).toEqual(item.isSignUp);
+  }));
 
   it('handleLogin should be called on login ', () => {
     wrapped.simulate('click', event);
@@ -172,11 +161,6 @@ describe(' Chnages isSignUp to false on click', () => {
     expect(wrapper.find('AuthView').state('loader')).toEqual({
       loading: true,
     });
-  });
-  it('test change to reset password form', () => {
-    wrapper.find('#reset').simulate('click');
-    expect(props.history.push).toHaveBeenCalled();
-
   });
   it('test change to reset password form', () => {
     wrapper.find('#reset').simulate('click');

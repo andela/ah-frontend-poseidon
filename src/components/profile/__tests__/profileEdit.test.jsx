@@ -1,6 +1,7 @@
 import React from 'react';
-import ProfileEditComponent from '../profileEditComponent';
 import { mount, shallow } from 'enzyme';
+import ProfileEditComponent from '../profileEditComponent';
+
 
 describe('Test profile edit page', () => {
   let wrapper;
@@ -13,9 +14,29 @@ describe('Test profile edit page', () => {
       following: false,
     },
   };
+  
   const mockOnChange = jest.fn();
   const mockOnClick = jest.fn();
   const mockOnSubmit = jest.fn();
+
+  const click = [
+    { title: 'simulates submit on clicking save button', button: '.save', expected: 'submit' },
+    { title: 'simulates clicking cancel button', button: '.btn-outline-danger', expected: 'submit' },
+    { title: 'simulates clicking change image', button: '.file-upload', expected: 'click' },
+  ];
+  const fields = [
+    { title: 'renders input fields', input: 'input' },
+    { title: 'renders two buttons', input: 'button' },
+  ];
+  
+  const change = [
+    { title: 'handleChange should set state', button: '.save', expected: 'submit' },
+    { title: 'handleChange should set image state', button: '.save', expected: 'submit' },
+
+  ];
+  const onClickChange = jest.fn();
+  const onChange = jest.fn();
+
   beforeEach(() => {
     wrapper = mount(<ProfileEditComponent {...props} onChange={mockOnChange} onClick={mockOnClick} onSubmit={mockOnSubmit}/>);
   });
@@ -24,15 +45,10 @@ describe('Test profile edit page', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders input fields', () => {
-    const inputFields = wrapper.find('input');
+  fields.forEach(item => it(item.title, () => {
+    const inputFields = wrapper.find(item.input);
     expect(inputFields).toHaveLength(2);
-  });
-
-  it('renders two buttons', () => {
-    const inputFields = wrapper.find('button');
-    expect(inputFields).toHaveLength(2);
-  });
+  }));
 
   it('renders textarea', () => {
     const inputFields = wrapper.find('textarea');
@@ -44,23 +60,16 @@ describe('Test profile edit page', () => {
     expect(inputLabel).toBeTruthy();
   });
 
-  it('simulates submit on clicking save button', () => {
-    wrapper.find('.save').simulate('click');
-    expect(mockOnSubmit.mock.calls.length).toEqual(1);
-  });
-
-  it('simulates clicking cancel button', () => {
-    wrapper.find('.btn-outline-danger').simulate('click');
-    expect(mockOnSubmit.mock.calls.length).toEqual(1);
-  });
-
-  it('simulates clicking change image', () => {
-    wrapper.find('.file-upload').simulate('click');
-    expect(mockOnClick.mock.calls.length).toEqual(1);
-  });
+  click.forEach(item => it(item.title, () => {
+    wrapper.find(item.button).simulate('click');
+    const check = {
+      submit: mockOnSubmit.mock.calls.length,
+      click: mockOnClick.mock.calls.length,
+    }
+    expect(check[item.expected]).toEqual(1);
+  }));
 
   it('handleChange should set state', () => {
-    const onChange = jest.fn();
     const event = 'bill';
     const wrapper = shallow(<ProfileEditComponent onChange={onChange} />);
     wrapper.find('#inlineFormInput').simulate('change', event);
@@ -68,12 +77,13 @@ describe('Test profile edit page', () => {
   });
 
   it('handleChange should set image state', () => {
-    const onClickChange = jest.fn();
     const event = 'https://res.cloudinary.com/dos4j4vpc/image/upload/v1547647373/poseidon/cpih2ylhazsnidell5yl.jpg';
     const wrapper = shallow(<ProfileEditComponent onClickChange={onClickChange} />);
     wrapper.find('.file-upload').simulate('click', event);
     expect(onClickChange).toHaveBeenCalledWith('https://res.cloudinary.com/dos4j4vpc/image/upload/v1547647373/poseidon/cpih2ylhazsnidell5yl.jpg');
   });
+
+
 
   it('renders image with url', () => {
     const props = {
