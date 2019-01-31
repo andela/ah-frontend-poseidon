@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import fontawesome from '@fortawesome/fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tags from './Tags';
 import { editArticle } from '../../redux/actions/ArticleActionCreators';
 import { doNothing } from '../../redux/actions/commonActions';
@@ -34,6 +34,7 @@ class Article extends Component {
         image_url,
         description,
         tags,
+        results,
       },
       onClickHandler,
       shareHandler,
@@ -54,6 +55,9 @@ class Article extends Component {
                     <h3 className="d-block">{username}</h3>
                     <h6 className="d-block">{DateDisplay(created_on)}</h6>
                     <h6 className="d-block">{read_time}</h6>
+                    {/* <h6 className="follow">follow</h6> */}
+                    {!results[0] ? <ButtonsFollowUnfollow id="follow" onClick={() => this.followUser(followedUsername)} followedUsername={followedUsername} innerText="Follow" />
+                      : <ButtonsFollowUnfollow id="unfollow" onClick={() => this.unfollowUser(followedUsername)} followedUsername={followedUsername} innerText="Unfollow" />}
                   </div>
                 </div>
               </div>
@@ -64,8 +68,8 @@ class Article extends Component {
                   className="btn btn-primary space"
                   onClick={onClickHandler(slug, null, editArticle, 'put')}
                   value="Edit"
-                  >
-                Edit
+                >
+                  Edit
                 </button>
                 <button
                   type="button"
@@ -73,8 +77,8 @@ class Article extends Component {
                   className="btn btn-primary"
                   onClick={onClickHandler(slug, null, doNothing, 'delete')}
                   value="Delete"
-                  >
-                Delete
+                >
+                  Delete
                 </button>
               </div>
             </div>
