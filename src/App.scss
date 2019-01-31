@@ -29,7 +29,7 @@ $color-alert: #b71c1c;
 .card-1 {
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, .45);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .header {
@@ -45,7 +45,8 @@ label {
   margin-top: 2em;
 }
 
-.btn-link, .sign-up {
+.btn-link,
+.sign-up {
   color: $colour;
 }
 
@@ -68,8 +69,8 @@ p {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
 }
 
 .lds-ripple {
@@ -80,33 +81,33 @@ p {
 
 p {
   font: {
-    family: "Roboto";
+    family: 'Roboto';
   }
 }
 
 .star-rating {
   width: 20%;
 }
-.kep-login-facebook.metro{
-    height: 43px;
-    background-color: #29487d;
-    display: inline-flex;
-    align-items: center;
-    color: rgba(255, 255, 245, 255);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
-    padding: 0px;
-    border-radius: 2px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: Roboto, sans-serif;
-    transition: opacity 0.5s ease 0s;
-    margin-top: 2em;
-    
+.kep-login-facebook.metro {
+  height: 43px;
+  background-color: #29487d;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 245, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+  padding: 0px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+  transition: opacity 0.5s ease 0s;
+  margin-top: 2em;
 }
 button {
-    -webkit-appearance: button;
-    height: 43px;
-    transition: opacity 0.5s ease 0s;
-    margin-left: 1em;
+  -webkit-appearance: button;
+  height: 43px;
+  transition: opacity 0.5s ease 0s;
+  margin-left: 1em;
 }

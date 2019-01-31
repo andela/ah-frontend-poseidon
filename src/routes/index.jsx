@@ -12,6 +12,7 @@ import HomeView from '../views/homeView/homeView';
 import { getDataThunk } from '../redux/thunks';
 import { getAllArticles } from '../redux/actions/ArticleActionCreators';
 import LikeDislikeView from '../views/LikeDislikeView';
+import reportView from '../views/reportView';
 
 export const store = configureStore();
 store.dispatch(getDataThunk('articles', getAllArticles));
@@ -33,6 +34,7 @@ class Routes extends Component {
               component={PasswordResetView}
             />
             <Route path="/likedislike" component={LikeDislikeView} />
+            <Route paht="/report" component={reportView} />
           </Switch>
         </BrowserRouter>
       </Provider>

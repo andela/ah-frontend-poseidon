@@ -8,12 +8,13 @@ import ButtonGroup from '../socialShare/buttonGroup';
 import LikeDislikeView from '../../views/LikeDislikeView';
 import StarRatingSystem from '../../views/ratingSystemView';
 import Comments from '../comments/commentsComponent';
+import ReportView from '../../views/reportView';
 
 const DateDisplay = dateString => new Date(dateString).toDateString();
 class Article extends Component {
   componentDidMount() {
     const {
-      article: { body },
+      article: { body }
     } = this.props;
     document.getElementById('data').innerHTML = body;
   }
@@ -28,10 +29,10 @@ class Article extends Component {
         slug,
         image_url,
         description,
-        tags,
+        tags
       },
       onClickHandler,
-      shareHandler,
+      shareHandler
     } = this.props;
 
     return (
@@ -43,7 +44,11 @@ class Article extends Component {
               <div className="col-8 card-title mb-4">
                 <div className="d-flex justify-content-start">
                   <div className="image-container">
-                    <img className="rounded-circle" src={image || 'http://placehold.it/70x70'} id="imgProfile" />
+                    <img
+                      className="rounded-circle"
+                      src={image || 'http://placehold.it/70x70'}
+                      id="imgProfile"
+                    />
                   </div>
                   <div className="userData ml-3">
                     <h3 className="d-block">{username}</h3>
@@ -52,15 +57,18 @@ class Article extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col" hidden={username !== localStorage.getItem('username')}>
+              <div
+                className="col"
+                hidden={username !== localStorage.getItem('username')}
+              >
                 <button
                   type="button"
                   id="edit"
                   className="btn btn-primary space"
                   onClick={onClickHandler(slug, null, editArticle, 'put')}
                   value="Edit"
-                  >
-                Edit
+                >
+                  Edit
                 </button>
                 <button
                   type="button"
@@ -68,13 +76,17 @@ class Article extends Component {
                   className="btn btn-primary"
                   onClick={onClickHandler(slug, null, doNothing, 'delete')}
                   value="Delete"
-                  >
-                Delete
+                >
+                  Delete
                 </button>
               </div>
             </div>
             <hr />
-            {image_url ? <img src={image_url} className="img-responsive article-img" /> : ''}
+            {image_url ? (
+              <img src={image_url} className="img-responsive article-img" />
+            ) : (
+              ''
+            )}
             <hr />
             <p className="lead">{description}</p>
             <div id="data" className="panel" />
@@ -83,22 +95,25 @@ class Article extends Component {
             <Tags tags={tags} />
             <br />
             <hr />
+
             <LikeDislikeView />
+
             <br />
-            {
-                  username !== localStorage.getItem('username')
-                    ? (
-                      <div className="card">
-                        <div className="card-header">
-                          <StarRatingSystem slug={slug} />
-                        </div>
-                      </div>
-                    )
-                    : ''
-              }
+            {username !== localStorage.getItem('username') ? (
+              <div className="card">
+                <div className="card-header">
+                  <StarRatingSystem slug={slug} />
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
             <hr />
-            <ButtonGroup slug={slug} shareHandler={shareHandler} /> 
+
+            <ButtonGroup slug={slug} shareHandler={shareHandler} />
+
             <Comments slug={slug} />
+            <ReportView />
           </div>
         </div>
         <hr />
@@ -122,7 +137,7 @@ Article.propTypes = {
       email: PropTypes.string,
       bio: PropTypes.string,
       image: PropTypes.string,
-      following: PropTypes.bool,
+      following: PropTypes.bool
     }),
     favourites_count: PropTypes.number,
     tags: PropTypes.array,
@@ -130,8 +145,8 @@ Article.propTypes = {
     read_time: PropTypes.string,
     id: PropTypes.number,
     likes: PropTypes.number,
-    dislikes: PropTypes.number,
-  }),
+    dislikes: PropTypes.number
+  })
 };
 
 Article.defaultProps = {
@@ -149,7 +164,7 @@ Article.defaultProps = {
       email: '',
       bio: '',
       image: null,
-      following: false,
+      following: false
     },
     favourites_count: 0,
     tags: [],
@@ -157,8 +172,8 @@ Article.defaultProps = {
     read_time: '',
     id: 0,
     likes: 0,
-    dislikes: 0,
-  },
+    dislikes: 0
+  }
 };
 
 export default Article;
