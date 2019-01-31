@@ -8,7 +8,7 @@ export default class ReportComponet extends Component {
       <div>
         <form>
           <button type="button" class="btn btn-primary" onClick={onclick}>
-            Report
+            Report article
           </button>
         </form>
 
