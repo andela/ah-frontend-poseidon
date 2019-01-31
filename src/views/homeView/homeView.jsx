@@ -16,17 +16,20 @@ export class HomeView extends Component {
     viewArticle: false,
     tagView: false,
     tagName: '',
+    keyword: '',
+    author: '',
+    tags: '',
     loader: {
       success: false,
-      loading: false
-    }
+      loading: false,
+    },
   };
 
   componentDidMount() {
-    const { match } = this.props;
+    const { match, actions: { getDataThunk } } = this.props;
     if (match.params.articleId) {
       const { articleId } = match.params;
-      this.props.actions.getDataThunk(`articles/${articleId}`, requestArticle);
+      getDataThunk(`articles/${articleId}`, requestArticle);
       this.setState({ loader: { loading: true } });
       this.singleArticlePage(4000, true);
       setTimeout(() => {
@@ -36,16 +39,46 @@ export class HomeView extends Component {
     }
   }
 
+  handleSearchInput = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSearchClick = (e) => {
+    e.preventDefault();
+    const { keyword, author, tags } = this.state;
+    const { actions: { getDataThunk } } = this.props;
+
+    if (keyword) {
+      getDataThunk(`articles?keyword=${keyword}`, getAllArticles);
+    } else if (tags && author) {
+      getDataThunk(`articles?author=${author}&tags=${tags}`, getAllArticles);
+    } else if (author) {
+      getDataThunk(`articles?author=${author}`, getAllArticles);
+    } else if (tags) {
+      getDataThunk(`articles?tags=${tags}`, getAllArticles);
+    }
+  }
+
+  handleKeyPress = (event) => {
+    if (event.charCode === 13) {
+      return this.handleSearchClick(event);
+    }
+  }
+
   singleArticlePage = (timeout, bool) => {
     setTimeout(() => {
       this.setState({
-        viewArticle: bool
+        viewArticle: bool,
       });
       this.isLoading(false);
     }, timeout);
   };
 
-  changeToCreateArticle = bool => e => {
+  changeToCreateArticle = bool => (e) => {
     e.preventDefault();
     this.setState({
       goToArticles: bool
@@ -53,7 +86,7 @@ export class HomeView extends Component {
     this.singleArticlePage(0, false);
   };
 
-  getArticle = slug => {
+  getArticle = (slug) => {
     const { actions } = this.props;
     actions.getOneArticle(slug);
     actions.getDataThunk(`articles/${slug}`, getOneArticle(slug));
@@ -61,7 +94,7 @@ export class HomeView extends Component {
     this.setState({ goToArticles: true });
   };
 
-  isLoading = bool => {
+  isLoading = (bool) => {
     this.setState({ loader: { loading: bool } });
   };
 
@@ -72,22 +105,20 @@ export class HomeView extends Component {
 
   handleClick = tag => (e) => {
     e.preventDefault();
-    const {
-      actions: { getDataThunk }
-    } = this.props;
+    const { actions: { getDataThunk } } = this.props;
     getDataThunk('articles?tags='.concat(tag), getAllArticles);
     this.setState({
       tagView: true,
-      tagName: tag
+      tagName: tag,
     });
   };
 
   render() {
     const {
- viewArticle, goToArticles, loader, tagView, tagName,
-} = this.state;
+      viewArticle, goToArticles, loader, tagView, tagName,
+    } = this.state;
     const {
-      articles, nextPage, prevPage, currentPage, actions,
+      articles, nextPage, prevPage, currentPage, actions, error,
     } = this.props;
     const homeProps = {
       getArticle: this.getArticle,
@@ -99,6 +130,7 @@ export class HomeView extends Component {
       getTaggedArticles: this.handleClick,
       tagView,
       tagName,
+      error,
     };
     const articlesProps = {
       viewArticle,
@@ -110,7 +142,12 @@ export class HomeView extends Component {
     return (
       <div>
         <CircularProgressLoader {...loader} />
-        <NavBar createArticle={this.changeToCreateArticle(true)} />
+        <NavBar
+          createArticle={this.changeToCreateArticle(true)}
+          searchClick={this.handleSearchClick}
+          searchInput={this.handleSearchInput}
+          keyPress={this.handleKeyPress}
+        />
         {goToArticles
           ? <Articles {...articlesProps} /> : <Home {...homeProps} />}
       </div>
@@ -122,11 +159,13 @@ const mapStateToProps = ({
   articles: {
     articles, nextPage, prevPage, currentPage,
   },
+  error: { error },
 }) => ({
   articles,
   nextPage,
   prevPage,
   currentPage,
+  error,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -137,5 +176,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeView);

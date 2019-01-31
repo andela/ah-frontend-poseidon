@@ -1,5 +1,5 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import SideBar from './SideBarComponent';
 import Article from './ArticleComponent';
@@ -12,49 +12,64 @@ class Home extends React.Component {
   render() {
     const {
       articles, getArticle, getTaggedArticles, tagView, tagName, getArticlesPage, nextPage,
-      prevPage, currentPage,
+      prevPage, currentPage, error,
     } = this.props;
     const articleList = articles || [];
     return (
       <div className="container-fluid">
         <div className="row">
-          {tagView ? <TagHeader tagName={tagName} />
-            : <SideBar articles={articleList} getTaggedArticles={getTaggedArticles} />}
-          <div className="col-lg-10 col-md-10 article-content">
-            {
+          {
+          error
+            ? (
+              <div className="container">
+                <div className="display-4 text-muted article-found">
+                  {error.articles.detail}
+                  <small>...</small>
+                </div>
+              </div>
+            )
+            : (
+              <Fragment>
+                {tagView ? <TagHeader tagName={tagName} />
+                  : <SideBar articles={articleList} getTaggedArticles={getTaggedArticles} />}
+                <div className="col-lg-10 col-md-10 article-content">
+                  {
               articleList.map(article => (
                 <Article
                   getArticle={getArticle}
                   article={article}
                   key={article.id}
                 />))}
-            <div className="btn-group align-middle">
-              <button
-                type="button"
-                disabled={!prevPage}
-                id="prevPage"
-                className="btn btn-outline-primary"
-                onClick={() => getArticlesPage(prevPage)}
-              >
+                  <div className="btn-group align-middle">
+                    <button
+                      type="button"
+                      disabled={!prevPage}
+                      id="prevPage"
+                      className="btn btn-outline-primary"
+                      onClick={() => getArticlesPage(prevPage)}
+                    >
                 Previous
-              </button>
-              <button
-                type="button"
-                className="btn btn-outline-primary rounded-circle"
-              >
-                {currentPage}
-              </button>
-              <button
-                type="button"
-                disabled={!nextPage}
-                id="nextPage"
-                className="btn btn-outline-primary"
-                onClick={() => getArticlesPage(nextPage)}
-              >
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-outline-primary rounded-circle"
+                    >
+                      {currentPage}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={!nextPage}
+                      id="nextPage"
+                      className="btn btn-outline-primary"
+                      onClick={() => getArticlesPage(nextPage)}
+                    >
                 Next
-              </button>
-            </div>
-          </div>
+                    </button>
+                  </div>
+                </div>
+              </Fragment>
+            )
+        }
         </div>
       </div>
     );
@@ -86,10 +101,15 @@ Home.propTypes = {
   nextPage: PropTypes.string,
   prevPage: PropTypes.string,
   currentPage: PropTypes.number,
+  error: PropTypes.string,
 };
 
 Home.defaultProps = {
   articles: [],
+  nextPage: '',
+  prevPage: '',
+  currentPage: 0,
+  error: '',
 };
 
 export default Home;
