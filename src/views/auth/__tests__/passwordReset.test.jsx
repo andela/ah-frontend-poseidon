@@ -72,10 +72,6 @@ describe('password reset', () => {
     expect(spy).toHaveBeenCalled();
   });
   it('tests new password created', () => {
-    wrapper.setState({
-      isResetPassword: true,
-      addNewPassword: false,
-    });
     const event = { preventDefault: jest.fn(), target: { elements: { password: { value: 'JDH56HX9Wom' } } } };
     const spy = jest.spyOn(wrapper.instance().props, 'postDataThunk');
     wrapper.find('form').simulate('submit', event);
@@ -106,10 +102,6 @@ describe('password reset', () => {
   });
 
   it('component load new page', () => {
-    wrapper.setState({
-      isResetPassword: true,
-      addNewPassword: false,
-    });
     const spy = jest.spyOn(wrapper.instance(), 'redirectOnSuccesfullPasswordReset');
     wrapper.setProps({
       signUpData: { Message: 'Your password has been updated succesfully' },
