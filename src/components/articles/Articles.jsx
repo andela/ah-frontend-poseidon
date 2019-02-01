@@ -107,6 +107,11 @@ export class ArticleView extends React.Component {
     }
   };
 
+  extractError = (errors) => {
+    const errs = Object.keys(errors).map(key => errors[key]);
+    return errs && errs.length > 1 ? errs[0] : errs;
+  };
+
   handleBookMark = slug => async (e) => {
     e.preventDefault();
     const endpoint = `/${slug}/bookmark/`;
@@ -114,8 +119,14 @@ export class ArticleView extends React.Component {
     const { postDataThunk } = this.props;
     const { createMethod } = this.state;
     await postDataThunk(endpoint, data, bookMarkArticle, createMethod);
-    const { message } = this.props;
-    notify(message.message.message, 'success');
+    const { message, error } = this.props;
+    const errors = this.extractError(error);
+    const bookMarkError = errors[0].message;
+    if (bookMarkError.length > 1) { 
+      notify(bookMarkError, 'error');
+    } else {
+      notify(message.message.message, 'success');
+    }
   }
 
   handleShare = slug => (e) => {
@@ -152,9 +163,10 @@ export class ArticleView extends React.Component {
   }
 }
 
-const mapStateToProps = ({ articles: { article }, message }) => ({
+const mapStateToProps = ({ articles: { article }, message, error }) => ({
   article,
   message,
+  error,
 });
 
 export default connect(mapStateToProps)(ArticleView);
