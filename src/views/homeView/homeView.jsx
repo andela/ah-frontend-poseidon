@@ -8,6 +8,7 @@ import Articles from '../../components/articles/Articles';
 import {
   requestArticle, getOneArticle, getAllArticles, deleteArticle, shareArticle,
 } from '../../redux/actions/ArticleActionCreators';
+import { getBookmarks, getOneBookmark } from '../../redux/actions/bookmarksActions';
 import CircularProgressLoader from '../../components/progress/index';
 
 export class HomeView extends Component {
@@ -26,7 +27,7 @@ export class HomeView extends Component {
   };
 
   componentDidMount() {
-    const { match, actions: { getDataThunk } } = this.props;
+    const { match, actions: { getDataThunk, getPrivateDataThunk } } = this.props;
     if (match.params.articleId) {
       const { articleId } = match.params;
       getDataThunk(`articles/${articleId}`, requestArticle);
@@ -37,6 +38,7 @@ export class HomeView extends Component {
         this.setState({ loader: { loading: false } });
       }, 7000);
     }
+    getPrivateDataThunk('bookmarks/', getBookmarks);
   }
 
   handleSearchInput = (event) => {
@@ -78,10 +80,10 @@ export class HomeView extends Component {
     }, timeout);
   };
 
-  changeToCreateArticle = bool => (e) => {
+  changeToPage = bool => (e) => {
     e.preventDefault();
     this.setState({
-      goToArticles: bool
+      goToArticles: bool,
     });
     this.singleArticlePage(0, false);
   };
@@ -105,7 +107,9 @@ export class HomeView extends Component {
 
   handleClick = tag => (e) => {
     e.preventDefault();
-    const { actions: { getDataThunk } } = this.props;
+    const {
+      actions: { getDataThunk },
+    } = this.props;
     getDataThunk('articles?tags='.concat(tag), getAllArticles);
     this.setState({
       tagView: true,
@@ -113,12 +117,19 @@ export class HomeView extends Component {
     });
   };
 
+  viewBookmark = (slug) => {
+    const { actions } = this.props;
+    actions.getOneBookmark(slug);
+    this.singleArticlePage(0, true);
+    this.setState({ goToArticles: true });
+  }
+
   render() {
     const {
       viewArticle, goToArticles, loader, tagView, tagName,
     } = this.state;
     const {
-      articles, nextPage, prevPage, currentPage, actions, error,
+      articles, bookmarks, nextPage, prevPage, currentPage, actions, error,
     } = this.props;
     const homeProps = {
       getArticle: this.getArticle,
@@ -135,18 +146,20 @@ export class HomeView extends Component {
     const articlesProps = {
       viewArticle,
       isLoading: this.isLoading,
-      backToHome: this.changeToCreateArticle(false),
+      backToHome: this.changeToPage(false),
       singleArticlePage: this.singleArticlePage,
       ...actions,
     };
     return (
       <div>
-        <CircularProgressLoader {...loader} />
+        <CircularProgressLoader {...loader} /> 
         <NavBar
-          createArticle={this.changeToCreateArticle(true)}
           searchClick={this.handleSearchClick}
           searchInput={this.handleSearchInput}
           keyPress={this.handleKeyPress}
+          changeToArticle={this.changeToPage(true)}
+          viewBookmark={this.viewBookmark}
+          bookmarks={bookmarks}
         />
         {goToArticles
           ? <Articles {...articlesProps} /> : <Home {...homeProps} />}
@@ -157,11 +170,12 @@ export class HomeView extends Component {
 
 const mapStateToProps = ({
   articles: {
-    articles, nextPage, prevPage, currentPage,
+    articles, nextPage, prevPage, currentPage, bookmarks,
   },
   error: { error },
 }) => ({
   articles,
+  bookmarks,
   nextPage,
   prevPage,
   currentPage,
@@ -170,7 +184,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    ...Actions, getOneArticle, deleteArticle, shareArticle,
+    ...Actions, getOneArticle, deleteArticle, shareArticle, getOneBookmark,
   }, dispatch),
 });
 

@@ -7,7 +7,6 @@ import './Dashboard.scss';
 import '../articles/articles.scss';
 import TagHeader from '../articles/taggedArticles/pageHeaderComponent';
 
-
 class Home extends React.Component {
   render() {
     const {

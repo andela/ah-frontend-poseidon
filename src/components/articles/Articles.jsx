@@ -32,7 +32,7 @@ export class ArticleView extends React.Component {
     this.setState({ contentArea: newHTML });
   };
 
-  handleCreate = (endpoint, actionCreator, method) => e => {
+  handleCreate = (endpoint, actionCreator, method) => (e) => {
     e.preventDefault();
     const {
  getTitle, getDescription, contentArea, getTags, getImage,
@@ -88,7 +88,7 @@ export class ArticleView extends React.Component {
     if (method === 'put') {
       const {
         article: {
-          body, title, description, tags,
+          body, title, description, tags, image_url,
         },
       } = this.props;
       this.setState(prevState => ({
@@ -98,13 +98,14 @@ export class ArticleView extends React.Component {
         contentArea: body,
         getTitle: title,
         getDescription: description,
-        getTags: tags.toString()
+        getTags: tags.toString(),
+        getImage: image_url,
       }));
       singleArticlePage(0, false);
     }
   };
 
-  handleShare = slug => e => {
+  handleShare = slug => (e) => {
     e.preventDefault();
     const endpoint = `/${slug}/email`;
     const data = '';

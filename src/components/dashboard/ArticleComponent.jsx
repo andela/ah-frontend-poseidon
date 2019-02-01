@@ -16,7 +16,8 @@ const Article = (props) => {
 
   const {
     article: {
-      title, body, author, created_on, image_url, description, slug, average_rating, view_counts,
+      title, body, author, created_on, image_url,
+      description, slug, average_rating, view_counts,
     },
     getArticle,
   } = props;
