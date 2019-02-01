@@ -45,18 +45,7 @@ class CreateArticle extends PureComponent {
                 placeholder="Tags (,)"
               />
             </div>
-            <label
-              className="btn btn-outline-primary btn-file"
-              htmlFor="image"
-            >
-          Add image
-              <input
-                className="file-upload"
-                name="image"
-                onClick={imageUpload}
-                accept=".jpg, .jpeg, .png"
-              />
-            </label>
+            <button type="button" className="btn btn-outline-primary file-upload" onClick={imageUpload}>Add Image</button>
             <Editor
               required
               handleArticleBody={handleArticleBody}

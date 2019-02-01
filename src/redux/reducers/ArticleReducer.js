@@ -55,6 +55,17 @@ export default (state = {}, action) => {
         ...state,
       };
 
+    case types.GET_ALL_BOOKMARKS:
+      return {
+        ...state,
+        bookmarks: action.bookmarks,
+      };
+
+    case types.GET_SINGLE_BOOKMARK:
+      return Object.assign({}, state, {
+        article: state.bookmarks.find(article => article.slug === action.slug),
+      });
+
     default:
       return state;
   }

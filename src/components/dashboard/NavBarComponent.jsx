@@ -3,11 +3,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import PropTypes from 'prop-types';
+import SidePanel from './SidePanel';
+
+const openNav = () => {
+  document.getElementById('mySidepanel').style.width = '30%';
+};
+
+const closeNav = () => {
+  document.getElementById('mySidepanel').style.width = '0';
+};
 
 const NavBar = (props) => {
-  const {
-    createArticle, searchClick, searchInput, keyPress,
-  } = props;
+  const token = localStorage.getItem('user');
+  const { changeToArticle, viewBookmark, bookmarks, searchClick, searchInput, keyPress, } = props;
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -50,16 +58,17 @@ const NavBar = (props) => {
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Profile
                 </a>
-                <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" data-display="static">
-                  <a className="dropdown-item" href="/">Notifications</a>
-                  <a className="dropdown-item" href="/profile">View Profile</a>
-                  <div className="dropdown-divider" />
-                  <a id="newArticle" className="dropdown-item" onClick={createArticle}>Create Article</a>
-                  <a className="dropdown-item" href="/">Your Articles</a>
-                </div>
+                  <div className="dropdown-menu" aria-labelledby="navbarDropdown" data-display="static">
+                    <a className="dropdown-item" href="/">Notifications</a>
+                    <a className="dropdown-item" href="/profile">View Profile</a>
+                    <div className="dropdown-divider" />
+                    <a id="newArticle" className="dropdown-item" onClick={changeToArticle}>Create Article</a>
+                    <a id="openPanel" className="dropdown-item" onClick={ openNav }>Bookmarks</a>
+                  </div>
               </li>
             </ul>
           </div>
+        <SidePanel closeNav={closeNav} viewBookmark={viewBookmark} bookmarks={bookmarks} />
         </div>
       </nav>
     </div>

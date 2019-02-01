@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import HomeViewTest, { HomeView } from '../homeView';
@@ -31,8 +31,10 @@ const props = {
   actions: {
     getOneArticle: jest.fn(),
     getDataThunk: jest.fn(),
+    getPrivateDataThunk: jest.fn(),
     postDataThunk: jest.fn(),
     deleteArticle: jest.fn(),
+    getOneBookmark: jest.fn(),
   },
   match: { params: 'none' },
   articles: mockArticles,
@@ -41,6 +43,7 @@ const props = {
   currentPage: 1,
   handleSearchInput: jest.fn(),
   handleSearchClick: jest.fn(),
+  bookmarks: mockArticles,
 };
 
 const state = {
@@ -53,6 +56,11 @@ describe('Home view test', () => {
   let wrapper;
 
   beforeEach(() => {
+    Element.prototype.getBoundingClientRect = jest.fn(() => { style: { width: 30 }})         
+    Object.defineProperty(global.document, 'getElementById', {
+      value: jest.fn(() => ({ style: { width: 0 } })),
+      writable: true,
+    });
     Editor.prototype.componentDidMount = () => 'Test';
     store = mockStore({
       articles: {
@@ -149,4 +157,13 @@ describe('Home view test', () => {
     expect(getData).toHaveBeenCalled();
   });
 
+  it('should call openNav function', () => {
+    wrapper.find('#openPanel').simulate('click');
+  });
+  it('viewBookmark function should be called', () => {
+    wrapper = shallow(<HomeView {...props} />);
+    const instance = wrapper.instance();
+    instance.viewBookmark('how-to-kill');
+    expect(instance.state.goToArticles).toEqual(true);
+  });
 });

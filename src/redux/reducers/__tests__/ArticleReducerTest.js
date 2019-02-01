@@ -1,5 +1,6 @@
 import reducer from '../ArticleReducer';
 import * as ActionCreators from '../../actions/ArticleActionCreators';
+import * as bookmarkActions from '../../actions/bookmarksActions';
 
 const state = {
 };
@@ -101,5 +102,18 @@ describe('article Reducer', () => {
     };
     expect(reducer(articles, ActionCreators.shareArticle({ articles: { slug: 'davido' } }),
     )).toEqual(expected);
+  });
+  it('should handle GET_ALL_BOOKMARKS', () => {
+    const expected = {
+      bookmarks: [{ a: 'b' }, { slug: 'davido' }],
+    };
+    const addArticle = {
+      article: { slug: 'davido' },
+      bookmarks: [{ a: 'b' }, { slug: 'davido' }],
+    };
+    expect(reducer({}, bookmarkActions.getBookmarks([{ a: 'b' }, { slug: 'davido' }]),
+    )).toEqual(expected);
+    expect(reducer(expected, bookmarkActions.getOneBookmark('davido'),
+    )).toEqual(addArticle);
   });
 });

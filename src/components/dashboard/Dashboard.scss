@@ -113,5 +113,41 @@ div.article-row {
   margin: {
     top: 20%;
     left: 20%;
-  }
+  }}
+
+.sidepanel {
+  height: 300px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 30%;
+  right: 5%;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  background: #c5c6ca;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidepanel span {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: $grey;
+  font-size: 1.3em;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sidepanel span:hover {
+  color: white;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }

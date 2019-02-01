@@ -32,7 +32,7 @@ const CommentCard = (props) => {
 CommentCard.propTypes = {
   body: PropTypes.string,
   commented_by: PropTypes.string,
-  created_at: PropTypes.func
+  created_at: PropTypes.string,
 };
 
 export default CommentCard;
