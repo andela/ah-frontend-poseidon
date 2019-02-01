@@ -32,6 +32,7 @@ class Article extends Component {
       },
       onClickHandler,
       shareHandler,
+      bookMark,
     } = this.props;
 
     return (
@@ -85,19 +86,17 @@ class Article extends Component {
             <hr />
             <LikeDislikeView />
             <br />
-            {
-                  username !== localStorage.getItem('username')
-                    ? (
-                      <div className="card">
-                        <div className="card-header">
-                          <StarRatingSystem slug={slug} />
-                        </div>
-                      </div>
-                    )
-                    : ''
-              }
+            {username !== localStorage.getItem('username') ? (
+              <div className="card">
+                <div className="card-header">
+                  <StarRatingSystem slug={slug} />
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
+            <ButtonGroup slug={slug} shareHandler={shareHandler} bookMark={bookMark} />
             <hr />
-            <ButtonGroup slug={slug} shareHandler={shareHandler} /> 
             <Comments slug={slug} />
           </div>
         </div>
@@ -132,6 +131,8 @@ Article.propTypes = {
     likes: PropTypes.number,
     dislikes: PropTypes.number,
   }),
+  shareHandler: PropTypes.func.isRequired,
+  bookMark: PropTypes.func.isRequired,
 };
 
 Article.defaultProps = {

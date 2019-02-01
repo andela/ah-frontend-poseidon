@@ -21,6 +21,7 @@ describe('Article page', () => {
         article={article.articles}
         onClickHandler={onClick}
         shareHandler={onClick}
+        bookMark={onClick}
       />
     );
   });
@@ -56,6 +57,7 @@ describe('Article page', () => {
           article={article.articles}
           onClickHandler={onClick}
           shareHandler={onClick}
+          bookMark={onClick}
         />
       </Provider>
     );

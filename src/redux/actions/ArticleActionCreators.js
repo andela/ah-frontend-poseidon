@@ -16,7 +16,9 @@ const rateArticle = score => ({ type: types.Rate_Article, score });
 
 const shareArticle = articleSlug => ({ type: types.SHARE_ARTICLE, articleSlug });
 
+const bookMarkArticle = message => ({ type: types.BOOKMARK_ARTICLE, message });
+
 export {
   createArticle, editArticle, deleteArticle, getOneArticle, getAllArticles, requestArticle,
-  rateArticle, shareArticle,
+  rateArticle, shareArticle, bookMarkArticle,
 };

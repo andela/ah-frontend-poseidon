@@ -120,6 +120,7 @@ describe('Articles Container', () => {
 
 describe('social share', () => {
   let store;
+  let mountedWrapper;
   const { articles } = article;
   const props = {
     viewArticle: false,
@@ -130,28 +131,34 @@ describe('social share', () => {
     postDataThunk: jest.fn(),
     getDataThunk: jest.fn(),
     deleteArticle: jest.fn(),
-    
   };
-
-  it('handles share email', () => {
+  beforeEach(() => {
     const newProps = {
       ...props,
       viewArticle: true,
     };
     const mockStore = configureStore([thunk]);
-    
-    store = mockStore({ articles: { article: articles },
+
+    store = mockStore({
+      articles: { article: articles },
       comments: {
         comments: [{}],
         current_comment: {},
       },
     });
-    const mountedWrapper = mount(
+    mountedWrapper = mount(
       <Provider store={store}>
         <ArticlesContainer {...newProps} />
       </Provider>,
     );
+  });
+
+  it('handles share email', () => {
     mountedWrapper.find('#share-email').simulate('click', 'the-20190111145839981441');
     expect(mountedWrapper.find('#share-email')).toBeDefined();
+  });
+  it('handles bookmark', () => {
+    mountedWrapper.find('#bookmark').simulate('click', 'the-20190111145839981441');
+    expect(mountedWrapper.find('#bookmark')).toBeDefined();
   });
 });
